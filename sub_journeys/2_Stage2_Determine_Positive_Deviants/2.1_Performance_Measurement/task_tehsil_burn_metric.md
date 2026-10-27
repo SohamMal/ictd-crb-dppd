@@ -39,3 +39,16 @@ The burn classifier works on fields. To compare tehsils we need one number per t
 - Extraction: S2 SR Harmonized, CLOUDY_PIXEL_PERCENTAGE < 60, 25 Aug – 1 Dec (for the 20-day "before"), `sampleRegions` scale 20 of SCL + B2–B8, B11, B12; clear = SCL {2,4,5,7}; same-day tiles averaged. Indices and old-detector z computed locally (`labelling_package.model()`), RF = `jalandhar_walker_model_test.walker_model()` with pre_looks 1.
 - 2022 also scored with the window ending 24 Oct for the CREAMS in-season table.
 - Smoke test (first 200 points: Dhar Kalan, Pathankot): runs end to end; points with a verdict 92–100 per tehsil per year.
+
+### 2026-10-28 — Final-model tehsil run done: matches CREAMS 2022 and VIIRS far better than the heat-peak table, and stable from year to year
+**Plain:** All 97 tehsils have a burn share for 2019–2024. Almost every point got a verdict: at worst 70 of 100 in one tehsil in 2022, typically 100. Three checks say the new measure is sound:
+- **Official 2022 figures (CREAMS, till 24 Oct):** the district order agrees strongly (ρ 0.87), and so does the state total (7.8% vs 9.9%).
+- **Satellite fire counts (VIIRS):** the tehsil order agrees closely in every year (ρ 0.78–0.87; 0.51 in 2024, when farmers dodge the satellite's pass). The old heat-peak table agreed only weakly with VIIRS (0.22–0.36).
+- **Year-to-year stability:** each year's tehsil order resembles the next year's (ρ 0.82–0.91; 0.62 into 2024). That is what a real, lasting behaviour looks like.
+The weak spots are the 2019 level (our 59% vs CREAMS 37%; CREAMS changed its method between 2019 and 2020) and the 2020 district order (ρ 0.50, the old table 0.82). The new and old tehsil tables rank tehsils very differently (ρ 0.1–0.5). The strict (0.79) and loose (0.5) cuts rank tehsils almost the same (ρ 0.84–0.98), so the cut choice changes the level, not the order.
+**Technical:** `python Code/burn/tehsil_metric_rf.py` (started 2026-10-27 23:49; finished 2026-10-28 ~00:35) → `outputs/burn_tehsil_rf/`. Walker cut90 = 0.786.
+- [C] Points with a verdict / 9,700: 2019 9,633; 2020 9,693; 2021 9,695; 2022 9,441; 2023 9,675; 2024 9,677. Per tehsil min: 80, 99, 98, 70, 94, 96.
+- [C] vs CREAMS (main cut; all 22 districts / 18 plains): 2019 state 59.3 vs 37.4, ρ 0.754 / 0.567; 2020 59.7 vs 55.7, ρ 0.503 / 0.160; 2022 (≤ 24 Oct) 7.8 vs 9.9, ρ 0.871 / 0.884. Cut 0.5: 2019 75.2, ρ 0.692; 2020 76.8, ρ 0.523; 2022 12.1, ρ 0.947 / 0.971. Heat-peak table (same check): 2019 ρ 0.366, 2020 0.815, 2022 0.644.
+- [C] Spearman, 81 PD-group tehsils: new vs heat-peak 0.11–0.26; main vs 0.5 cut 0.84–0.97; year-to-year (main) 2019→20 0.84, 20→21 0.91, 21→22 0.84, 22→23 0.82, 23→24 0.62; vs VIIRS fires per 1,000 ha rice 2019 0.79, 2020 0.86, 2021 0.87, 2022 0.79, 2023 0.78, 2024 0.51.
+- [C] Area-weighted burnt % (main), Central / South-west / Foothills: 2019 58.9 / 67.4 / 30.6; 2020 61.1 / 66.0 / 26.8; 2021 66.9 / 70.2 / 25.9; 2022 53.3 / 61.3 / 21.7; 2023 52.5 / 60.2 / 19.9; 2024 58.7 / 80.7 / 28.6.
+- Reading [P]: the new measure is fit for PD identification (2020–2024). Caveats for the report: the 2019 level (CREAMS method change), the 2020 district order, the 2024 SW jump (80.7%; unchecked), partial-burn under-count, and untested pixel-level false alarms on ploughed fields.
