@@ -1,0 +1,490 @@
+    retry 1: Too many concurrent aggregations.
+  MODIS 2019-08: 3043 location-days
+  MODIS 2019-09: 4417 location-days
+  S2 2019 b3 2019-09-15..2019-10-15: 14338 point-looks
+  S2 2019 b1 2019-09-15..2019-10-15: 16800 point-looks
+  S2 2019 b4 2019-09-15..2019-10-15: 13874 point-looks
+  S2 2019 b5 2019-09-15..2019-10-15: 11499 point-looks
+  S2 2019 b2 2019-09-15..2019-10-15: 10672 point-looks
+  MODIS 2019-10: 18280 location-days
+  S2 2019 b1 2019-10-15..2019-11-15: 17954 point-looks
+  MODIS 2019-11: 9907 location-days
+  S2 2019 b3 2019-10-15..2019-11-15: 13256 point-looks
+  S2 2019 b2 2019-10-15..2019-11-15: 10925 point-looks
+  S2 2019 b5 2019-10-15..2019-11-15: 11374 point-looks
+  S2 2019 b4 2019-10-15..2019-11-15: 13557 point-looks
+  MODIS 2019-12: 7858 location-days
+== done 2019 b0
+  S2 2019 b1 2019-11-15..2019-12-08: 9337 point-looks
+  S2 2019 b3 2019-11-15..2019-12-08: 6927 point-looks
+  MODIS 2019-08: 2195 location-days
+  MODIS 2019-08: 2466 location-days
+  S2 2019 b6 2019-09-15..2019-10-15: 5187 point-looks
+  S2 2019 b2 2019-11-15..2019-12-08: 6003 point-looks
+  S2 2019 b5 2019-11-15..2019-12-08: 5834 point-looks
+  S2 2019 b4 2019-11-15..2019-12-08: 7311 point-looks
+  MODIS 2019-09: 3035 location-days
+  MODIS 2019-08: 2972 location-days
+  MODIS 2019-09: 4336 location-days
+  S2 2019 b6 2019-10-15..2019-11-15: 5339 point-looks
+  MODIS 2019-08: 2572 location-days
+  MODIS 2019-08: 2403 location-days
+  S2 2019 b6 2019-11-15..2019-12-08: 2781 point-looks
+  MODIS 2019-08: 1465 location-days
+  MODIS 2019-09: 6623 location-days
+  MODIS 2019-09: 4938 location-days
+  MODIS 2019-09: 2574 location-days
+  MODIS 2019-09: 3533 location-days
+  MODIS 2019-10: 18125 location-days
+  MODIS 2019-10: 8367 location-days
+  MODIS 2019-10: 18882 location-days
+  MODIS 2019-11: 4863 location-days
+  MODIS 2019-10: 21733 location-days
+  MODIS 2019-12: 3542 location-days
+== done 2019 b6
+  MODIS 2019-10: 17496 location-days
+  MODIS 2019-11: 9356 location-days
+  MODIS 2019-10: 18624 location-days
+  MODIS 2019-11: 10363 location-days
+  MODIS 2019-11: 8913 location-days
+  MODIS 2019-12: 7165 location-days
+== done 2019 b1
+  MODIS 2019-11: 9548 location-days
+  S2 2020 b0 2020-09-15..2020-10-15: 10396 point-looks
+  MODIS 2019-11: 9895 location-days
+  MODIS 2019-12: 5996 location-days
+== done 2019 b2
+  MODIS 2019-12: 6921 location-days
+== done 2019 b3
+  MODIS 2019-12: 7960 location-days
+== done 2019 b4
+  MODIS 2019-12: 6379 location-days
+== done 2019 b5
+  S2 2020 b0 2020-10-15..2020-11-15: 10226 point-looks
+  S2 2020 b2 2020-09-15..2020-10-15: 10934 point-looks
+  S2 2020 b0 2020-11-15..2020-12-08: 3360 point-looks
+  S2 2020 b1 2020-09-15..2020-10-15: 20239 point-looks
+  MODIS 2020-08: 1491 location-days
+  S2 2020 b4 2020-09-15..2020-10-15: 15421 point-looks
+  S2 2020 b2 2020-10-15..2020-11-15: 9803 point-looks
+  S2 2020 b3 2020-09-15..2020-10-15: 15155 point-looks
+  S2 2020 b5 2020-09-15..2020-10-15: 12269 point-looks
+  S2 2020 b2 2020-11-15..2020-12-08: 3716 point-looks
+  MODIS 2020-09: 14830 location-days
+  MODIS 2020-08: 1262 location-days
+  S2 2020 b1 2020-10-15..2020-11-15: 19972 point-looks
+  S2 2020 b4 2020-10-15..2020-11-15: 14926 point-looks
+  S2 2020 b3 2020-10-15..2020-11-15: 14605 point-looks
+  S2 2020 b5 2020-10-15..2020-11-15: 11687 point-looks
+  S2 2020 b1 2020-11-15..2020-12-08: 8086 point-looks
+  MODIS 2020-09: 19873 location-days
+  S2 2020 b4 2020-11-15..2020-12-08: 6562 point-looks
+  MODIS 2020-08: 786 location-days
+  MODIS 2020-08: 748 location-days
+  S2 2020 b5 2020-11-15..2020-12-08: 4568 point-looks
+  S2 2020 b3 2020-11-15..2020-12-08: 5831 point-looks
+  MODIS 2020-10: 41770 location-days
+  MODIS 2020-08: 1342 location-days
+  MODIS 2020-08: 996 location-days
+  MODIS 2020-09: 12416 location-days
+  MODIS 2020-09: 11076 location-days
+  MODIS 2020-09: 13932 location-days
+  MODIS 2020-09: 15401 location-days
+  MODIS 2020-11: 20337 location-days
+  MODIS 2020-10: 39946 location-days
+  MODIS 2020-12: 8252 location-days
+== done 2020 b0
+  MODIS 2020-11: 18678 location-days
+  S2 2020 b6 2020-09-15..2020-10-15: 5726 point-looks
+  MODIS 2020-10: 40011 location-days
+  MODIS 2020-10: 41427 location-days
+  S2 2020 b6 2020-10-15..2020-11-15: 5656 point-looks
+  MODIS 2020-10: 40086 location-days
+  MODIS 2020-10: 40133 location-days
+  MODIS 2020-12: 11896 location-days
+== done 2020 b2
+  S2 2020 b6 2020-11-15..2020-12-08: 2071 point-looks
+  MODIS 2020-08: 692 location-days
+  MODIS 2020-09: 7041 location-days
+  MODIS 2020-11: 19239 location-days
+  S2 2021 b0 2021-09-15..2021-10-15: 9383 point-looks
+  MODIS 2020-11: 19081 location-days
+  MODIS 2020-11: 20896 location-days
+  MODIS 2020-11: 20029 location-days
+  MODIS 2020-12: 10261 location-days
+== done 2020 b3
+  S2 2021 b0 2021-10-15..2021-11-15: 8421 point-looks
+  MODIS 2020-10: 19287 location-days
+  MODIS 2020-12: 8883 location-days
+== done 2020 b1
+  MODIS 2020-12: 9680 location-days
+== done 2020 b5
+  S2 2021 b0 2021-11-15..2021-12-08: 6720 point-looks
+  MODIS 2020-11: 9698 location-days
+  MODIS 2020-12: 11286 location-days
+== done 2020 b4
+  MODIS 2020-12: 3795 location-days
+== done 2020 b6
+  MODIS 2021-08: 7188 location-days
+  S2 2021 b1 2021-09-15..2021-10-15: 17650 point-looks
+  S2 2021 b2 2021-09-15..2021-10-15: 10934 point-looks
+  MODIS 2021-09: 4261 location-days
+  S2 2021 b3 2021-09-15..2021-10-15: 14231 point-looks
+  S2 2021 b5 2021-09-15..2021-10-15: 11585 point-looks
+  S2 2021 b4 2021-09-15..2021-10-15: 14109 point-looks
+  S2 2021 b2 2021-10-15..2021-11-15: 10670 point-looks
+  S2 2021 b1 2021-10-15..2021-11-15: 18421 point-looks
+  MODIS 2021-10: 26165 location-days
+    retry 1: Too many concurrent aggregations.
+  S2 2021 b2 2021-11-15..2021-12-08: 7295 point-looks
+  S2 2021 b5 2021-10-15..2021-11-15: 11721 point-looks
+  MODIS 2021-08: 8953 location-days
+  S2 2021 b1 2021-11-15..2021-12-08: 14767 point-looks
+  S2 2021 b3 2021-10-15..2021-11-15: 14347 point-looks
+  MODIS 2021-09: 3247 location-days
+  S2 2021 b5 2021-11-15..2021-12-08: 8672 point-looks
+  MODIS 2021-11: 23579 location-days
+  MODIS 2021-08: 4902 location-days
+  S2 2021 b4 2021-10-15..2021-11-15: 14996 point-looks
+  MODIS 2021-09: 2517 location-days
+  MODIS 2021-08: 6621 location-days
+  MODIS 2021-12: 12632 location-days
+== done 2021 b0
+  MODIS 2021-09: 2672 location-days
+  S2 2021 b3 2021-11-15..2021-12-08: 10798 point-looks
+  MODIS 2021-10: 23946 location-days
+  S2 2021 b6 2021-09-15..2021-10-15: 5384 point-looks
+  S2 2021 b4 2021-11-15..2021-12-08: 11593 point-looks
+  S2 2021 b6 2021-10-15..2021-11-15: 5187 point-looks
+  MODIS 2021-08: 6905 location-days
+  MODIS 2021-10: 24719 location-days
+  MODIS 2021-08: 4783 location-days
+  S2 2021 b6 2021-11-15..2021-12-08: 4013 point-looks
+  MODIS 2021-09: 2420 location-days
+  MODIS 2021-08: 3733 location-days
+  MODIS 2021-09: 2042 location-days
+  MODIS 2021-10: 24170 location-days
+  MODIS 2021-11: 25112 location-days
+  MODIS 2021-09: 1646 location-days
+  MODIS 2021-11: 26461 location-days
+  MODIS 2021-12: 9943 location-days
+== done 2021 b2
+  MODIS 2021-10: 11712 location-days
+  MODIS 2021-10: 24200 location-days
+  MODIS 2021-10: 24401 location-days
+  MODIS 2021-11: 26674 location-days
+  S2 2022 b0 2022-09-15..2022-10-15: 7763 point-looks
+  MODIS 2021-11: 11638 location-days
+  MODIS 2021-12: 12296 location-days
+== done 2021 b1
+  MODIS 2021-12: 10997 location-days
+== done 2021 b5
+  MODIS 2021-12: 5934 location-days
+== done 2021 b6
+  S2 2022 b0 2022-10-15..2022-11-15: 7548 point-looks
+  MODIS 2021-11: 23168 location-days
+  MODIS 2021-11: 27249 location-days
+  S2 2022 b0 2022-11-15..2022-12-08: 5973 point-looks
+  S2 2022 b2 2022-09-15..2022-10-15: 8815 point-looks
+  S2 2022 b1 2022-09-15..2022-10-15: 12879 point-looks
+  MODIS 2021-12: 10557 location-days
+== done 2021 b3
+  MODIS 2022-08: 734 location-days
+  S2 2022 b3 2022-09-15..2022-10-15: 10032 point-looks
+  MODIS 2021-12: 12576 location-days
+== done 2021 b4
+  S2 2022 b2 2022-10-15..2022-11-15: 9212 point-looks
+  MODIS 2022-09: 5012 location-days
+  S2 2022 b1 2022-10-15..2022-11-15: 15754 point-looks
+  S2 2022 b4 2022-09-15..2022-10-15: 9653 point-looks
+  S2 2022 b2 2022-11-15..2022-12-08: 6936 point-looks
+  S2 2022 b5 2022-09-15..2022-10-15: 8502 point-looks
+  MODIS 2022-08: 244 location-days
+  S2 2022 b3 2022-10-15..2022-11-15: 12458 point-looks
+  MODIS 2022-09: 6021 location-days
+  S2 2022 b5 2022-10-15..2022-11-15: 10224 point-looks
+  S2 2022 b1 2022-11-15..2022-12-08: 14640 point-looks
+  MODIS 2022-10: 24540 location-days
+  S2 2022 b4 2022-10-15..2022-11-15: 13184 point-looks
+  MODIS 2022-08: 1018 location-days
+  S2 2022 b3 2022-11-15..2022-12-08: 10131 point-looks
+  MODIS 2022-08: 447 location-days
+  MODIS 2022-09: 2757 location-days
+  S2 2022 b5 2022-11-15..2022-12-08: 8203 point-looks
+  MODIS 2022-08: 509 location-days
+  MODIS 2022-11: 14570 location-days
+  MODIS 2022-09: 3866 location-days
+  MODIS 2022-10: 27189 location-days
+  S2 2022 b4 2022-11-15..2022-12-08: 11427 point-looks
+  MODIS 2022-09: 4276 location-days
+  MODIS 2022-08: 543 location-days
+  MODIS 2022-12: 11801 location-days
+== done 2022 b0
+  MODIS 2022-10: 24107 location-days
+  MODIS 2022-09: 2808 location-days
+  S2 2022 b6 2022-09-15..2022-10-15: 4155 point-looks
+  MODIS 2022-10: 23755 location-days
+  MODIS 2022-11: 18304 location-days
+  MODIS 2022-10: 23882 location-days
+  S2 2022 b6 2022-10-15..2022-11-15: 4703 point-looks
+  S2 2022 b6 2022-11-15..2022-12-08: 3526 point-looks
+  MODIS 2022-11: 17844 location-days
+  MODIS 2022-08: 415 location-days
+  MODIS 2022-12: 14303 location-days
+== done 2022 b2
+  MODIS 2022-11: 18321 location-days
+  MODIS 2022-09: 2036 location-days
+  MODIS 2022-10: 22827 location-days
+  S2 2023 b0 2023-09-15..2023-10-15: 6015 point-looks
+  MODIS 2022-11: 18912 location-days
+  MODIS 2022-12: 11494 location-days
+== done 2022 b1
+  MODIS 2022-10: 11162 location-days
+  MODIS 2022-12: 14175 location-days
+== done 2022 b3
+  S2 2023 b0 2023-10-15..2023-11-15: 8400 point-looks
+  MODIS 2022-11: 8142 location-days
+  MODIS 2022-11: 18912 location-days
+  MODIS 2022-12: 5809 location-days
+== done 2022 b6
+  MODIS 2022-12: 13735 location-days
+== done 2022 b5
+  S2 2023 b2 2023-09-15..2023-10-15: 8549 point-looks
+  S2 2023 b0 2023-11-15..2023-12-08: 6720 point-looks
+  S2 2023 b1 2023-09-15..2023-10-15: 16005 point-looks
+  MODIS 2022-12: 14811 location-days
+== done 2022 b4
+  MODIS 2023-08: 2093 location-days
+  S2 2023 b2 2023-10-15..2023-11-15: 9110 point-looks
+  S2 2023 b3 2023-09-15..2023-10-15: 11421 point-looks
+  S2 2023 b4 2023-09-15..2023-10-15: 13005 point-looks
+  S2 2023 b1 2023-10-15..2023-11-15: 15433 point-looks
+  S2 2023 b5 2023-09-15..2023-10-15: 9274 point-looks
+  S2 2023 b2 2023-11-15..2023-12-08: 7291 point-looks
+  MODIS 2023-09: 8346 location-days
+  MODIS 2023-08: 2290 location-days
+  S2 2023 b4 2023-10-15..2023-11-15: 11783 point-looks
+  S2 2023 b3 2023-10-15..2023-11-15: 12076 point-looks
+  S2 2023 b1 2023-11-15..2023-12-08: 12348 point-looks
+  MODIS 2023-10: 19823 location-days
+  S2 2023 b5 2023-10-15..2023-11-15: 9831 point-looks
+  MODIS 2023-09: 7826 location-days
+  MODIS 2023-08: 2157 location-days
+  S2 2023 b4 2023-11-15..2023-12-08: 9691 point-looks
+  S2 2023 b3 2023-11-15..2023-12-08: 9209 point-looks
+  MODIS 2023-08: 2128 location-days
+  MODIS 2023-11: 12887 location-days
+  MODIS 2023-08: 2183 location-days
+  MODIS 2023-10: 18785 location-days
+  MODIS 2023-09: 7255 location-days
+  S2 2023 b5 2023-11-15..2023-12-08: 7803 point-looks
+  MODIS 2023-09: 5981 location-days
+  MODIS 2023-08: 2500 location-days
+  MODIS 2023-09: 7549 location-days
+  MODIS 2023-11: 6451 location-days
+  MODIS 2023-12: 11662 location-days
+== done 2023 b0
+  S2 2023 b6 2023-09-15..2023-10-15: 3661 point-looks
+  MODIS 2023-12: 11325 location-days
+== done 2023 b2
+  MODIS 2023-10: 20014 location-days
+  MODIS 2023-09: 8358 location-days
+  S2 2023 b6 2023-10-15..2023-11-15: 4726 point-looks
+  MODIS 2023-10: 18957 location-days
+  S2 2023 b6 2023-11-15..2023-12-08: 3726 point-looks
+  MODIS 2023-10: 18483 location-days
+  MODIS 2023-08: 1300 location-days
+  S2 2024 b0 2024-09-15..2024-10-15: 8470 point-looks
+  MODIS 2023-09: 4060 location-days
+  MODIS 2023-11: 14653 location-days
+  MODIS 2023-10: 9809 location-days
+  MODIS 2023-11: 11122 location-days
+  MODIS 2023-10: 19647 location-days
+  MODIS 2023-11: 13568 location-days
+  S2 2024 b0 2024-10-15..2024-11-15: 9046 point-looks
+  MODIS 2023-11: 5713 location-days
+  MODIS 2023-12: 13164 location-days
+== done 2023 b1
+  S2 2024 b0 2024-11-15..2024-12-08: 7497 point-looks
+  MODIS 2023-11: 10541 location-days
+  MODIS 2023-12: 11652 location-days
+== done 2023 b3
+  MODIS 2023-12: 5349 location-days
+== done 2023 b6
+  MODIS 2023-12: 14025 location-days
+== done 2023 b4
+  MODIS 2024-08: 1601 location-days
+  MODIS 2023-12: 11680 location-days
+== done 2023 b5
+  S2 2024 b2 2024-09-15..2024-10-15: 9121 point-looks
+  MODIS 2024-09: 6292 location-days
+  S2 2024 b1 2024-09-15..2024-10-15: 16813 point-looks
+  S2 2024 b3 2024-09-15..2024-10-15: 13345 point-looks
+  S2 2024 b2 2024-10-15..2024-11-15: 8750 point-looks
+  S2 2024 b4 2024-09-15..2024-10-15: 13199 point-looks
+  S2 2024 b5 2024-09-15..2024-10-15: 10536 point-looks
+  MODIS 2024-10: 27899 location-days
+  S2 2024 b2 2024-11-15..2024-12-08: 7712 point-looks
+  S2 2024 b1 2024-10-15..2024-11-15: 19925 point-looks
+  MODIS 2024-08: 571 location-days
+  S2 2024 b3 2024-10-15..2024-11-15: 13619 point-looks
+  S2 2024 b5 2024-10-15..2024-11-15: 10921 point-looks
+  MODIS 2024-09: 7492 location-days
+  MODIS 2024-11: 11747 location-days
+  S2 2024 b4 2024-10-15..2024-11-15: 15214 point-looks
+  S2 2024 b1 2024-11-15..2024-12-08: 14228 point-looks
+  MODIS 2024-08: 1181 location-days
+  S2 2024 b3 2024-11-15..2024-12-08: 10842 point-looks
+  MODIS 2024-08: 900 location-days
+  S2 2024 b5 2024-11-15..2024-12-08: 8805 point-looks
+  MODIS 2024-09: 4353 location-days
+  MODIS 2024-12: 10871 location-days
+== done 2024 b0
+  MODIS 2024-10: 29424 location-days
+  S2 2024 b4 2024-11-15..2024-12-08: 10932 point-looks
+  MODIS 2024-08: 832 location-days
+  MODIS 2024-09: 4748 location-days
+  S2 2024 b6 2024-09-15..2024-10-15: 4984 point-looks
+  MODIS 2024-08: 1143 location-days
+  MODIS 2024-09: 5186 location-days
+  S2 2024 b6 2024-10-15..2024-11-15: 5294 point-looks
+  MODIS 2024-11: 14081 location-days
+  S2 2024 b6 2024-11-15..2024-12-08: 4371 point-looks
+  MODIS 2024-08: 685 location-days
+  MODIS 2024-10: 27272 location-days
+  MODIS 2024-09: 2859 location-days
+  MODIS 2024-09: 3937 location-days
+  MODIS 2024-12: 10240 location-days
+== done 2024 b2
+  MODIS 2024-10: 29224 location-days
+  MODIS 2024-10: 13496 location-days
+  MODIS 2024-11: 11701 location-days
+  MODIS 2024-10: 29285 location-days
+  MODIS 2024-11: 6109 location-days
+  MODIS 2024-12: 5253 location-days
+== done 2024 b6
+  MODIS 2024-11: 14979 location-days
+  MODIS 2024-12: 10863 location-days
+== done 2024 b1
+  MODIS 2024-10: 29753 location-days
+  MODIS 2024-11: 14828 location-days
+  MODIS 2024-12: 11083 location-days
+== done 2024 b3
+  MODIS 2024-12: 10984 location-days
+== done 2024 b5
+  MODIS 2024-11: 15219 location-days
+  MODIS 2024-12: 11380 location-days
+== done 2024 b4
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+D:\IIT\Sem 1\ICTD_COL7761\Code\burn\modis_lste_check.py:109: FutureWarning: Input has data type int64, but the output has been cast to float64.  In the future, the output data type will match the input. To avoid this warning, set the `dtype` parameter to `None` to have the output dtype match the input, or set it to the desired output data type.
+  D = sparse.diags([1, -2, 1], [0, 1, 2], shape=(n - 2, n))
+
+Points per tehsil with a clear look in the window (median, min) by year:
+      median  min
+year             
+2019    98.0   62
+2020   100.0   75
+2021    99.0   86
+2022    99.0   61
+2023    92.0   24
+2024    98.0   50
+
+State and district checks vs CREAMS (2022 = till 24 Oct):
+ year                          scope  districts  state_ours_pct  state_creams_pct  spearman  pearson  mean_abs_diff_pts  rho_vs_district_sample
+ 2019                  all districts         22            61.6              37.4     0.366    0.302               29.9                   0.851
+ 2019 plains (no foothill districts)         18            62.4              38.9     0.245    0.144               26.4                   0.839
+ 2020                  all districts         22            61.8              55.7     0.815    0.761               13.8                   0.962
+ 2020 plains (no foothill districts)         18            63.6              57.8     0.771    0.742               11.1                   0.930
+ 2022                  all districts         22            12.5               9.9     0.644    0.554                7.5                   0.881
+ 2022 plains (no foothill districts)         18            11.3              10.0     0.787    0.801                4.8                   0.856
+
+Area-weighted burnt % by group and year:
+group  Central  Foothills  Outlier  South-west
+year                                          
+2019      64.9       51.7     60.8        57.9
+2020      67.4       41.7     43.9        57.2
+2021      68.9       57.6     67.7        56.1
+2022      67.5       55.8     50.5        58.8
+2023      66.9       48.2     31.9        63.9
+2024      61.6       47.7     46.5        53.6

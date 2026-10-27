@@ -1,0 +1,18 @@
+scenario,group_sizes,ari_vs_baseline,n_moved,moved
+terrain_instead_of_zone (pre-2026-10-06 design),80/16,0.484,19,Bathinda; Maur; Rampura Phul; Talwandi Sabo; Faridkot; Jaitu; Kotkapura; Abohar; Fazilka; Jalalabad; Firozpur; Guruharsahai; Dinanagar; Budhlada; Mansa; Sardulgarh; Gidderbaha; Malout; Sri Muktsar Sahib
+weight_rice_x1.15,80/16,0.484,19,Bathinda; Maur; Rampura Phul; Talwandi Sabo; Faridkot; Jaitu; Kotkapura; Abohar; Fazilka; Jalalabad; Firozpur; Guruharsahai; Dinanagar; Budhlada; Mansa; Sardulgarh; Gidderbaha; Malout; Sri Muktsar Sahib
+weight_rice_x0.85,63/18/15,1.0,0,
+weight_rainfall_x1.15,63/18/15,1.0,0,
+weight_rainfall_x0.85,58/23/15,0.833,5,Bagha Purana; Patran; Dirba; Moonak; Sunam
+weight_zone_x1.15,58/23/15,0.833,5,Bagha Purana; Patran; Dirba; Moonak; Sunam
+weight_zone_x0.85,62/18/16,0.966,1,Dinanagar
+weight_groundwater_x1.15,63/18/15,1.0,0,
+weight_groundwater_x0.85,63/17/16,0.932,2,Firozpur; Dinanagar
+weight_soil_x1.15,81/15,0.51,18,Bathinda; Maur; Rampura Phul; Talwandi Sabo; Faridkot; Jaitu; Kotkapura; Abohar; Fazilka; Jalalabad; Firozpur; Guruharsahai; Budhlada; Mansa; Sardulgarh; Gidderbaha; Malout; Sri Muktsar Sahib
+weight_soil_x0.85,63/17/16,0.932,2,Firozpur; Dinanagar
+drop_rice,50/27/19,0.599,13,Barnala; Tapa; Bassi Pathana; Khamanon; Samrala; Bagha Purana; Patran; Dirba; Lehra; Moonak; Sangrur; Sunam; Nawanshahr
+drop_rainfall,78/18,0.551,18,Bathinda; Maur; Rampura Phul; Talwandi Sabo; Faridkot; Jaitu; Kotkapura; Abohar; Fazilka; Jalalabad; Firozpur; Guruharsahai; Budhlada; Mansa; Sardulgarh; Gidderbaha; Malout; Sri Muktsar Sahib
+drop_zone,80/16,0.523,18,Bathinda; Maur; Rampura Phul; Talwandi Sabo; Faridkot; Jaitu; Kotkapura; Abohar; Fazilka; Jalalabad; Firozpur; Guruharsahai; Budhlada; Mansa; Sardulgarh; Gidderbaha; Malout; Sri Muktsar Sahib
+drop_groundwater,80/16,0.484,19,Bathinda; Maur; Rampura Phul; Talwandi Sabo; Faridkot; Jaitu; Kotkapura; Abohar; Fazilka; Jalalabad; Firozpur; Guruharsahai; Jalandhar - I; Budhlada; Mansa; Sardulgarh; Gidderbaha; Malout; Sri Muktsar Sahib
+drop_soil,80/16,0.484,19,Bathinda; Maur; Rampura Phul; Talwandi Sabo; Faridkot; Jaitu; Kotkapura; Abohar; Fazilka; Jalalabad; Firozpur; Guruharsahai; Dinanagar; Budhlada; Mansa; Sardulgarh; Gidderbaha; Malout; Sri Muktsar Sahib
+soil_without_near_constant,64/17/15,0.965,1,Firozpur

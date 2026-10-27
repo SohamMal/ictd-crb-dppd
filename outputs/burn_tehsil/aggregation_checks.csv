@@ -1,0 +1,7 @@
+year,scope,districts,state_ours_pct,state_creams_pct,spearman,pearson,mean_abs_diff_pts,rho_vs_district_sample
+2019,all districts,22,61.6,37.4,0.366,0.302,29.9,0.851
+2019,plains (no foothill districts),18,62.4,38.9,0.245,0.144,26.4,0.839
+2020,all districts,22,61.8,55.7,0.815,0.761,13.8,0.962
+2020,plains (no foothill districts),18,63.6,57.8,0.771,0.742,11.1,0.93
+2022,all districts,22,12.5,9.9,0.644,0.554,7.5,0.881
+2022,plains (no foothill districts),18,11.3,10.0,0.787,0.801,4.8,0.856

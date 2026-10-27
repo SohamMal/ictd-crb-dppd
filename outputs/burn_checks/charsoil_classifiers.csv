@@ -1,0 +1,9 @@
+features,train,test,char_called_char,soil_called_char,stubble_called_char,green_called_char
+BAIS2+TCB (current),2021,2020,0.406,0.109,,0.393
+BAIS2+TCB (current),2020,2021,0.767,0.865,0.011,
+NBR2+SWIR,2021,2020,0.548,0.129,,0.41
+NBR2+SWIR,2020,2021,0.519,0.634,0.0,
+BAIS2+TCB+NBR2+B12,2021,2020,0.11,0.01,,0.016
+BAIS2+TCB+NBR2+B12,2020,2021,0.84,0.615,0.063,
+all bands+indices,2021,2020,0.026,0.0,,0.0
+all bands+indices,2020,2021,0.813,0.253,0.137,

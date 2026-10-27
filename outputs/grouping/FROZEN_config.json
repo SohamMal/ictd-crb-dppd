@@ -1,0 +1,91 @@
+{
+  "frozen_on": "2026-10-07",
+  "k": 3,
+  "k_alternative_2way": 2,
+  "master_csv": "Data\\punjab_homogeneous_grouping_master_transformed.csv",
+  "dimensions": {
+    "rice": [
+      [
+        "rice_share_2022_cal",
+        "numeric"
+      ]
+    ],
+    "rainfall": [
+      [
+        "mean_monsoon_rainfall_mm",
+        "numeric"
+      ]
+    ],
+    "zone": [
+      [
+        "aesr_share_14_2",
+        "numeric"
+      ],
+      [
+        "aesr_share_2_5",
+        "numeric"
+      ],
+      [
+        "aesr_share_4_1",
+        "numeric"
+      ],
+      [
+        "aesr_share_9_1",
+        "numeric"
+      ]
+    ],
+    "groundwater": [
+      [
+        "mean_extraction_pct_2022",
+        "numeric"
+      ]
+    ],
+    "soil": [
+      [
+        "dominant_particle_size",
+        "categorical"
+      ],
+      [
+        "dominant_drainage",
+        "categorical"
+      ],
+      [
+        "dominant_soil_texture",
+        "categorical"
+      ],
+      [
+        "dominant_soil_depth",
+        "categorical"
+      ],
+      [
+        "dominant_ph_class",
+        "categorical"
+      ],
+      [
+        "dominant_salinity",
+        "categorical"
+      ],
+      [
+        "dominant_sodicity",
+        "categorical"
+      ],
+      [
+        "dominant_erosion",
+        "categorical"
+      ]
+    ]
+  },
+  "weights": "equal",
+  "range_exclude": [
+    "Dhar Kalan"
+  ],
+  "outliers": [
+    "Dhar Kalan"
+  ],
+  "min_group_size": 5,
+  "borderline_switch_rate": 0.2,
+  "assignment": "bootstrap consensus (labels_consensus.csv)",
+  "silhouette_consensus": 0.377,
+  "silhouette_tree_cut": 0.377,
+  "master_sha256": "3e6fe88605d294e873e297761ef6b6a87391d25744f7c6112a01ff76ce7dfcf8"
+}

@@ -1,0 +1,7 @@
+mode,change,n_ploughed,n_burnt,AUC_ploughed_higher
+bracket,dVV,27,260,0.259
+bracket,dVH,27,260,0.118
+bracket,dVHVV,27,260,0.24
+operational,dVV,27,260,0.222
+operational,dVH,27,260,0.186
+operational,dVHVV,27,260,0.41

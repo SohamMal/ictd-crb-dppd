@@ -1,0 +1,4 @@
+rule,burnt_fields_detected,unburnt_fields_flagged_in_season
+any_look,1.0,0.924
+two_consecutive,1.0,0.916
+became_dark,1.0,0.916

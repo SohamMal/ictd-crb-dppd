@@ -1,0 +1,98 @@
+lgd_tehsil_code,lgd_tehsil_name,lgd_district_name,group,group_2way,outlier,borderline,moved_by_consensus,consensus_share,switch_rate,switch_rate_2way,bootstrap_mate_overlap
+7192,Adampur,Jalandhar,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+6856,Ahmedgarh,Malerkotla,Central,Plains,False,False,False,1.0,0.0,0.0,0.952
+255,Ajnala,Amritsar,Central,Plains,False,False,False,1.0,0.0,0.0,0.947
+7122,Amargarh,Malerkotla,Central,Plains,False,False,False,1.0,0.0,0.0,0.948
+222,Amloh,Fatehgarh Sahib,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+256,Amritsar -I,Amritsar,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+257,Amritsar- II,Amritsar,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+258,Baba Bakala,Amritsar,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+232,Bagha Purana,Moga,Central,Plains,False,False,False,0.867,0.124,0.0,0.85
+5993,Banga,Shahid Bhagat Singh Nagar,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+275,Barnala,Barnala,Central,Plains,False,False,False,0.887,0.105,0.0,0.864
+220,Bassi Pathana,Fatehgarh Sahib,Central,Plains,False,False,False,1.0,0.0,0.0,0.952
+203,Batala,Gurdaspur,Central,Plains,False,False,False,1.0,0.0,0.0,0.95
+6855,Bhawanigarh,Sangrur,Central,Plains,False,False,False,1.0,0.0,0.0,0.952
+6853,Bhikhiwind,Tarn Taran,Central,Plains,False,False,False,1.0,0.0,0.0,0.95
+205,Bhulath,Kapurthala,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+204,Dera Baba Nanak,Gurdaspur,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+5996,Dharamkot,Moga,Central,Plains,False,False,False,1.0,0.0,0.0,0.946
+270,Dhuri,Sangrur,Central,Plains,False,False,False,1.0,0.0,0.0,0.951
+6860,Dinanagar,Gurdaspur,Central,Plains,False,True,False,0.692,0.308,0.308,0.659
+6852,Dirba,Sangrur,Central,Plains,False,False,False,0.836,0.153,0.0,0.825
+6849,Dudhan Sadhan,Patiala,Central,Plains,False,False,False,1.0,0.0,0.0,0.95
+7191,Fatehgarh Churian,Gurdaspur,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+221,Fatehgarh Sahib,Fatehgarh Sahib,Central,Plains,False,False,False,1.0,0.0,0.0,0.947
+202,Gurdaspur,Gurdaspur,Central,Plains,False,False,False,0.996,0.004,0.004,0.947
+230,Jagraon,Ludhiana,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+212,Jalandhar - I,Jalandhar,Central,Plains,False,False,False,1.0,0.0,0.0,0.943
+213,Jalandhar - II,Jalandhar,Central,Plains,False,False,False,1.0,0.0,0.0,0.95
+6859,Kalanaur,Gurdaspur,Central,Plains,False,False,False,1.0,0.0,0.0,0.947
+206,Kapurthala,Kapurthala,Central,Plains,False,False,False,1.0,0.0,0.0,0.948
+261,Khadur Sahib,Tarn Taran,Central,Plains,False,False,False,1.0,0.0,0.0,0.95
+223,Khamanon,Fatehgarh Sahib,Central,Plains,False,False,False,1.0,0.0,0.0,0.948
+225,Khanna,Ludhiana,Central,Plains,False,False,False,1.0,0.0,0.0,0.951
+273,Lehra,Sangrur,Central,Plains,False,False,False,0.827,0.16,0.0,0.816
+7341,Lopoke,Amritsar,Central,Plains,False,False,False,1.0,0.0,0.0,0.95
+227,Ludhiana (East),Ludhiana,Central,Plains,False,False,False,1.0,0.0,0.0,0.948
+228,Ludhiana (West),Ludhiana,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+6854,Majitha,Amritsar,Central,Plains,False,False,False,1.0,0.0,0.0,0.947
+269,Malerkotla,Malerkotla,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+7409,Mehal Kalan,Barnala,Central,Plains,False,False,False,1.0,0.0,0.0,0.948
+233,Moga,Moga,Central,Plains,False,False,False,1.0,0.0,0.0,0.95
+274,Moonak,Sangrur,Central,Plains,False,False,False,0.837,0.151,0.0,0.824
+252,Nabha,Patiala,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+210,Nakodar,Jalandhar,Central,Plains,False,False,False,1.0,0.0,0.0,0.947
+218,Nawanshahr,Shahid Bhagat Singh Nagar,Central,Plains,False,False,False,1.0,0.0,0.0,0.948
+231,Nihal Singhwala,Moga,Central,Plains,False,False,False,0.957,0.041,0.0,0.924
+253,Patiala,Patiala,Central,Plains,False,False,False,1.0,0.0,0.0,0.951
+251,Patran,Patiala,Central,Plains,False,False,False,0.883,0.108,0.0,0.864
+260,Patti,Tarn Taran,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+226,Payal,Ludhiana,Central,Plains,False,False,False,1.0,0.0,0.0,0.947
+208,Phagwara,Kapurthala,Central,Plains,False,False,False,1.0,0.0,0.0,0.948
+211,Phillaur,Jalandhar,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+229,Raikot,Ludhiana,Central,Plains,False,False,False,1.0,0.0,0.0,0.948
+254,Rajpura,Patiala,Central,Plains,False,False,False,1.0,0.0,0.0,0.949
+250,Samana,Patiala,Central,Plains,False,False,False,1.0,0.0,0.0,0.947
+224,Samrala,Ludhiana,Central,Plains,False,False,False,1.0,0.0,0.0,0.946
+271,Sangrur,Sangrur,Central,Plains,False,False,False,0.932,0.063,0.0,0.903
+209,Shahkot,Jalandhar,Central,Plains,False,False,False,1.0,0.0,0.0,0.952
+207,Sultanpur Lodhi,Kapurthala,Central,Plains,False,False,False,1.0,0.0,0.0,0.946
+272,Sunam,Sangrur,Central,Plains,False,False,False,0.851,0.139,0.0,0.839
+276,Tapa,Barnala,Central,Plains,False,False,False,0.862,0.127,0.0,0.84
+259,Tarn Taran,Tarn Taran,Central,Plains,False,False,False,1.0,0.0,0.0,0.95
+234,Zira,Ferozepur,Central,Plains,False,False,False,1.0,0.0,0.0,0.948
+262,Anandpur Sahib,Rupnagar,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.978
+219,Balachaur,Shahid Bhagat Singh Nagar,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.978
+265,Chamkaur Sahib,Rupnagar,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.98
+214,Dasua,Hoshiarpur,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.982
+268,Dera Bassi,S.A.S Nagar,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.979
+217,Garhshankar,Hoshiarpur,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.977
+216,Hoshiarpur,Hoshiarpur,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.979
+266,Kharar,S.A.S Nagar,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.976
+6857,Morinda,Rupnagar,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.978
+215,Mukerian,Hoshiarpur,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.977
+263,Nangal,Rupnagar,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.977
+201,Pathankot,Pathankot,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.978
+264,Rup Nagar,Rupnagar,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.976
+267,Sas Nagar (Mohali),S.A.S Nagar,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.976
+7193,Tanda,Hoshiarpur,Foothills,Foothills,False,False,False,1.0,0.0,0.0,0.977
+200,Dhar Kalan,Pathankot,Outlier,Outlier,True,False,False,,,,
+238,Abohar,Fazilka,South-west,Plains,False,False,False,1.0,0.0,0.02,0.861
+245,Bathinda,Bathinda,South-west,Plains,False,False,False,1.0,0.0,0.02,0.858
+248,Budhlada,Mansa,South-west,Plains,False,False,False,1.0,0.0,0.0,0.841
+242,Faridkot,Faridkot,South-west,Plains,False,True,False,0.757,0.243,0.0,0.662
+237,Fazilka,Fazilka,South-west,Plains,False,False,False,1.0,0.0,0.024,0.85
+235,Firozpur,Ferozepur,South-west,Plains,False,True,False,0.569,0.431,0.0,0.497
+240,Gidderbaha,Sri Muktsar Sahib,South-west,Plains,False,False,False,1.0,0.0,0.0,0.845
+6011,Guruharsahai,Ferozepur,South-west,Plains,False,False,False,0.972,0.028,0.0,0.847
+243,Jaitu,Faridkot,South-west,Plains,False,False,False,0.884,0.116,0.0,0.768
+236,Jalalabad,Fazilka,South-west,Plains,False,False,False,1.0,0.0,0.0,0.842
+5984,Kotkapura,Faridkot,South-west,Plains,False,False,False,0.811,0.189,0.0,0.716
+239,Malout,Sri Muktsar Sahib,South-west,Plains,False,False,False,1.0,0.0,0.0,0.857
+249,Mansa,Mansa,South-west,Plains,False,False,False,1.0,0.0,0.0,0.853
+6858,Maur,Bathinda,South-west,Plains,False,False,False,1.0,0.0,0.0,0.844
+244,Rampura Phul,Bathinda,South-west,Plains,False,False,False,0.977,0.023,0.0,0.817
+247,Sardulgarh,Mansa,South-west,Plains,False,False,False,1.0,0.0,0.0,0.841
+241,Sri Muktsar Sahib,Sri Muktsar Sahib,South-west,Plains,False,False,False,1.0,0.0,0.0,0.849
+246,Talwandi Sabo,Bathinda,South-west,Plains,False,False,False,1.0,0.0,0.0,0.846

@@ -1,0 +1,105 @@
+CIMMYT 2021: cells 138, plots 262
+  harvest error (sat - reported) days: median -3.0, MAE 5.8, rho 0.15
+  green-up - reported wheat sowing days: median 28.0, IQR 23..32, rho 0.04
+CIMMYT 2022: cells 137, plots 426
+  green-up - reported wheat sowing days: median 27.0, IQR 23..32, rho 0.56
+  tehsil 2019 0 2019-09: 7837 point-looks
+  tehsil 2020 0 2020-09: 8338 point-looks
+  tehsil 2019 0 2019-10: 9646 point-looks
+  tehsil 2020 0 2020-10: 10206 point-looks
+  tehsil 2019 0 2019-11: 6629 point-looks
+  tehsil 2020 0 2020-11: 6608 point-looks
+  tehsil 2019 0 2019-12: 3027 point-looks
+  tehsil 2020 0 2020-12: 7051 point-looks
+  tehsil 2019 0 2020-01: 4457 point-looks
+  tehsil 2020 0 2021-01: 3310 point-looks
+  tehsil 2019 1 2019-09: 7842 point-looks
+  tehsil 2020 1 2020-09: 7735 point-looks
+  tehsil 2019 1 2019-10: 8786 point-looks
+  tehsil 2019 1 2019-11: 5899 point-looks
+  tehsil 2019 1 2019-12: 2979 point-looks
+  tehsil 2020 1 2020-10: 8970 point-looks
+  tehsil 2020 1 2020-11: 6062 point-looks
+  tehsil 2019 1 2020-01: 3983 point-looks
+  tehsil 2020 1 2020-12: 6939 point-looks
+  tehsil 2019 2 2019-09: 6963 point-looks
+  tehsil 2020 1 2021-01: 3076 point-looks
+  tehsil 2020 2 2020-09: 6649 point-looks
+  tehsil 2019 2 2019-10: 7851 point-looks
+  tehsil 2019 2 2019-11: 4644 point-looks
+  tehsil 2020 2 2020-10: 7979 point-looks
+  tehsil 2019 2 2019-12: 2727 point-looks
+  tehsil 2020 2 2020-11: 5423 point-looks
+  tehsil 2019 2 2020-01: 3793 point-looks
+  tehsil 2020 2 2020-12: 5887 point-looks
+  tehsil 2021 0 2021-09: 8356 point-looks
+  tehsil 2020 2 2021-01: 2393 point-looks
+  tehsil 2021 0 2021-10: 8588 point-looks
+  tehsil 2022 0 2022-09: 7315 point-looks
+  tehsil 2021 0 2021-11: 9787 point-looks
+  tehsil 2022 0 2022-10: 9176 point-looks
+  tehsil 2021 0 2021-12: 8569 point-looks
+  tehsil 2021 0 2022-01: 3090 point-looks
+  tehsil 2022 0 2022-11: 7293 point-looks
+  tehsil 2022 0 2022-12: 7297 point-looks
+  tehsil 2021 1 2021-09: 7447 point-looks
+  tehsil 2022 0 2023-01: 5998 point-looks
+  tehsil 2021 1 2021-10: 8615 point-looks
+  tehsil 2022 1 2022-09: 6332 point-looks
+  tehsil 2021 1 2021-11: 9010 point-looks
+  tehsil 2022 1 2022-10: 8525 point-looks
+  tehsil 2021 1 2021-12: 8459 point-looks
+  tehsil 2021 1 2022-01: 2650 point-looks
+  tehsil 2022 1 2022-11: 7190 point-looks
+  tehsil 2021 2 2021-09: 6784 point-looks
+  tehsil 2022 1 2022-12: 6884 point-looks
+  tehsil 2021 2 2021-10: 7799 point-looks
+  tehsil 2022 1 2023-01: 5378 point-looks
+  tehsil 2021 2 2021-11: 8009 point-looks
+  tehsil 2022 2 2022-09: 5854 point-looks
+  tehsil 2021 2 2021-12: 7294 point-looks
+  tehsil 2021 2 2022-01: 2112 point-looks
+  tehsil 2023 0 2023-09: 6375 point-looks
+  tehsil 2022 2 2022-10: 7365 point-looks
+  tehsil 2022 2 2022-11: 6358 point-looks
+  tehsil 2023 0 2023-10: 9519 point-looks
+  tehsil 2022 2 2022-12: 5905 point-looks
+  tehsil 2023 0 2023-11: 7470 point-looks
+  tehsil 2022 2 2023-01: 4384 point-looks
+  tehsil 2023 0 2023-12: 7813 point-looks
+  tehsil 2024 0 2024-09: 6714 point-looks
+  tehsil 2023 0 2024-01: 3594 point-looks
+  tehsil 2023 1 2023-09: 6742 point-looks
+  tehsil 2024 0 2024-10: 9846 point-looks
+  tehsil 2023 1 2023-10: 8891 point-looks
+  tehsil 2024 0 2024-11: 8053 point-looks
+  tehsil 2024 0 2024-12: 9606 point-looks
+  tehsil 2023 1 2023-11: 6857 point-looks
+  tehsil 2024 0 2025-01: 4459 point-looks
+  tehsil 2023 1 2023-12: 7278 point-looks
+  tehsil 2023 1 2024-01: 2577 point-looks
+  tehsil 2024 1 2024-09: 5871 point-looks
+  tehsil 2023 2 2023-09: 6046 point-looks
+  tehsil 2024 1 2024-10: 9054 point-looks
+  tehsil 2023 2 2023-10: 7805 point-looks
+  tehsil 2024 1 2024-11: 7041 point-looks
+  tehsil 2023 2 2023-11: 5927 point-looks
+  tehsil 2023 2 2023-12: 6226 point-looks
+  tehsil 2023 2 2024-01: 1958 point-looks
+  tehsil 2024 1 2024-12: 8869 point-looks
+  tehsil 2024 1 2025-01: 4214 point-looks
+  tehsil 2024 2 2024-09: 5566 point-looks
+  tehsil 2024 2 2024-10: 8016 point-looks
+  tehsil 2024 2 2024-11: 6246 point-looks
+  tehsil 2024 2 2024-12: 7696 point-looks
+  tehsil 2024 2 2025-01: 3866 point-looks
+      harvest_found  harvest_doy_median  ...  gap_days_median  no_greenup_share
+year                                     ...                                   
+2019           0.97               295.0  ...             65.0              0.00
+2020           1.00               294.0  ...             50.0              0.04
+2021           0.97               297.0  ...             45.0              0.12
+2022           0.97               297.0  ...             42.0              0.00
+2023           1.00               299.0  ...             42.0              0.11
+2024           1.00               296.0  ...             50.0              0.00
+
+[6 rows x 5 columns]

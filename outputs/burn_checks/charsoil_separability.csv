@@ -1,0 +1,15 @@
+feature,auc_char_vs_soil,char_higher_than_soil,auc_char_vs_stubble,char_higher_than_stubble,auc_char_vs_green,char_higher_than_green
+NBR2,0.733,True,0.934,False,0.813,False
+B12,0.699,False,0.755,False,0.597,False
+B3,0.659,False,0.751,False,0.844,False
+SWIR_ratio,0.64,False,0.879,True,0.784,True
+VIS_mean,0.625,False,0.729,False,0.821,False
+B2,0.623,False,0.629,False,0.826,False
+TCB,0.605,False,0.898,False,0.875,False
+B8,0.604,False,0.962,False,0.916,False
+NBR,0.603,True,0.874,False,0.8,False
+B4,0.588,False,0.804,False,0.718,False
+NDVI,0.577,False,0.78,False,0.653,False
+B11,0.577,False,0.862,False,0.625,False
+B8A,0.572,False,0.966,False,0.905,False
+BAIS2,0.511,True,0.968,True,0.886,True

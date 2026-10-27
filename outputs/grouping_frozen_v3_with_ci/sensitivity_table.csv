@@ -1,0 +1,21 @@
+scenario,group_sizes,ari_vs_baseline,n_moved,moved
+terrain_instead_of_zone (pre-2026-10-06 design),67/15/14,0.709,9,Barnala; Tapa; Rampura Phul; Jaitu; Firozpur; Chamkaur Sahib; Morinda; Lehra; Sangrur
+weight_cropping_intensity_x1.15,78/18,0.484,22,Barnala; Tapa; Bathinda; Maur; Rampura Phul; Talwandi Sabo; Faridkot; Jaitu; Kotkapura; Abohar; Fazilka; Jalalabad; Firozpur; Guruharsahai; Budhlada; Mansa; Sardulgarh; Lehra; Sangrur; Gidderbaha; Malout; Sri Muktsar Sahib
+weight_cropping_intensity_x0.85,58/22/16,1.0,0,
+weight_rice_x1.15,68/15/13,0.687,10,Barnala; Tapa; Faridkot; Jaitu; Kotkapura; Firozpur; Guruharsahai; Dinanagar; Lehra; Sangrur
+weight_rice_x0.85,63/17/16,0.835,5,Barnala; Tapa; Rampura Phul; Lehra; Sangrur
+weight_rainfall_x1.15,63/17/16,0.835,5,Barnala; Tapa; Rampura Phul; Lehra; Sangrur
+weight_rainfall_x0.85,60/22/14,0.936,2,Chamkaur Sahib; Morinda
+weight_zone_x1.15,52/28/16,0.8,6,Bagha Purana; Nihal Singhwala; Patran; Dirba; Moonak; Sunam
+weight_zone_x0.85,70/13/13,0.62,12,Barnala; Tapa; Faridkot; Jaitu; Kotkapura; Firozpur; Guruharsahai; Dinanagar; Chamkaur Sahib; Morinda; Lehra; Sangrur
+weight_groundwater_x1.15,63/17/16,0.835,5,Barnala; Tapa; Rampura Phul; Lehra; Sangrur
+weight_groundwater_x0.85,63/17/16,0.835,5,Barnala; Tapa; Firozpur; Lehra; Sangrur
+weight_soil_x1.15,78/18,0.484,22,Barnala; Tapa; Bathinda; Maur; Rampura Phul; Talwandi Sabo; Faridkot; Jaitu; Kotkapura; Abohar; Fazilka; Jalalabad; Firozpur; Guruharsahai; Budhlada; Mansa; Sardulgarh; Lehra; Sangrur; Gidderbaha; Malout; Sri Muktsar Sahib
+weight_soil_x0.85,67/16/13,0.722,9,Barnala; Tapa; Faridkot; Jaitu; Kotkapura; Firozpur; Guruharsahai; Lehra; Sangrur
+drop_cropping_intensity,63/18/15,0.832,5,Barnala; Tapa; Dinanagar; Lehra; Sangrur
+drop_rice,56/22/18,0.875,4,Khamanon; Tanda; Samrala; Nawanshahr
+drop_rainfall,68/16/12,0.27,25,Barnala; Tapa; Bathinda; Maur; Rampura Phul; Talwandi Sabo; Faridkot; Jaitu; Kotkapura; Abohar; Fazilka; Jalalabad; Firozpur; Guruharsahai; Dinanagar; Budhlada; Mansa; Sardulgarh; Chamkaur Sahib; Morinda; Lehra; Sangrur; Gidderbaha; Malout; Sri Muktsar Sahib
+drop_zone,79/17,0.422,24,Barnala; Tapa; Bathinda; Maur; Rampura Phul; Talwandi Sabo; Faridkot; Jaitu; Kotkapura; Abohar; Fazilka; Jalalabad; Firozpur; Guruharsahai; Budhlada; Mansa; Sardulgarh; Chamkaur Sahib; Morinda; Lehra; Sangrur; Gidderbaha; Malout; Sri Muktsar Sahib
+drop_groundwater,53/28/15,0.771,7,Dinanagar; Bagha Purana; Nihal Singhwala; Patran; Dirba; Moonak; Sunam
+drop_soil,63/18/15,0.771,7,Barnala; Tapa; Gurdaspur; Chamkaur Sahib; Morinda; Lehra; Sangrur
+soil_without_near_constant,64/17/15,0.801,6,Barnala; Tapa; Firozpur; Dinanagar; Lehra; Sangrur

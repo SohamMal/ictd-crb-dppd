@@ -1,0 +1,9 @@
+mask,train,test,n,accuracy,precision,recall,f1,false_alarm_rate
+notebook_scl45,2021,2020,23,1.0,1.0,1.0,1.0,0.0
+notebook_scl45,2020,2021,357,0.8683,0.9954,0.8244,0.9019,0.0105
+notebook_scl45,2020,"2020 (same, in-sample)",23,1.0,1.0,1.0,1.0,0.0
+notebook_scl45,2021,"2021 (same, in-sample)",357,0.958,0.9625,0.9809,0.9716,0.1053
+relaxed_scl2457,2021,2020,79,1.0,1.0,1.0,1.0,0.0
+relaxed_scl2457,2020,2021,357,0.9608,0.9733,0.9733,0.9733,0.0737
+relaxed_scl2457,2020,"2020 (same, in-sample)",79,1.0,1.0,1.0,1.0,0.0
+relaxed_scl2457,2021,"2021 (same, in-sample)",357,0.958,0.9625,0.9809,0.9716,0.1053

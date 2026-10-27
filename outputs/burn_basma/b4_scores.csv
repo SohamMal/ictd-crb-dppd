@@ -1,0 +1,15 @@
+year,cells,n,candidate_share,burnt_share_t1.5,reclassified_t1.5,burnt_share_t3.0,reclassified_t3.0
+2021,all burnt,43,0.976,0.969,0.007,0.974,0.002
+2021,some burnt,35,0.986,0.978,0.008,0.985,0.001
+2021,none burnt,60,0.982,0.975,0.007,0.981,0.001
+2021,"none burnt, SS/HS used",40,0.978,0.971,0.008,0.977,0.001
+2021,rho survey vs cand,138,0.033,,,,
+2021,rho survey vs surv_1_5,138,0.034,,,,
+2021,rho survey vs surv_3_0,138,0.03,,,,
+2022,all burnt,34,0.962,0.942,0.02,0.958,0.004
+2022,some burnt,60,0.925,0.899,0.028,0.92,0.005
+2022,none burnt,43,0.933,0.9,0.036,0.925,0.009
+2022,"none burnt, SS/HS used",13,0.905,0.873,0.036,0.897,0.008
+2022,rho survey vs cand,138,0.192,,,,
+2022,rho survey vs surv_1_5,138,0.202,,,,
+2022,rho survey vs surv_3_0,138,0.204,,,,

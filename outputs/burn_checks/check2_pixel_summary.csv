@@ -1,0 +1,3 @@
+mask,fields,pixels,pixel_accuracy,burnt_fields_mean_burnt_px,unburnt_fields_mean_burnt_px,field_rule_majority_acc
+notebook_scl45,380,8253,0.8967,0.907,0.131,0.9579
+relaxed_scl2457,436,8877,0.9035,0.921,0.13,0.9633

@@ -1,0 +1,5 @@
+group,n_tehsils,CI_3yr_pooled,rice_share_2022_cal,mean_monsoon_rainfall_mm,aesr_share_14_2,aesr_share_2_5,aesr_share_4_1,aesr_share_9_1,mean_extraction_pct_2022,elevation_mean
+Central,63,204.68,0.751,720.77,0.0,0.0,0.161,0.271,230.12,239.165
+Foothills,15,194.4,0.281,980.9,1.0,0.0,0.0,0.0,116.88,295.723
+Outlier,1,179.78,0.074,1603.74,1.0,0.0,0.0,0.0,27.0,577.782
+South-west,18,202.33,0.587,466.515,0.0,1.0,0.0,0.0,118.1,203.778

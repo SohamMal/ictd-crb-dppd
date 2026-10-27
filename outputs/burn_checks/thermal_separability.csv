@@ -1,0 +1,7 @@
+window_days,feature,auc_char_vs_soil,char_higher_than_soil,auc_char_vs_stubble,char_higher_than_stubble,auc_char_vs_green,char_higher_than_green
+3,LST,0.769,False,0.685,True,0.939,False
+3,LST_anom,0.665,False,0.622,True,0.957,True
+3,NDVI,0.954,False,0.715,False,0.979,False
+5,LST,0.769,False,0.662,True,0.94,False
+5,LST_anom,0.661,False,0.626,True,0.958,True
+5,NDVI,0.926,False,0.712,False,0.963,False

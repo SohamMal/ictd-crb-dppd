@@ -1,0 +1,94 @@
+{
+  "frozen_on": "2026-10-06",
+  "k": 4,
+  "k_alternative_2way": 2,
+  "master_csv": "Data\\punjab_homogeneous_grouping_master_transformed.csv",
+  "dimensions": {
+    "cropping_intensity": [
+      [
+        "CI_3yr_pooled",
+        "numeric"
+      ]
+    ],
+    "rice": [
+      [
+        "rice_share_2022",
+        "numeric"
+      ]
+    ],
+    "rainfall": [
+      [
+        "mean_monsoon_rainfall_mm",
+        "numeric"
+      ]
+    ],
+    "zone": [
+      [
+        "aesr_share_14_2",
+        "numeric"
+      ],
+      [
+        "aesr_share_2_5",
+        "numeric"
+      ],
+      [
+        "aesr_share_4_1",
+        "numeric"
+      ],
+      [
+        "aesr_share_9_1",
+        "numeric"
+      ]
+    ],
+    "groundwater": [
+      [
+        "mean_extraction_pct_2022",
+        "numeric"
+      ]
+    ],
+    "soil": [
+      [
+        "dominant_particle_size",
+        "categorical"
+      ],
+      [
+        "dominant_drainage",
+        "categorical"
+      ],
+      [
+        "dominant_soil_texture",
+        "categorical"
+      ],
+      [
+        "dominant_soil_depth",
+        "categorical"
+      ],
+      [
+        "dominant_ph_class",
+        "categorical"
+      ],
+      [
+        "dominant_salinity",
+        "categorical"
+      ],
+      [
+        "dominant_sodicity",
+        "categorical"
+      ],
+      [
+        "dominant_erosion",
+        "categorical"
+      ]
+    ]
+  },
+  "weights": "equal",
+  "range_exclude": [
+    "Dhar Kalan"
+  ],
+  "outliers": [
+    "Dhar Kalan"
+  ],
+  "min_group_size": 5,
+  "borderline_below": 0.8,
+  "master_sha256": "60958c1d09270a4980c143b5968a3a31c56527fafcefd3abdb09b130eed0a8a2"
+}

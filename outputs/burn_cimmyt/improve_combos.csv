@@ -1,0 +1,7 @@
+features,2021_LODO_auc,2021_LODO_rho,2022_test_auc,2022_test_rho,coefs
+any|peak_-7_7,0.424,-0.125,0.503,0.004,{'any|peak_-7_7': np.float64(0.36)}
+any|peak_-7_7 + rise,0.383,-0.183,0.498,-0.005,"{'any|peak_-7_7': np.float64(0.36), 'rise': np.float64(0.0)}"
+jump|peak_-7_7 + rise,0.243,-0.389,0.378,-0.166,"{'jump|peak_-7_7': np.float64(-0.0), 'rise': np.float64(0.18)}"
+jump_nbr08|peak_-7_7 + rise,0.415,-0.119,0.446,-0.038,"{'jump_nbr08|peak_-7_7': np.float64(-0.43), 'rise': np.float64(0.3)}"
+jump|season + rise,0.354,-0.23,0.343,-0.247,"{'jump|season': np.float64(-0.27), 'rise': np.float64(0.22)}"
+jump|peak_-21_14 + jump_nbr08|peak_-21_14 + rise,0.527,0.031,0.607,0.192,"{'jump|peak_-21_14': np.float64(0.65), 'jump_nbr08|peak_-21_14': np.float64(-0.6), 'rise': np.float64(0.11)}"

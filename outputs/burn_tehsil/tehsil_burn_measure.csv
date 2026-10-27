@@ -1,0 +1,583 @@
+year,lgd_tehsil_code,district,burnt_share,n_look,n_points,se,rice_ha,burnt_ha,lgd_tehsil_name,group,in_pd_identification
+2019,200,Pathankot,0.6076,79,100,0.0549,1678.8,1020.0304,Dhar Kalan,Outlier,False
+2019,201,Pathankot,0.5426,94,100,0.0514,30901.79,16765.8648,Pathankot,Foothills,False
+2019,202,Gurdaspur,0.587,92,100,0.0513,45170.09,26512.8789,Gurdaspur,Central,True
+2019,203,Gurdaspur,0.6739,92,100,0.0489,56270.02,37921.1004,Batala,Central,True
+2019,204,Gurdaspur,0.7677,99,100,0.0424,23820.02,18286.076,Dera Baba Nanak,Central,True
+2019,205,Kapurthala,0.8673,98,100,0.0343,15621.43,13549.1995,Bhulath,Central,True
+2019,206,Kapurthala,0.6531,98,100,0.0481,40753.22,26614.3478,Kapurthala,Central,True
+2019,207,Kapurthala,0.6429,98,100,0.0484,29227.39,18789.0364,Sultanpur Lodhi,Central,True
+2019,208,Kapurthala,0.73,100,100,0.0444,17263.28,12602.1944,Phagwara,Central,True
+2019,209,Jalandhar,0.4574,94,100,0.0514,24795.36,11342.5583,Shahkot,Central,True
+2019,210,Jalandhar,0.6907,97,100,0.0469,30828.89,21294.1818,Nakodar,Central,True
+2019,211,Jalandhar,0.8878,98,100,0.0319,57244.69,50819.2656,Phillaur,Central,True
+2019,212,Jalandhar,0.4831,89,100,0.053,9099.83,4396.5471,Jalandhar - I,Central,True
+2019,213,Jalandhar,0.5376,93,100,0.0517,17319.45,9311.5323,Jalandhar - II,Central,True
+2019,214,Hoshiarpur,0.5464,97,100,0.0505,15785.39,8625.0069,Dasua,Foothills,False
+2019,215,Hoshiarpur,0.6067,89,100,0.0518,20294.03,12313.2317,Mukerian,Foothills,False
+2019,216,Hoshiarpur,0.4,90,100,0.0516,33540.85,13416.34,Hoshiarpur,Foothills,False
+2019,217,Hoshiarpur,0.3939,99,100,0.0491,34740.08,13685.4861,Garhshankar,Foothills,False
+2019,218,Shahid Bhagat Singh Nagar,0.51,100,100,0.05,35191.44,17947.6344,Nawanshahr,Central,True
+2019,219,Shahid Bhagat Singh Nagar,0.36,100,100,0.048,14193.2,5109.552,Balachaur,Foothills,False
+2019,220,Fatehgarh Sahib,0.6739,92,100,0.0489,16263.88,10960.4409,Bassi Pathana,Central,True
+2019,221,Fatehgarh Sahib,0.6364,99,100,0.0483,38664.77,24604.8536,Fatehgarh Sahib,Central,True
+2019,222,Fatehgarh Sahib,0.4343,99,100,0.0498,19357.29,8407.7118,Amloh,Central,True
+2019,223,Fatehgarh Sahib,0.6344,93,100,0.0499,14580.59,9250.0517,Khamanon,Central,True
+2019,224,Ludhiana,0.5876,97,100,0.05,38629.51,22699.8152,Samrala,Central,True
+2019,225,Ludhiana,0.2857,98,100,0.0456,16305.48,4658.7086,Khanna,Central,True
+2019,226,Ludhiana,0.5773,97,100,0.0502,33634.96,19418.1212,Payal,Central,True
+2019,227,Ludhiana,0.5426,94,100,0.0514,40613.65,22035.0654,Ludhiana (East),Central,True
+2019,228,Ludhiana,0.4624,93,100,0.0517,36647.57,16944.5754,Ludhiana (West),Central,True
+2019,229,Ludhiana,0.5604,91,100,0.052,33263.47,18642.1645,Raikot,Central,True
+2019,230,Ludhiana,0.6869,99,100,0.0466,67487.07,46354.7552,Jagraon,Central,True
+2019,231,Moga,0.66,100,100,0.0474,32100.26,21186.1716,Nihal Singhwala,Central,True
+2019,232,Moga,0.65,100,100,0.0477,42421.72,27574.118,Bagha Purana,Central,True
+2019,233,Moga,0.57,100,100,0.0495,46125.31,26291.4267,Moga,Central,True
+2019,234,Ferozepur,0.7374,99,100,0.0442,56909.7,41963.7182,Zira,Central,True
+2019,235,Ferozepur,0.8,100,100,0.04,85512.42,68409.936,Firozpur,South-west,True
+2019,236,Fazilka,0.8283,99,100,0.0379,47041.2,38963.4182,Jalalabad,South-west,True
+2019,237,Fazilka,0.65,100,100,0.0477,87444.63,56839.0095,Fazilka,South-west,True
+2019,238,Fazilka,0.36,100,100,0.048,85882.73,30917.7828,Abohar,South-west,True
+2019,239,Sri Muktsar Sahib,0.69,100,100,0.0462,88324.68,60944.0292,Malout,South-west,True
+2019,240,Sri Muktsar Sahib,0.602,98,100,0.0494,49861.74,30018.8027,Gidderbaha,South-west,True
+2019,241,Sri Muktsar Sahib,0.4,100,100,0.049,70854.91,28341.964,Sri Muktsar Sahib,South-west,True
+2019,242,Faridkot,0.45,100,100,0.0497,55102.63,24796.1835,Faridkot,South-west,True
+2019,243,Faridkot,0.7778,99,100,0.0418,34341.38,26709.9622,Jaitu,South-west,True
+2019,244,Bathinda,0.6739,92,100,0.0489,48614.11,32761.6828,Rampura Phul,South-west,True
+2019,245,Bathinda,0.5152,99,100,0.0502,112818.25,58118.4924,Bathinda,South-west,True
+2019,246,Bathinda,0.3111,90,100,0.0488,52756.01,16412.9809,Talwandi Sabo,South-west,True
+2019,247,Mansa,0.49,100,100,0.05,48852.07,23937.5143,Sardulgarh,South-west,True
+2019,248,Mansa,0.4646,99,100,0.0501,58333.73,27104.5614,Budhlada,South-west,True
+2019,249,Mansa,0.5833,96,100,0.0503,66327.84,38691.24,Mansa,South-west,True
+2019,250,Patiala,0.8202,89,100,0.0407,30065.61,24660.5565,Samana,Central,True
+2019,251,Patiala,0.56,100,100,0.0496,37290.01,20882.4056,Patran,Central,True
+2019,252,Patiala,0.6522,92,100,0.0497,45449.06,29640.6913,Nabha,Central,True
+2019,253,Patiala,0.6591,88,100,0.0505,67999.14,44817.615,Patiala,Central,True
+2019,254,Patiala,0.5258,97,100,0.0507,48553.32,25528.0342,Rajpura,Central,True
+2019,255,Amritsar,0.6,95,100,0.0503,35166.85,21100.11,Ajnala,Central,True
+2019,256,Amritsar,0.4783,69,100,0.0601,14791.31,7074.1048,Amritsar -I,Central,True
+2019,257,Amritsar,0.4048,84,100,0.0536,28194.51,11412.0636,Amritsar- II,Central,True
+2019,258,Amritsar,0.3723,94,100,0.0499,37801.97,14075.2016,Baba Bakala,Central,True
+2019,259,Tarn Taran,0.875,96,100,0.0338,68739.95,60147.4562,Tarn Taran,Central,True
+2019,260,Tarn Taran,0.798,99,100,0.0404,45220.91,36085.3726,Patti,Central,True
+2019,261,Tarn Taran,0.5957,94,100,0.0506,30077.16,17918.3081,Khadur Sahib,Central,True
+2019,262,Rupnagar,0.83,100,100,0.0376,13209.82,10964.1506,Anandpur Sahib,Foothills,False
+2019,263,Rupnagar,0.9,100,100,0.03,6906.98,6216.282,Nangal,Foothills,False
+2019,264,Rupnagar,0.61,100,100,0.0488,12545.83,7652.9563,Rup Nagar,Foothills,False
+2019,265,Rupnagar,0.7347,98,100,0.0446,14102.67,10361.1453,Chamkaur Sahib,Foothills,False
+2019,266,S A S Nagar,0.2637,91,100,0.0462,23210.97,6121.5745,Kharar,Foothills,False
+2019,267,S A S Nagar,0.3523,88,100,0.0509,17567.47,6188.5406,Sas Nagar (Mohali),Foothills,False
+2019,268,S A S Nagar,0.617,94,100,0.0501,22771.94,14050.7715,Dera Bassi,Foothills,False
+2019,269,Malerkotla,0.5679,81,100,0.055,22545.76,12803.7649,Malerkotla,Central,True
+2019,270,Sangrur,0.7128,94,100,0.0467,48435.72,34523.3323,Dhuri,Central,True
+2019,271,Sangrur,0.5657,99,100,0.0498,28467.21,16102.6642,Sangrur,Central,True
+2019,272,Sangrur,0.59,100,100,0.0492,36752.34,21683.8806,Sunam,Central,True
+2019,273,Sangrur,0.66,100,100,0.0474,30113.7,19875.042,Lehra,Central,True
+2019,274,Sangrur,0.57,100,100,0.0495,28148.59,16044.6963,Moonak,Central,True
+2019,275,Barnala,0.7576,99,100,0.0431,37668.5,28536.7424,Barnala,Central,True
+2019,276,Barnala,0.7113,97,100,0.046,48944.15,34815.9418,Tapa,Central,True
+2019,5984,Faridkot,0.58,100,100,0.0494,23983.68,13910.5344,Kotkapura,South-west,True
+2019,5993,Shahid Bhagat Singh Nagar,0.5758,99,100,0.0497,19290.25,11106.5076,Banga,Central,True
+2019,5996,Moga,0.79,100,100,0.0407,43204.65,34131.6735,Dharamkot,Central,True
+2019,6011,Ferozepur,0.78,100,100,0.0414,36286.81,28303.7118,Guruharsahai,South-west,True
+2019,6849,Patiala,0.52,100,100,0.05,20116.53,10460.5956,Dudhan Sadhan,Central,True
+2019,6852,Sangrur,0.63,100,100,0.0483,18275.79,11513.7477,Dirba,Central,True
+2019,6853,Tarn Taran,0.9,100,100,0.03,40846.93,36762.237,Bhikhiwind,Central,True
+2019,6854,Amritsar,0.5698,86,100,0.0534,20817.08,11860.8944,Majitha,Central,True
+2019,6855,Sangrur,0.7717,92,100,0.0438,25402.65,19604.219,Bhawanigarh,Central,True
+2019,6856,Malerkotla,0.4516,62,100,0.0632,16151.4,7294.1806,Ahmedgarh,Central,True
+2019,6857,Rupnagar,0.65,100,100,0.0477,9318.04,6056.726,Morinda,Foothills,False
+2019,6858,Bathinda,0.6804,97,100,0.0473,38747.06,26363.979,Maur,South-west,True
+2019,6859,Gurdaspur,0.7604,96,100,0.0436,17474.18,13287.6577,Kalanaur,Central,True
+2019,6860,Gurdaspur,0.4713,87,100,0.0535,22276.09,10497.9275,Dinanagar,Central,True
+2019,7122,Malerkotla,0.7292,96,100,0.0454,14881.58,10851.1521,Amargarh,Central,True
+2019,7191,Gurdaspur,0.8061,98,100,0.0399,12520.78,10093.2818,Fatehgarh Churian,Central,True
+2019,7192,Jalandhar,0.59,100,100,0.0492,20132.39,11878.1101,Adampur,Central,True
+2019,7193,Hoshiarpur,0.6,100,100,0.049,17635.57,10581.342,Tanda,Foothills,False
+2019,7341,Amritsar,0.8111,90,100,0.0413,41817.1,33918.3144,Lopoke,Central,True
+2019,7409,Barnala,0.7889,90,100,0.043,16697.2,13172.2356,Mehal Kalan,Central,True
+2020,200,Pathankot,0.4388,98,100,0.0501,1982.33,869.7979,Dhar Kalan,Outlier,False
+2020,201,Pathankot,0.52,100,100,0.05,28819.66,14986.2232,Pathankot,Foothills,False
+2020,202,Gurdaspur,0.69,100,100,0.0462,48381.31,33383.1039,Gurdaspur,Central,True
+2020,203,Gurdaspur,0.76,100,100,0.0427,57222.76,43489.2976,Batala,Central,True
+2020,204,Gurdaspur,0.89,100,100,0.0313,22415.18,19949.5102,Dera Baba Nanak,Central,True
+2020,205,Kapurthala,0.92,100,100,0.0271,14486.42,13327.5064,Bhulath,Central,True
+2020,206,Kapurthala,0.71,100,100,0.0454,39475.08,28027.3068,Kapurthala,Central,True
+2020,207,Kapurthala,0.74,100,100,0.0439,27038.45,20008.453,Sultanpur Lodhi,Central,True
+2020,208,Kapurthala,0.66,100,100,0.0474,17046.41,11250.6306,Phagwara,Central,True
+2020,209,Jalandhar,0.53,100,100,0.0499,23588.03,12501.6559,Shahkot,Central,True
+2020,210,Jalandhar,0.4646,99,100,0.0501,31005.15,14406.4333,Nakodar,Central,True
+2020,211,Jalandhar,0.72,100,100,0.0449,56904.75,40971.42,Phillaur,Central,True
+2020,212,Jalandhar,0.5789,95,100,0.0507,9533.19,5519.2153,Jalandhar - I,Central,True
+2020,213,Jalandhar,0.45,100,100,0.0497,17549.18,7897.131,Jalandhar - II,Central,True
+2020,214,Hoshiarpur,0.42,100,100,0.0494,16321.54,6855.0468,Dasua,Foothills,False
+2020,215,Hoshiarpur,0.38,100,100,0.0485,21506.06,8172.3028,Mukerian,Foothills,False
+2020,216,Hoshiarpur,0.4,95,100,0.0503,34319.79,13727.916,Hoshiarpur,Foothills,False
+2020,217,Hoshiarpur,0.3656,93,100,0.0499,36189.32,13230.5041,Garhshankar,Foothills,False
+2020,218,Shahid Bhagat Singh Nagar,0.53,100,100,0.0499,33036.3,17509.239,Nawanshahr,Central,True
+2020,219,Shahid Bhagat Singh Nagar,0.31,100,100,0.0462,15880.78,4923.0418,Balachaur,Foothills,False
+2020,220,Fatehgarh Sahib,0.75,100,100,0.0433,15207.47,11405.6025,Bassi Pathana,Central,True
+2020,221,Fatehgarh Sahib,0.73,100,100,0.0444,35477.46,25898.5458,Fatehgarh Sahib,Central,True
+2020,222,Fatehgarh Sahib,0.48,100,100,0.05,18937.16,9089.8368,Amloh,Central,True
+2020,223,Fatehgarh Sahib,0.7,100,100,0.0458,14619.95,10233.965,Khamanon,Central,True
+2020,224,Ludhiana,0.56,100,100,0.0496,37972.39,21264.5384,Samrala,Central,True
+2020,225,Ludhiana,0.47,100,100,0.0499,15653.63,7357.2061,Khanna,Central,True
+2020,226,Ludhiana,0.69,100,100,0.0462,33928.11,23410.3959,Payal,Central,True
+2020,227,Ludhiana,0.4505,91,100,0.0522,38820.76,17490.6721,Ludhiana (East),Central,True
+2020,228,Ludhiana,0.4124,97,100,0.05,35892.59,14801.068,Ludhiana (West),Central,True
+2020,229,Ludhiana,0.5824,91,100,0.0517,32629.64,19004.076,Raikot,Central,True
+2020,230,Ludhiana,0.6531,98,100,0.0481,66757.03,43596.4278,Jagraon,Central,True
+2020,231,Moga,0.6939,98,100,0.0466,33119.43,22980.829,Nihal Singhwala,Central,True
+2020,232,Moga,0.78,100,100,0.0414,44194.71,34471.8738,Bagha Purana,Central,True
+2020,233,Moga,0.49,100,100,0.05,48297.08,23665.5692,Moga,Central,True
+2020,234,Ferozepur,0.6939,98,100,0.0466,55518.46,38523.0131,Zira,Central,True
+2020,235,Ferozepur,0.83,100,100,0.0376,85310.98,70808.1134,Firozpur,South-west,True
+2020,236,Fazilka,0.7959,98,100,0.0407,46506.96,37015.7437,Jalalabad,South-west,True
+2020,237,Fazilka,0.6465,99,100,0.048,90038.12,58206.4614,Fazilka,South-west,True
+2020,238,Fazilka,0.4239,92,100,0.0515,91391.59,38742.0871,Abohar,South-west,True
+2020,239,Sri Muktsar Sahib,0.66,100,100,0.0474,87189.15,57544.839,Malout,South-west,True
+2020,240,Sri Muktsar Sahib,0.5361,97,100,0.0506,50382.73,27009.2986,Gidderbaha,South-west,True
+2020,241,Sri Muktsar Sahib,0.5657,99,100,0.0498,71247.33,40301.52,Sri Muktsar Sahib,South-west,True
+2020,242,Faridkot,0.55,100,100,0.0497,57167.72,31442.246,Faridkot,South-west,True
+2020,243,Faridkot,0.8163,98,100,0.0391,36888.44,30113.0122,Jaitu,South-west,True
+2020,244,Bathinda,0.5714,84,100,0.054,50675.66,28957.52,Rampura Phul,South-west,True
+2020,245,Bathinda,0.4388,98,100,0.0501,121844.11,53462.2115,Bathinda,South-west,True
+2020,246,Bathinda,0.4271,96,100,0.0505,56043.77,23935.3601,Talwandi Sabo,South-west,True
+2020,247,Mansa,0.3118,93,100,0.048,50128.13,15631.3524,Sardulgarh,South-west,True
+2020,248,Mansa,0.3846,91,100,0.051,59129.99,22742.3038,Budhlada,South-west,True
+2020,249,Mansa,0.5,88,100,0.0533,68146.56,34073.28,Mansa,South-west,True
+2020,250,Patiala,0.68,100,100,0.0466,28108.11,19113.5148,Samana,Central,True
+2020,251,Patiala,0.74,100,100,0.0439,35000.86,25900.6364,Patran,Central,True
+2020,252,Patiala,0.73,100,100,0.0444,45133.98,32947.8054,Nabha,Central,True
+2020,253,Patiala,0.69,100,100,0.0462,61763.02,42616.4838,Patiala,Central,True
+2020,254,Patiala,0.69,100,100,0.0462,42069.25,29027.7825,Rajpura,Central,True
+2020,255,Amritsar,0.7374,99,100,0.0442,36543.47,26946.1951,Ajnala,Central,True
+2020,256,Amritsar,0.65,100,100,0.0477,15224.17,9895.7105,Amritsar -I,Central,True
+2020,257,Amritsar,0.5354,99,100,0.0501,27958.62,14967.7461,Amritsar- II,Central,True
+2020,258,Amritsar,0.6,100,100,0.049,36505.17,21903.102,Baba Bakala,Central,True
+2020,259,Tarn Taran,0.82,100,100,0.0384,63452.19,52030.7958,Tarn Taran,Central,True
+2020,260,Tarn Taran,0.85,100,100,0.0357,42421.5,36058.275,Patti,Central,True
+2020,261,Tarn Taran,0.59,100,100,0.0492,28782.21,16981.5039,Khadur Sahib,Central,True
+2020,262,Rupnagar,0.44,100,100,0.0496,16483.7,7252.828,Anandpur Sahib,Foothills,False
+2020,263,Rupnagar,0.27,100,100,0.0444,7544.4,2036.988,Nangal,Foothills,False
+2020,264,Rupnagar,0.35,100,100,0.0477,13769.74,4819.409,Rup Nagar,Foothills,False
+2020,265,Rupnagar,0.6869,99,100,0.0466,14696.06,10094.2634,Chamkaur Sahib,Foothills,False
+2020,266,S A S Nagar,0.25,100,100,0.0433,23780.54,5945.135,Kharar,Foothills,False
+2020,267,S A S Nagar,0.3,100,100,0.0458,15372.46,4611.738,Sas Nagar (Mohali),Foothills,False
+2020,268,S A S Nagar,0.46,100,100,0.0498,21438.06,9861.5076,Dera Bassi,Foothills,False
+2020,269,Malerkotla,0.625,96,100,0.0494,22839.12,14274.45,Malerkotla,Central,True
+2020,270,Sangrur,0.6452,93,100,0.0496,49932.05,32214.2258,Dhuri,Central,True
+2020,271,Sangrur,0.6146,96,100,0.0497,29308.29,18012.3866,Sangrur,Central,True
+2020,272,Sangrur,0.6869,99,100,0.0466,35928.14,24677.9143,Sunam,Central,True
+2020,273,Sangrur,0.78,100,100,0.0414,29843.07,23277.5946,Lehra,Central,True
+2020,274,Sangrur,0.78,100,100,0.0414,27398.86,21371.1108,Moonak,Central,True
+2020,275,Barnala,0.6429,98,100,0.0484,38657.86,24851.4814,Barnala,Central,True
+2020,276,Barnala,0.6882,93,100,0.048,50255.93,34584.726,Tapa,Central,True
+2020,5984,Faridkot,0.6263,99,100,0.0486,25540.09,15994.8038,Kotkapura,South-west,True
+2020,5993,Shahid Bhagat Singh Nagar,0.6327,98,100,0.0487,17860.24,11299.3355,Banga,Central,True
+2020,5996,Moga,0.5758,99,100,0.0497,43976.41,25319.7512,Dharamkot,Central,True
+2020,6011,Ferozepur,0.74,100,100,0.0439,35444.12,26228.6488,Guruharsahai,South-west,True
+2020,6849,Patiala,0.7,100,100,0.0458,18341.94,12839.358,Dudhan Sadhan,Central,True
+2020,6852,Sangrur,0.74,100,100,0.0439,17902.71,13248.0054,Dirba,Central,True
+2020,6853,Tarn Taran,0.8889,99,100,0.0316,39562.11,35166.32,Bhikhiwind,Central,True
+2020,6854,Amritsar,0.49,100,100,0.05,20833.43,10208.3807,Majitha,Central,True
+2020,6855,Sangrur,0.74,100,100,0.0439,25333.21,18746.5754,Bhawanigarh,Central,True
+2020,6856,Malerkotla,0.7273,88,100,0.0475,16218.15,11795.0182,Ahmedgarh,Central,True
+2020,6857,Rupnagar,0.62,100,100,0.0485,9421.09,5841.0758,Morinda,Foothills,False
+2020,6858,Bathinda,0.76,75,100,0.0493,40728.02,30953.2952,Maur,South-west,True
+2020,6859,Gurdaspur,0.87,100,100,0.0336,16573.45,14418.9015,Kalanaur,Central,True
+2020,6860,Gurdaspur,0.51,100,100,0.05,19675.57,10034.5407,Dinanagar,Central,True
+2020,7122,Malerkotla,0.81,100,100,0.0392,15008.61,12156.9741,Amargarh,Central,True
+2020,7191,Gurdaspur,0.84,100,100,0.0367,12200.55,10248.462,Fatehgarh Churian,Central,True
+2020,7192,Jalandhar,0.6289,97,100,0.0491,20858.82,13117.4023,Adampur,Central,True
+2020,7193,Hoshiarpur,0.56,100,100,0.0496,17612.78,9863.1568,Tanda,Foothills,False
+2020,7341,Amritsar,0.76,100,100,0.0427,42869.6,32580.896,Lopoke,Central,True
+2020,7409,Barnala,0.8283,99,100,0.0379,16436.97,13614.46,Mehal Kalan,Central,True
+2021,200,Pathankot,0.6768,99,100,0.047,1982.33,1341.5769,Dhar Kalan,Outlier,False
+2021,201,Pathankot,0.6421,95,100,0.0492,28819.66,18505.2554,Pathankot,Foothills,False
+2021,202,Gurdaspur,0.7041,98,100,0.0461,48381.31,34064.3917,Gurdaspur,Central,True
+2021,203,Gurdaspur,0.81,100,100,0.0392,57222.76,46350.4356,Batala,Central,True
+2021,204,Gurdaspur,0.68,100,100,0.0466,22415.18,15242.3224,Dera Baba Nanak,Central,True
+2021,205,Kapurthala,0.82,100,100,0.0384,14486.42,11878.8644,Bhulath,Central,True
+2021,206,Kapurthala,0.6632,95,100,0.0485,39475.08,26178.2109,Kapurthala,Central,True
+2021,207,Kapurthala,0.7273,99,100,0.0448,27038.45,19664.3273,Sultanpur Lodhi,Central,True
+2021,208,Kapurthala,0.7245,98,100,0.0451,17046.41,12349.9501,Phagwara,Central,True
+2021,209,Jalandhar,0.567,97,100,0.0503,23588.03,13374.6562,Shahkot,Central,True
+2021,210,Jalandhar,0.67,100,100,0.047,31005.15,20773.4505,Nakodar,Central,True
+2021,211,Jalandhar,0.8182,99,100,0.0388,56904.75,46558.4318,Phillaur,Central,True
+2021,212,Jalandhar,0.5778,90,100,0.0521,9533.19,5508.0653,Jalandhar - I,Central,True
+2021,213,Jalandhar,0.4396,91,100,0.052,17549.18,7713.9253,Jalandhar - II,Central,True
+2021,214,Hoshiarpur,0.3939,99,100,0.0491,16321.54,6429.6976,Dasua,Foothills,False
+2021,215,Hoshiarpur,0.59,100,100,0.0492,21506.06,12688.5754,Mukerian,Foothills,False
+2021,216,Hoshiarpur,0.4227,97,100,0.0502,34319.79,14506.303,Hoshiarpur,Foothills,False
+2021,217,Hoshiarpur,0.65,100,100,0.0477,36189.32,23523.058,Garhshankar,Foothills,False
+2021,218,Shahid Bhagat Singh Nagar,0.5859,99,100,0.0495,33036.3,19354.6,Nawanshahr,Central,True
+2021,219,Shahid Bhagat Singh Nagar,0.38,100,100,0.0485,15880.78,6034.6964,Balachaur,Foothills,False
+2021,220,Fatehgarh Sahib,0.9,100,100,0.03,15207.47,13686.723,Bassi Pathana,Central,True
+2021,221,Fatehgarh Sahib,0.88,100,100,0.0325,35477.46,31220.1648,Fatehgarh Sahib,Central,True
+2021,222,Fatehgarh Sahib,0.46,100,100,0.0498,18937.16,8711.0936,Amloh,Central,True
+2021,223,Fatehgarh Sahib,0.82,100,100,0.0384,14619.95,11988.359,Khamanon,Central,True
+2021,224,Ludhiana,0.55,100,100,0.0497,37972.39,20884.8145,Samrala,Central,True
+2021,225,Ludhiana,0.35,100,100,0.0477,15653.63,5478.7705,Khanna,Central,True
+2021,226,Ludhiana,0.68,100,100,0.0466,33928.11,23071.1148,Payal,Central,True
+2021,227,Ludhiana,0.4333,90,100,0.0522,38820.76,16822.3293,Ludhiana (East),Central,True
+2021,228,Ludhiana,0.3956,91,100,0.0513,35892.59,14199.2664,Ludhiana (West),Central,True
+2021,229,Ludhiana,0.6842,95,100,0.0477,32629.64,22325.5432,Raikot,Central,True
+2021,230,Ludhiana,0.7551,98,100,0.0434,66757.03,50408.3696,Jagraon,Central,True
+2021,231,Moga,0.6392,97,100,0.0488,33119.43,21169.1202,Nihal Singhwala,Central,True
+2021,232,Moga,0.7732,97,100,0.0425,44194.71,34171.1675,Bagha Purana,Central,True
+2021,233,Moga,0.5417,96,100,0.0509,48297.08,26160.9183,Moga,Central,True
+2021,234,Ferozepur,0.6364,99,100,0.0483,55518.46,35329.9291,Zira,Central,True
+2021,235,Ferozepur,0.6633,98,100,0.0477,85310.98,56583.8133,Firozpur,South-west,True
+2021,236,Fazilka,0.7253,91,100,0.0468,46506.96,33730.3226,Jalalabad,South-west,True
+2021,237,Fazilka,0.6316,95,100,0.0495,90038.12,56866.1811,Fazilka,South-west,True
+2021,238,Fazilka,0.4535,86,100,0.0537,91391.59,41445.0234,Abohar,South-west,True
+2021,239,Sri Muktsar Sahib,0.5978,92,100,0.0511,87189.15,52123.9484,Malout,South-west,True
+2021,240,Sri Muktsar Sahib,0.6421,95,100,0.0492,50382.73,32351.0161,Gidderbaha,South-west,True
+2021,241,Sri Muktsar Sahib,0.5102,98,100,0.0505,71247.33,36350.6786,Sri Muktsar Sahib,South-west,True
+2021,242,Faridkot,0.6222,90,100,0.0511,57167.72,35571.0258,Faridkot,South-west,True
+2021,243,Faridkot,0.8065,93,100,0.041,36888.44,29748.7419,Jaitu,South-west,True
+2021,244,Bathinda,0.5263,95,100,0.0512,50675.66,26671.4,Rampura Phul,South-west,True
+2021,245,Bathinda,0.5158,95,100,0.0513,121844.11,62845.9094,Bathinda,South-west,True
+2021,246,Bathinda,0.4526,95,100,0.0511,56043.77,25367.1801,Talwandi Sabo,South-west,True
+2021,247,Mansa,0.4898,98,100,0.0505,50128.13,24552.5535,Sardulgarh,South-west,True
+2021,248,Mansa,0.4639,97,100,0.0506,59129.99,27431.4387,Budhlada,South-west,True
+2021,249,Mansa,0.4184,98,100,0.0498,68146.56,28510.2955,Mansa,South-west,True
+2021,250,Patiala,0.87,100,100,0.0336,28108.11,24454.0557,Samana,Central,True
+2021,251,Patiala,0.6263,99,100,0.0486,35000.86,21919.7305,Patran,Central,True
+2021,252,Patiala,0.68,100,100,0.0466,45133.98,30691.1064,Nabha,Central,True
+2021,253,Patiala,0.77,100,100,0.0421,61763.02,47557.5254,Patiala,Central,True
+2021,254,Patiala,0.62,100,100,0.0485,42069.25,26082.935,Rajpura,Central,True
+2021,255,Amritsar,0.67,100,100,0.047,36543.47,24484.1249,Ajnala,Central,True
+2021,256,Amritsar,0.5368,95,100,0.0512,15224.17,8172.9755,Amritsar -I,Central,True
+2021,257,Amritsar,0.5217,92,100,0.0521,27958.62,14587.1061,Amritsar- II,Central,True
+2021,258,Amritsar,0.4536,97,100,0.0505,36505.17,16559.0462,Baba Bakala,Central,True
+2021,259,Tarn Taran,0.88,100,100,0.0325,63452.19,55837.9272,Tarn Taran,Central,True
+2021,260,Tarn Taran,0.66,100,100,0.0474,42421.5,27998.19,Patti,Central,True
+2021,261,Tarn Taran,0.54,100,100,0.0498,28782.21,15542.3934,Khadur Sahib,Central,True
+2021,262,Rupnagar,0.82,100,100,0.0384,16483.7,13516.634,Anandpur Sahib,Foothills,False
+2021,263,Rupnagar,0.76,100,100,0.0427,7544.4,5733.744,Nangal,Foothills,False
+2021,264,Rupnagar,0.59,100,100,0.0492,13769.74,8124.1466,Rup Nagar,Foothills,False
+2021,265,Rupnagar,0.68,100,100,0.0466,14696.06,9993.3208,Chamkaur Sahib,Foothills,False
+2021,266,S A S Nagar,0.49,100,100,0.05,23780.54,11652.4646,Kharar,Foothills,False
+2021,267,S A S Nagar,0.48,100,100,0.05,15372.46,7378.7808,Sas Nagar (Mohali),Foothills,False
+2021,268,S A S Nagar,0.58,100,100,0.0494,21438.06,12434.0748,Dera Bassi,Foothills,False
+2021,269,Malerkotla,0.7,100,100,0.0458,22839.12,15987.384,Malerkotla,Central,True
+2021,270,Sangrur,0.7879,99,100,0.0411,49932.05,39340.403,Dhuri,Central,True
+2021,271,Sangrur,0.6735,98,100,0.0474,29308.29,19738.2361,Sangrur,Central,True
+2021,272,Sangrur,0.63,100,100,0.0483,35928.14,22634.7282,Sunam,Central,True
+2021,273,Sangrur,0.6768,99,100,0.047,29843.07,20196.8252,Lehra,Central,True
+2021,274,Sangrur,0.75,100,100,0.0433,27398.86,20549.145,Moonak,Central,True
+2021,275,Barnala,0.7653,98,100,0.0428,38657.86,29585.0969,Barnala,Central,True
+2021,276,Barnala,0.6327,98,100,0.0487,50255.93,31794.568,Tapa,Central,True
+2021,5984,Faridkot,0.4948,97,100,0.0508,25540.09,12638.3951,Kotkapura,South-west,True
+2021,5993,Shahid Bhagat Singh Nagar,0.6562,96,100,0.0485,17860.24,11720.7825,Banga,Central,True
+2021,5996,Moga,0.7553,94,100,0.0443,43976.41,33216.2246,Dharamkot,Central,True
+2021,6011,Ferozepur,0.6224,98,100,0.049,35444.12,22062.1563,Guruharsahai,South-west,True
+2021,6849,Patiala,0.83,100,100,0.0376,18341.94,15223.8102,Dudhan Sadhan,Central,True
+2021,6852,Sangrur,0.76,100,100,0.0427,17902.71,13606.0596,Dirba,Central,True
+2021,6853,Tarn Taran,0.9,100,100,0.03,39562.11,35605.899,Bhikhiwind,Central,True
+2021,6854,Amritsar,0.596,99,100,0.0493,20833.43,12415.8825,Majitha,Central,True
+2021,6855,Sangrur,0.61,100,100,0.0488,25333.21,15453.2581,Bhawanigarh,Central,True
+2021,6856,Malerkotla,0.7553,94,100,0.0443,16218.15,12249.8793,Ahmedgarh,Central,True
+2021,6857,Rupnagar,0.83,100,100,0.0376,9421.09,7819.5047,Morinda,Foothills,False
+2021,6858,Bathinda,0.6224,98,100,0.049,40728.02,25351.1145,Maur,South-west,True
+2021,6859,Gurdaspur,0.7684,95,100,0.0433,16573.45,12735.3879,Kalanaur,Central,True
+2021,6860,Gurdaspur,0.5213,94,100,0.0515,19675.57,10256.4141,Dinanagar,Central,True
+2021,7122,Malerkotla,0.8,100,100,0.04,15008.61,12006.888,Amargarh,Central,True
+2021,7191,Gurdaspur,0.8571,98,100,0.0353,12200.55,10457.6143,Fatehgarh Churian,Central,True
+2021,7192,Jalandhar,0.6061,99,100,0.0491,20858.82,12641.7091,Adampur,Central,True
+2021,7193,Hoshiarpur,0.6,100,100,0.049,17612.78,10567.668,Tanda,Foothills,False
+2021,7341,Amritsar,0.8687,99,100,0.0339,42869.6,37240.2586,Lopoke,Central,True
+2021,7409,Barnala,0.9,100,100,0.03,16436.97,14793.273,Mehal Kalan,Central,True
+2022,200,Pathankot,0.5055,91,100,0.0524,1849.2965,934.8092,Dhar Kalan,Outlier,False
+2022,201,Pathankot,0.6465,99,100,0.048,24349.2054,15740.9005,Pathankot,Foothills,False
+2022,202,Gurdaspur,0.5326,92,100,0.052,39931.187,21267.6974,Gurdaspur,Central,True
+2022,203,Gurdaspur,0.8182,88,100,0.0411,46714.2224,38220.7275,Batala,Central,True
+2022,204,Gurdaspur,0.7449,98,100,0.044,18563.3323,13827.7884,Dera Baba Nanak,Central,True
+2022,205,Kapurthala,0.898,98,100,0.0306,15787.6662,14176.6799,Bhulath,Central,True
+2022,206,Kapurthala,0.4769,65,100,0.062,34979.8177,16682.6823,Kapurthala,Central,True
+2022,207,Kapurthala,0.6316,95,100,0.0495,25275.8147,15963.6724,Sultanpur Lodhi,Central,True
+2022,208,Kapurthala,0.8283,99,100,0.0379,14703.4844,12178.6436,Phagwara,Central,True
+2022,209,Jalandhar,0.5851,94,100,0.0508,23834.5951,13945.7737,Shahkot,Central,True
+2022,210,Jalandhar,0.4343,99,100,0.0498,25105.3388,10904.3391,Nakodar,Central,True
+2022,211,Jalandhar,0.8587,92,100,0.0363,47592.2881,40867.2909,Phillaur,Central,True
+2022,212,Jalandhar,0.5204,98,100,0.0505,9604.6256,4998.3256,Jalandhar - I,Central,True
+2022,213,Jalandhar,0.4898,98,100,0.0505,15183.1673,7436.6534,Jalandhar - II,Central,True
+2022,214,Hoshiarpur,0.3131,99,100,0.0466,14463.3799,4528.9371,Dasua,Foothills,False
+2022,215,Hoshiarpur,0.62,100,100,0.0485,18132.0091,11241.8457,Mukerian,Foothills,False
+2022,216,Hoshiarpur,0.4,100,100,0.049,29243.8809,11697.5524,Hoshiarpur,Foothills,False
+2022,217,Hoshiarpur,0.4948,97,100,0.0508,31437.8935,15556.8958,Garhshankar,Foothills,False
+2022,218,Shahid Bhagat Singh Nagar,0.51,100,100,0.05,26398.3025,13463.1343,Nawanshahr,Central,True
+2022,219,Shahid Bhagat Singh Nagar,0.3646,96,100,0.0491,14779.5945,5388.3938,Balachaur,Foothills,False
+2022,220,Fatehgarh Sahib,0.8557,97,100,0.0357,13881.8765,11878.3067,Bassi Pathana,Central,True
+2022,221,Fatehgarh Sahib,0.8384,99,100,0.037,30782.4886,25807.541,Fatehgarh Sahib,Central,True
+2022,222,Fatehgarh Sahib,0.7071,99,100,0.0457,16635.7506,11762.6519,Amloh,Central,True
+2022,223,Fatehgarh Sahib,0.72,100,100,0.0449,12856.6356,9256.7776,Khamanon,Central,True
+2022,224,Ludhiana,0.56,100,100,0.0496,32018.6506,17930.4443,Samrala,Central,True
+2022,225,Ludhiana,0.5556,99,100,0.0499,12940.4826,7189.157,Khanna,Central,True
+2022,226,Ludhiana,0.64,100,100,0.048,30061.3658,19239.2741,Payal,Central,True
+2022,227,Ludhiana,0.5052,97,100,0.0508,34671.1667,17514.3007,Ludhiana (East),Central,True
+2022,228,Ludhiana,0.3232,99,100,0.047,28598.7071,9244.0265,Ludhiana (West),Central,True
+2022,229,Ludhiana,0.4742,97,100,0.0507,31539.3605,14956.8102,Raikot,Central,True
+2022,230,Ludhiana,0.6735,98,100,0.0474,56458.4681,38023.0499,Jagraon,Central,True
+2022,231,Moga,0.6122,98,100,0.0492,30798.3648,18856.1417,Nihal Singhwala,Central,True
+2022,232,Moga,0.84,100,100,0.0367,44430.9033,37321.9588,Bagha Purana,Central,True
+2022,233,Moga,0.5914,93,100,0.051,47227.9348,27930.4991,Moga,Central,True
+2022,234,Ferozepur,0.6804,97,100,0.0473,49931.2099,33973.8129,Zira,Central,True
+2022,235,Ferozepur,0.72,100,100,0.0449,75763.22,54549.5184,Firozpur,South-west,True
+2022,236,Fazilka,0.82,100,100,0.0384,39364.2531,32278.6876,Jalalabad,South-west,True
+2022,237,Fazilka,0.58,100,100,0.0494,79276.5908,45980.4227,Fazilka,South-west,True
+2022,238,Fazilka,0.3367,98,100,0.0477,74813.2933,25192.2314,Abohar,South-west,True
+2022,239,Sri Muktsar Sahib,0.7172,99,100,0.0453,77422.9926,55525.5805,Malout,South-west,True
+2022,240,Sri Muktsar Sahib,0.602,98,100,0.0494,48570.7063,29241.5477,Gidderbaha,South-west,True
+2022,241,Sri Muktsar Sahib,0.5455,99,100,0.05,64321.4844,35084.446,Sri Muktsar Sahib,South-west,True
+2022,242,Faridkot,0.49,100,100,0.05,50779.3294,24881.8714,Faridkot,South-west,True
+2022,243,Faridkot,0.71,100,100,0.0454,30885.9948,21929.0563,Jaitu,South-west,True
+2022,244,Bathinda,0.4388,98,100,0.0501,45461.4658,19947.3778,Rampura Phul,South-west,True
+2022,245,Bathinda,0.54,100,100,0.0498,108662.7796,58677.901,Bathinda,South-west,True
+2022,246,Bathinda,0.71,100,100,0.0454,54211.8862,38490.4392,Talwandi Sabo,South-west,True
+2022,247,Mansa,0.5152,99,100,0.0502,45086.9712,23226.6215,Sardulgarh,South-west,True
+2022,248,Mansa,0.49,100,100,0.05,48981.6617,24001.0143,Budhlada,South-west,True
+2022,249,Mansa,0.61,100,100,0.0488,62529.797,38143.1762,Mansa,South-west,True
+2022,250,Patiala,0.8,100,100,0.04,24935.5672,19948.4538,Samana,Central,True
+2022,251,Patiala,0.57,100,100,0.0495,33455.9948,19069.917,Patran,Central,True
+2022,252,Patiala,0.6667,99,100,0.0474,39605.0907,26403.3938,Nabha,Central,True
+2022,253,Patiala,0.7789,95,100,0.0426,53613.4906,41762.0874,Patiala,Central,True
+2022,254,Patiala,0.8592,71,100,0.0413,41679.0406,35808.7532,Rajpura,Central,True
+2022,255,Amritsar,0.4783,69,100,0.0601,32317.3656,15456.1314,Ajnala,Central,True
+2022,256,Amritsar,0.5104,96,100,0.051,13066.7973,6669.5111,Amritsar -I,Central,True
+2022,257,Amritsar,0.407,86,100,0.053,28125.4163,11446.3904,Amritsar- II,Central,True
+2022,258,Amritsar,0.56,100,100,0.0496,33693.9415,18868.6072,Baba Bakala,Central,True
+2022,259,Tarn Taran,0.9,100,100,0.03,56343.2053,50708.8847,Tarn Taran,Central,True
+2022,260,Tarn Taran,0.7273,99,100,0.0448,37627.8456,27365.7059,Patti,Central,True
+2022,261,Tarn Taran,0.49,100,100,0.05,25996.9464,12738.5037,Khadur Sahib,Central,True
+2022,262,Rupnagar,0.78,100,100,0.0414,14643.46,11421.8988,Anandpur Sahib,Foothills,False
+2022,263,Rupnagar,0.76,100,100,0.0427,5984.8277,4548.4691,Nangal,Foothills,False
+2022,264,Rupnagar,0.5161,93,100,0.0518,11649.6722,6012.7341,Rup Nagar,Foothills,False
+2022,265,Rupnagar,0.7,100,100,0.0458,12190.5252,8533.3676,Chamkaur Sahib,Foothills,False
+2022,266,S A S Nagar,0.4754,61,100,0.0639,20410.9267,9703.5553,Kharar,Foothills,False
+2022,267,S A S Nagar,0.5972,72,100,0.0578,6521.5226,3894.7982,Sas Nagar (Mohali),Foothills,False
+2022,268,S A S Nagar,0.7857,70,100,0.049,18512.4491,14545.4957,Dera Bassi,Foothills,False
+2022,269,Malerkotla,0.69,100,100,0.0462,19407.4129,13391.1149,Malerkotla,Central,True
+2022,270,Sangrur,0.72,100,100,0.0449,40055.5079,28839.9657,Dhuri,Central,True
+2022,271,Sangrur,0.6429,98,100,0.0484,28134.0373,18086.1668,Sangrur,Central,True
+2022,272,Sangrur,0.73,100,100,0.0444,34633.2825,25282.2962,Sunam,Central,True
+2022,273,Sangrur,0.75,100,100,0.0433,23739.2913,17804.4684,Lehra,Central,True
+2022,274,Sangrur,0.76,100,100,0.0427,27039.8382,20550.277,Moonak,Central,True
+2022,275,Barnala,0.7172,99,100,0.0453,43866.6866,31459.9469,Barnala,Central,True
+2022,276,Barnala,0.6837,98,100,0.047,40658.374,27797.0516,Tapa,Central,True
+2022,5984,Faridkot,0.56,100,100,0.0496,25611.7537,14342.5821,Kotkapura,South-west,True
+2022,5993,Shahid Bhagat Singh Nagar,0.67,100,100,0.047,16116.8649,10798.2995,Banga,Central,True
+2022,5996,Moga,0.7419,93,100,0.0454,40527.8655,30069.0615,Dharamkot,Central,True
+2022,6011,Ferozepur,0.72,100,100,0.0449,34984.3478,25188.7304,Guruharsahai,South-west,True
+2022,6849,Patiala,0.9011,91,100,0.0313,16659.7089,15012.0454,Dudhan Sadhan,Central,True
+2022,6852,Sangrur,0.9,100,100,0.03,18052.7085,16247.4377,Dirba,Central,True
+2022,6853,Tarn Taran,0.9059,85,100,0.0317,33102.2682,29986.7606,Bhikhiwind,Central,True
+2022,6854,Amritsar,0.4459,74,100,0.0578,18825.2946,8395.0638,Majitha,Central,True
+2022,6855,Sangrur,0.66,100,100,0.0474,24145.8343,15936.2506,Bhawanigarh,Central,True
+2022,6856,Malerkotla,0.62,100,100,0.0485,13676.1283,8479.1996,Ahmedgarh,Central,True
+2022,6857,Rupnagar,0.71,100,100,0.0454,8894.6369,6315.1922,Morinda,Foothills,False
+2022,6858,Bathinda,0.6263,99,100,0.0486,39643.6471,24827.3345,Maur,South-west,True
+2022,6859,Gurdaspur,0.6804,97,100,0.0473,13700.3044,9321.8566,Kalanaur,Central,True
+2022,6860,Gurdaspur,0.39,100,100,0.0488,16694.7475,6510.9515,Dinanagar,Central,True
+2022,7122,Malerkotla,0.88,100,100,0.0325,11750.5366,10340.4722,Amargarh,Central,True
+2022,7191,Gurdaspur,0.7727,66,100,0.0516,10590.6911,8183.7158,Fatehgarh Churian,Central,True
+2022,7192,Jalandhar,0.5,100,100,0.05,17644.6563,8822.3281,Adampur,Central,True
+2022,7193,Hoshiarpur,0.5532,94,100,0.0513,13830.5425,7650.9384,Tanda,Foothills,False
+2022,7341,Amritsar,0.8295,88,100,0.0401,37432.3726,31051.8546,Lopoke,Central,True
+2022,7409,Barnala,0.72,100,100,0.0449,16397.905,11806.4916,Mehal Kalan,Central,True
+2023,200,Pathankot,0.3191,94,100,0.0481,1849.2965,590.201,Dhar Kalan,Outlier,False
+2023,201,Pathankot,0.3696,92,100,0.0503,24349.2054,8998.6194,Pathankot,Foothills,False
+2023,202,Gurdaspur,0.6897,87,100,0.0496,39931.187,27538.7496,Gurdaspur,Central,True
+2023,203,Gurdaspur,0.7391,92,100,0.0458,46714.2224,34527.9035,Batala,Central,True
+2023,204,Gurdaspur,0.7234,94,100,0.0461,18563.3323,13428.7936,Dera Baba Nanak,Central,True
+2023,205,Kapurthala,0.6222,90,100,0.0511,15787.6662,9823.4368,Bhulath,Central,True
+2023,206,Kapurthala,0.6279,86,100,0.0521,34979.8177,21964.0716,Kapurthala,Central,True
+2023,207,Kapurthala,0.5357,84,100,0.0544,25275.8147,13540.615,Sultanpur Lodhi,Central,True
+2023,208,Kapurthala,0.7159,88,100,0.0481,14703.4844,10526.3582,Phagwara,Central,True
+2023,209,Jalandhar,0.6667,90,100,0.0497,23834.5951,15889.7301,Shahkot,Central,True
+2023,210,Jalandhar,0.5824,91,100,0.0517,25105.3388,14621.7907,Nakodar,Central,True
+2023,211,Jalandhar,0.7174,92,100,0.0469,47592.2881,34142.2937,Phillaur,Central,True
+2023,212,Jalandhar,0.6301,73,100,0.0565,9604.6256,6052.2298,Jalandhar - I,Central,True
+2023,213,Jalandhar,0.4096,83,100,0.054,15183.1673,6219.6107,Jalandhar - II,Central,True
+2023,214,Hoshiarpur,0.7115,52,100,0.0628,14463.3799,10291.2511,Dasua,Foothills,False
+2023,215,Hoshiarpur,0.5833,84,100,0.0538,18132.0091,10577.0053,Mukerian,Foothills,False
+2023,216,Hoshiarpur,0.375,24,100,0.0988,29243.8809,10966.4553,Hoshiarpur,Foothills,False
+2023,217,Hoshiarpur,0.5205,73,100,0.0585,31437.8935,16364.9309,Garhshankar,Foothills,False
+2023,218,Shahid Bhagat Singh Nagar,0.6633,98,100,0.0477,26398.3025,17509.0782,Nawanshahr,Central,True
+2023,219,Shahid Bhagat Singh Nagar,0.2979,94,100,0.0472,14779.5945,4402.4324,Balachaur,Foothills,False
+2023,220,Fatehgarh Sahib,0.88,100,100,0.0325,13881.8765,12216.0513,Bassi Pathana,Central,True
+2023,221,Fatehgarh Sahib,0.88,100,100,0.0325,30782.4886,27088.59,Fatehgarh Sahib,Central,True
+2023,222,Fatehgarh Sahib,0.55,100,100,0.0497,16635.7506,9149.6628,Amloh,Central,True
+2023,223,Fatehgarh Sahib,0.66,100,100,0.0474,12856.6356,8485.3795,Khamanon,Central,True
+2023,224,Ludhiana,0.48,100,100,0.05,32018.6506,15368.9523,Samrala,Central,True
+2023,225,Ludhiana,0.42,100,100,0.0494,12940.4826,5435.0027,Khanna,Central,True
+2023,226,Ludhiana,0.798,99,100,0.0404,30061.3658,23988.3626,Payal,Central,True
+2023,227,Ludhiana,0.6173,81,100,0.054,34671.1667,21401.9547,Ludhiana (East),Central,True
+2023,228,Ludhiana,0.4444,72,100,0.0586,28598.7071,12710.5365,Ludhiana (West),Central,True
+2023,229,Ludhiana,0.5909,88,100,0.0524,31539.3605,18636.8949,Raikot,Central,True
+2023,230,Ludhiana,0.6289,97,100,0.0491,56458.4681,35504.8098,Jagraon,Central,True
+2023,231,Moga,0.7273,88,100,0.0475,30798.3648,22398.8108,Nihal Singhwala,Central,True
+2023,232,Moga,0.7558,86,100,0.0463,44430.9033,33581.4967,Bagha Purana,Central,True
+2023,233,Moga,0.5294,85,100,0.0541,47227.9348,25003.0243,Moga,Central,True
+2023,234,Ferozepur,0.6559,93,100,0.0493,49931.2099,32750.5786,Zira,Central,True
+2023,235,Ferozepur,0.7111,90,100,0.0478,75763.22,53876.0675,Firozpur,South-west,True
+2023,236,Fazilka,0.8427,89,100,0.0386,39364.2531,33172.1234,Jalalabad,South-west,True
+2023,237,Fazilka,0.6977,86,100,0.0495,79276.5908,55309.2494,Fazilka,South-west,True
+2023,238,Fazilka,0.614,57,100,0.0645,74813.2933,45937.9871,Abohar,South-west,True
+2023,239,Sri Muktsar Sahib,0.663,92,100,0.0493,77422.9926,51334.8103,Malout,South-west,True
+2023,240,Sri Muktsar Sahib,0.7527,93,100,0.0447,48570.7063,36558.5961,Gidderbaha,South-west,True
+2023,241,Sri Muktsar Sahib,0.6484,91,100,0.0501,64321.4844,41702.9404,Sri Muktsar Sahib,South-west,True
+2023,242,Faridkot,0.7222,90,100,0.0472,50779.3294,36673.9601,Faridkot,South-west,True
+2023,243,Faridkot,0.5714,91,100,0.0519,30885.9948,17649.1399,Jaitu,South-west,True
+2023,244,Bathinda,0.5465,86,100,0.0537,45461.4658,24845.2197,Rampura Phul,South-west,True
+2023,245,Bathinda,0.5814,86,100,0.0532,108662.7796,63176.0346,Bathinda,South-west,True
+2023,246,Bathinda,0.6923,78,100,0.0523,54211.8862,37531.3058,Talwandi Sabo,South-west,True
+2023,247,Mansa,0.4713,87,100,0.0535,45086.9712,21247.883,Sardulgarh,South-west,True
+2023,248,Mansa,0.5625,80,100,0.0555,48981.6617,27552.1847,Budhlada,South-west,True
+2023,249,Mansa,0.5833,84,100,0.0538,62529.797,36475.7149,Mansa,South-west,True
+2023,250,Patiala,0.76,100,100,0.0427,24935.5672,18951.0311,Samana,Central,True
+2023,251,Patiala,0.5612,98,100,0.0501,33455.9948,18776.3236,Patran,Central,True
+2023,252,Patiala,0.64,100,100,0.048,39605.0907,25347.258,Nabha,Central,True
+2023,253,Patiala,0.8,100,100,0.04,53613.4906,42890.7925,Patiala,Central,True
+2023,254,Patiala,0.6869,99,100,0.0466,41679.0406,28628.0279,Rajpura,Central,True
+2023,255,Amritsar,0.4839,93,100,0.0518,32317.3656,15637.435,Ajnala,Central,True
+2023,256,Amritsar,0.4574,94,100,0.0514,13066.7973,5977.3647,Amritsar -I,Central,True
+2023,257,Amritsar,0.7162,74,100,0.0524,28125.4163,20143.8793,Amritsar- II,Central,True
+2023,258,Amritsar,0.5663,83,100,0.0544,33693.9415,19079.7018,Baba Bakala,Central,True
+2023,259,Tarn Taran,0.7835,97,100,0.0418,56343.2053,44145.1917,Tarn Taran,Central,True
+2023,260,Tarn Taran,0.7368,95,100,0.0452,37627.8456,27725.781,Patti,Central,True
+2023,261,Tarn Taran,0.2593,81,100,0.0487,25996.9464,6739.9491,Khadur Sahib,Central,True
+2023,262,Rupnagar,0.5918,98,100,0.0496,14643.46,8666.5375,Anandpur Sahib,Foothills,False
+2023,263,Rupnagar,0.69,100,100,0.0462,5984.8277,4129.5311,Nangal,Foothills,False
+2023,264,Rupnagar,0.42,100,100,0.0494,11649.6722,4892.8623,Rup Nagar,Foothills,False
+2023,265,Rupnagar,0.3978,93,100,0.0508,12190.5252,4849.9939,Chamkaur Sahib,Foothills,False
+2023,266,S A S Nagar,0.3232,99,100,0.047,20410.9267,6597.4713,Kharar,Foothills,False
+2023,267,S A S Nagar,0.5,96,100,0.051,6521.5226,3260.7613,Sas Nagar (Mohali),Foothills,False
+2023,268,S A S Nagar,0.4526,95,100,0.0511,18512.4491,8379.3191,Dera Bassi,Foothills,False
+2023,269,Malerkotla,0.8298,94,100,0.0388,19407.4129,16104.0234,Malerkotla,Central,True
+2023,270,Sangrur,0.7766,94,100,0.043,40055.5079,31106.937,Dhuri,Central,True
+2023,271,Sangrur,0.6923,91,100,0.0484,28134.0373,19477.4104,Sangrur,Central,True
+2023,272,Sangrur,0.6196,92,100,0.0506,34633.2825,21457.5772,Sunam,Central,True
+2023,273,Sangrur,0.5354,99,100,0.0501,23739.2913,12708.9135,Lehra,Central,True
+2023,274,Sangrur,0.75,100,100,0.0433,27039.8382,20279.8787,Moonak,Central,True
+2023,275,Barnala,0.8276,87,100,0.0405,43866.6866,36303.4648,Barnala,Central,True
+2023,276,Barnala,0.7889,90,100,0.043,40658.374,32074.9395,Tapa,Central,True
+2023,5984,Faridkot,0.5057,87,100,0.0536,25611.7537,12953.0708,Kotkapura,South-west,True
+2023,5993,Shahid Bhagat Singh Nagar,0.61,100,100,0.0488,16116.8649,9831.2876,Banga,Central,True
+2023,5996,Moga,0.7419,93,100,0.0454,40527.8655,30069.0615,Dharamkot,Central,True
+2023,6011,Ferozepur,0.6316,95,100,0.0495,34984.3478,22095.3776,Guruharsahai,South-west,True
+2023,6849,Patiala,0.6875,96,100,0.0473,16659.7089,11453.5498,Dudhan Sadhan,Central,True
+2023,6852,Sangrur,0.76,100,100,0.0427,18052.7085,13720.0585,Dirba,Central,True
+2023,6853,Tarn Taran,0.5816,98,100,0.0498,33102.2682,19253.3601,Bhikhiwind,Central,True
+2023,6854,Amritsar,0.5979,97,100,0.0498,18825.2946,11256.3617,Majitha,Central,True
+2023,6855,Sangrur,0.78,100,100,0.0414,24145.8343,18833.7507,Bhawanigarh,Central,True
+2023,6856,Malerkotla,0.7,80,100,0.0512,13676.1283,9573.2898,Ahmedgarh,Central,True
+2023,6857,Rupnagar,0.67,100,100,0.047,8894.6369,5959.4067,Morinda,Foothills,False
+2023,6858,Bathinda,0.6222,90,100,0.0511,39643.6471,24667.1582,Maur,South-west,True
+2023,6859,Gurdaspur,0.6304,92,100,0.0503,13700.3044,8637.1485,Kalanaur,Central,True
+2023,6860,Gurdaspur,0.3684,76,100,0.0553,16694.7475,6150.6964,Dinanagar,Central,True
+2023,7122,Malerkotla,0.8182,99,100,0.0388,11750.5366,9614.0754,Amargarh,Central,True
+2023,7191,Gurdaspur,0.7449,98,100,0.044,10590.6911,7888.9842,Fatehgarh Churian,Central,True
+2023,7192,Jalandhar,0.4667,90,100,0.0526,17644.6563,8234.1729,Adampur,Central,True
+2023,7193,Hoshiarpur,0.7031,64,100,0.0571,13830.5425,9724.6002,Tanda,Foothills,False
+2023,7341,Amritsar,0.8261,92,100,0.0395,37432.3726,30922.3948,Lopoke,Central,True
+2023,7409,Barnala,0.8958,96,100,0.0312,16397.905,14689.7899,Mehal Kalan,Central,True
+2024,200,Pathankot,0.4646,99,100,0.0501,1849.2965,859.2691,Dhar Kalan,Outlier,False
+2024,201,Pathankot,0.61,100,100,0.0488,24349.2054,14853.0153,Pathankot,Foothills,False
+2024,202,Gurdaspur,0.4699,83,100,0.0548,39931.187,18762.8469,Gurdaspur,Central,True
+2024,203,Gurdaspur,0.8163,98,100,0.0391,46714.2224,38134.0591,Batala,Central,True
+2024,204,Gurdaspur,0.7653,98,100,0.0428,18563.3323,14206.6319,Dera Baba Nanak,Central,True
+2024,205,Kapurthala,0.75,100,100,0.0433,15787.6662,11840.7497,Bhulath,Central,True
+2024,206,Kapurthala,0.4592,98,100,0.0503,34979.8177,16062.1612,Kapurthala,Central,True
+2024,207,Kapurthala,0.4184,98,100,0.0498,25275.8147,10574.5755,Sultanpur Lodhi,Central,True
+2024,208,Kapurthala,0.6,95,100,0.0503,14703.4844,8822.0906,Phagwara,Central,True
+2024,209,Jalandhar,0.3636,99,100,0.0483,23834.5951,8667.1255,Shahkot,Central,True
+2024,210,Jalandhar,0.3333,90,100,0.0497,25105.3388,8368.4463,Nakodar,Central,True
+2024,211,Jalandhar,0.7604,96,100,0.0436,47592.2881,36189.9691,Phillaur,Central,True
+2024,212,Jalandhar,0.4146,82,100,0.0544,9604.6256,3982.4057,Jalandhar - I,Central,True
+2024,213,Jalandhar,0.4194,93,100,0.0512,15183.1673,6367.1347,Jalandhar - II,Central,True
+2024,214,Hoshiarpur,0.2222,90,100,0.0438,14463.3799,3214.0844,Dasua,Foothills,False
+2024,215,Hoshiarpur,0.4479,96,100,0.0508,18132.0091,8121.6291,Mukerian,Foothills,False
+2024,216,Hoshiarpur,0.24,50,100,0.0604,29243.8809,7018.5314,Hoshiarpur,Foothills,False
+2024,217,Hoshiarpur,0.2842,95,100,0.0463,31437.8935,8934.9803,Garhshankar,Foothills,False
+2024,218,Shahid Bhagat Singh Nagar,0.6,95,100,0.0503,26398.3025,15838.9815,Nawanshahr,Central,True
+2024,219,Shahid Bhagat Singh Nagar,0.38,100,100,0.0485,14779.5945,5616.2459,Balachaur,Foothills,False
+2024,220,Fatehgarh Sahib,0.87,100,100,0.0336,13881.8765,12077.2325,Bassi Pathana,Central,True
+2024,221,Fatehgarh Sahib,0.86,100,100,0.0347,30782.4886,26472.9402,Fatehgarh Sahib,Central,True
+2024,222,Fatehgarh Sahib,0.48,100,100,0.05,16635.7506,7985.1603,Amloh,Central,True
+2024,223,Fatehgarh Sahib,0.65,100,100,0.0477,12856.6356,8356.8132,Khamanon,Central,True
+2024,224,Ludhiana,0.42,100,100,0.0494,32018.6506,13447.8332,Samrala,Central,True
+2024,225,Ludhiana,0.39,100,100,0.0488,12940.4826,5046.7882,Khanna,Central,True
+2024,226,Ludhiana,0.6224,98,100,0.049,30061.3658,18711.6665,Payal,Central,True
+2024,227,Ludhiana,0.6667,78,100,0.0534,34671.1667,23114.1111,Ludhiana (East),Central,True
+2024,228,Ludhiana,0.358,81,100,0.0533,28598.7071,10239.0433,Ludhiana (West),Central,True
+2024,229,Ludhiana,0.4333,90,100,0.0522,31539.3605,13667.0562,Raikot,Central,True
+2024,230,Ludhiana,0.6022,93,100,0.0508,56458.4681,33996.4969,Jagraon,Central,True
+2024,231,Moga,0.6452,93,100,0.0496,30798.3648,19869.9128,Nihal Singhwala,Central,True
+2024,232,Moga,0.6735,98,100,0.0474,44430.9033,29922.8533,Bagha Purana,Central,True
+2024,233,Moga,0.4421,95,100,0.051,47227.9348,20879.7186,Moga,Central,True
+2024,234,Ferozepur,0.5426,94,100,0.0514,49931.2099,27090.3373,Zira,Central,True
+2024,235,Ferozepur,0.617,94,100,0.0501,75763.22,46747.5187,Firozpur,South-west,True
+2024,236,Fazilka,0.7857,98,100,0.0414,39364.2531,30929.056,Jalalabad,South-west,True
+2024,237,Fazilka,0.6531,98,100,0.0481,79276.5908,51772.4675,Fazilka,South-west,True
+2024,238,Fazilka,0.33,100,100,0.047,74813.2933,24688.3868,Abohar,South-west,True
+2024,239,Sri Muktsar Sahib,0.69,100,100,0.0462,77422.9926,53421.8649,Malout,South-west,True
+2024,240,Sri Muktsar Sahib,0.65,100,100,0.0477,48570.7063,31570.9591,Gidderbaha,South-west,True
+2024,241,Sri Muktsar Sahib,0.4848,99,100,0.0502,64321.4844,31186.1742,Sri Muktsar Sahib,South-west,True
+2024,242,Faridkot,0.56,100,100,0.0496,50779.3294,28436.4245,Faridkot,South-west,True
+2024,243,Faridkot,0.63,100,100,0.0483,30885.9948,19458.1767,Jaitu,South-west,True
+2024,244,Bathinda,0.4405,84,100,0.0542,45461.4658,20024.6933,Rampura Phul,South-west,True
+2024,245,Bathinda,0.3939,99,100,0.0491,108662.7796,42806.5495,Bathinda,South-west,True
+2024,246,Bathinda,0.5657,99,100,0.0498,54211.8862,30665.3094,Talwandi Sabo,South-west,True
+2024,247,Mansa,0.5333,90,100,0.0526,45086.9712,24046.3846,Sardulgarh,South-west,True
+2024,248,Mansa,0.4483,87,100,0.0533,48981.6617,21957.2966,Budhlada,South-west,True
+2024,249,Mansa,0.3704,81,100,0.0537,62529.797,23159.1841,Mansa,South-west,True
+2024,250,Patiala,0.69,100,100,0.0462,24935.5672,17205.5414,Samana,Central,True
+2024,251,Patiala,0.61,100,100,0.0488,33455.9948,20408.1568,Patran,Central,True
+2024,252,Patiala,0.57,100,100,0.0495,39605.0907,22574.9017,Nabha,Central,True
+2024,253,Patiala,0.63,100,100,0.0483,53613.4906,33776.4991,Patiala,Central,True
+2024,254,Patiala,0.7,100,100,0.0458,41679.0406,29175.3284,Rajpura,Central,True
+2024,255,Amritsar,0.5579,95,100,0.051,32317.3656,18029.6882,Ajnala,Central,True
+2024,256,Amritsar,0.3776,98,100,0.049,13066.7973,4933.3827,Amritsar -I,Central,True
+2024,257,Amritsar,0.5455,99,100,0.05,28125.4163,15341.1362,Amritsar- II,Central,True
+2024,258,Amritsar,0.46,100,100,0.0498,33693.9415,15499.2131,Baba Bakala,Central,True
+2024,259,Tarn Taran,0.8229,96,100,0.039,56343.2053,46365.7627,Tarn Taran,Central,True
+2024,260,Tarn Taran,0.6458,96,100,0.0488,37627.8456,24301.317,Patti,Central,True
+2024,261,Tarn Taran,0.43,100,100,0.0495,25996.9464,11178.6869,Khadur Sahib,Central,True
+2024,262,Rupnagar,0.67,100,100,0.047,14643.46,9811.1182,Anandpur Sahib,Foothills,False
+2024,263,Rupnagar,0.74,100,100,0.0439,5984.8277,4428.7725,Nangal,Foothills,False
+2024,264,Rupnagar,0.73,100,100,0.0444,11649.6722,8504.2607,Rup Nagar,Foothills,False
+2024,265,Rupnagar,0.7,100,100,0.0458,12190.5252,8533.3676,Chamkaur Sahib,Foothills,False
+2024,266,S A S Nagar,0.61,100,100,0.0488,20410.9267,12450.6653,Kharar,Foothills,False
+2024,267,S A S Nagar,0.42,100,100,0.0494,6521.5226,2739.0395,Sas Nagar (Mohali),Foothills,False
+2024,268,S A S Nagar,0.5,100,100,0.05,18512.4491,9256.2246,Dera Bassi,Foothills,False
+2024,269,Malerkotla,0.6489,94,100,0.0492,19407.4129,12594.1722,Malerkotla,Central,True
+2024,270,Sangrur,0.6702,94,100,0.0485,40055.5079,26845.7128,Dhuri,Central,True
+2024,271,Sangrur,0.7442,86,100,0.047,28134.0373,20936.958,Sangrur,Central,True
+2024,272,Sangrur,0.5876,97,100,0.05,34633.2825,20351.5165,Sunam,Central,True
+2024,273,Sangrur,0.7071,99,100,0.0457,23739.2913,16785.3574,Lehra,Central,True
+2024,274,Sangrur,0.75,100,100,0.0433,27039.8382,20279.8787,Moonak,Central,True
+2024,275,Barnala,0.6782,87,100,0.0501,43866.6866,29748.6725,Barnala,Central,True
+2024,276,Barnala,0.7529,85,100,0.0468,40658.374,30613.3639,Tapa,Central,True
+2024,5984,Faridkot,0.48,100,100,0.05,25611.7537,12293.6418,Kotkapura,South-west,True
+2024,5993,Shahid Bhagat Singh Nagar,0.4211,95,100,0.0507,16116.8649,6786.0484,Banga,Central,True
+2024,5996,Moga,0.72,100,100,0.0449,40527.8655,29180.0632,Dharamkot,Central,True
+2024,6011,Ferozepur,0.7263,95,100,0.0457,34984.3478,25409.6842,Guruharsahai,South-west,True
+2024,6849,Patiala,0.72,100,100,0.0449,16659.7089,11994.9904,Dudhan Sadhan,Central,True
+2024,6852,Sangrur,0.7,100,100,0.0458,18052.7085,12636.896,Dirba,Central,True
+2024,6853,Tarn Taran,0.79,100,100,0.0407,33102.2682,26150.7919,Bhikhiwind,Central,True
+2024,6854,Amritsar,0.42,100,100,0.0494,18825.2946,7906.6237,Majitha,Central,True
+2024,6855,Sangrur,0.54,100,100,0.0498,24145.8343,13038.7505,Bhawanigarh,Central,True
+2024,6856,Malerkotla,0.4505,91,100,0.0522,13676.1283,6161.7721,Ahmedgarh,Central,True
+2024,6857,Rupnagar,0.67,100,100,0.047,8894.6369,5959.4067,Morinda,Foothills,False
+2024,6858,Bathinda,0.5333,90,100,0.0526,39643.6471,21143.2784,Maur,South-west,True
+2024,6859,Gurdaspur,0.663,92,100,0.0493,13700.3044,9083.8975,Kalanaur,Central,True
+2024,6860,Gurdaspur,0.4111,90,100,0.0519,16694.7475,6863.3962,Dinanagar,Central,True
+2024,7122,Malerkotla,0.68,100,100,0.0466,11750.5366,7990.3649,Amargarh,Central,True
+2024,7191,Gurdaspur,0.7475,99,100,0.0437,10590.6911,7916.2742,Fatehgarh Churian,Central,True
+2024,7192,Jalandhar,0.6977,86,100,0.0495,17644.6563,12310.2253,Adampur,Central,True
+2024,7193,Hoshiarpur,0.5465,86,100,0.0537,13830.5425,7558.5523,Tanda,Foothills,False
+2024,7341,Amritsar,0.81,100,100,0.0392,37432.3726,30320.2218,Lopoke,Central,True
+2024,7409,Barnala,0.8488,86,100,0.0386,16397.905,13919.1519,Mehal Kalan,Central,True

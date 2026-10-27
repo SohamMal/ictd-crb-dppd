@@ -1,0 +1,11 @@
+class,size_bin,n,sd_dVV,sd_dVH
+burnt,<0.5ha,769,2.84,2.86
+burnt,0.5-1ha,103,2.61,2.44
+burnt,1-2ha,19,2.25,2.38
+green/golden,<0.5ha,62,2.38,3.76
+green/golden,0.5-1ha,26,1.68,2.25
+green/golden,1-2ha,4,2.14,3.34
+stubble,<0.5ha,139,2.35,3.11
+stubble,0.5-1ha,77,1.96,2.85
+stubble,1-2ha,56,1.43,2.59
+stubble,>2ha,9,1.65,2.73

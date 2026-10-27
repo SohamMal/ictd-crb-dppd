@@ -1,0 +1,11 @@
+group,flag,n,kind
+Central,candidate-PD,6,static
+Central,candidate-ND,6,static
+South-west,candidate-ND,2,static
+South-west,PD,1,static
+South-west,candidate-PD,1,static
+Central,candidate-PD,6,temporal
+Central,candidate-ND,5,temporal
+Central,ND,1,temporal
+South-west,candidate-ND,2,temporal
+South-west,candidate-PD,2,temporal

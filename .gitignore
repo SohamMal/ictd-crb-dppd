@@ -1,0 +1,30 @@
+# Raw data (15 GB rasters/shapefiles; kept locally, see CLAUDE.md §5)
+Data/
+0. Material/
+Code/Ground Truth Data/
+
+# Planet imagery: licence forbids redistribution
+outputs/planet/
+
+# Large regenerable intermediates
+outputs/**/raw/
+outputs/burn_checks/modis_s2_pixels.csv
+
+# Geospatial / binary formats that are too big for git
+*.tif
+*.tiff
+*.shp
+*.shx
+*.dbf
+*.gpkg
+*.zip
+
+# Python / OS / editor junk
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*

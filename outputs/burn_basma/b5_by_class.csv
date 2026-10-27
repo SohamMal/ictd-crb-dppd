@@ -1,0 +1,9 @@
+mode,class,n_fields,median_gap_d,median_dVV,median_dVH,median_dVHVV,called_ploughing_dVV>1.5,called_ploughing_dVH>1.5,called_ploughing_dVV>3.0,called_ploughing_dVH>3.0
+bracket,burnt (ground),260,12.0,1.04,-1.27,-2.43,0.385,0.065,0.138,0.015
+bracket,probable burnt (later),34,20.0,0.28,-3.76,-3.56,0.265,0.029,0.176,0.0
+bracket,probable ploughed,27,24.0,-0.56,-4.44,-3.81,0.148,0.0,0.0,0.0
+bracket,unclear,27,24.0,-1.0,-4.4,-3.38,0.259,0.0,0.148,0.0
+operational,burnt (ground),260,12.0,0.82,-1.3,-2.18,0.335,0.069,0.112,0.015
+operational,probable burnt (later),34,12.0,-0.19,-2.87,-3.05,0.176,0.029,0.059,0.0
+operational,probable ploughed,27,12.0,-0.92,-3.49,-2.62,0.074,0.0,0.0,0.0
+operational,unclear,27,12.0,-0.39,-3.35,-2.89,0.074,0.0,0.074,0.0
