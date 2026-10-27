@@ -9,7 +9,10 @@ jalandhar_walker_model_test.py: Walker RF, jump candidate, last-1-look "before",
 
 Pass if the window results stay close to the field-mean results (A 51/63 burns, 3/32 false at 0.5).
 
-Run:  python Code/planet/jalandhar_window_gate.py [--extract]
+--half h (2026-10-27): half-width of the square in m; 30 = 3x3 (default, no suffix), 50 = 5x5 (100 m square),
+0 = single pixel (the point itself, i.e. the 20 m pixel it falls in). Outputs for h != 30 get a _h<h> suffix.
+
+Run:  python Code/planet/jalandhar_window_gate.py [--extract] [--half 30|50|0]
 Out:  outputs/planet/jalandhar_s2_window_2021.csv (cache), jalandhar_window_fields_{A,B}.csv,
       jalandhar_window_results.csv
 """
@@ -27,8 +30,8 @@ sys.path.insert(0, str(ROOT / "Code" / "planet"))
 import jalandhar_walker_model_test as jw  # noqa: E402
 
 OUT = jw.OUT
-CACHE = OUT / "jalandhar_s2_window_2021.csv"
-HALF = 30  # m; square of 60 m = 3x3 pixels at 20 m
+HALF = 30  # m; square of 60 m = 3x3 pixels at 20 m; set from --half
+SFX = ""
 SEED = 42
 
 
@@ -49,13 +52,18 @@ def random_points():
     return pd.DataFrame(rows)
 
 
+def cache():
+    return OUT / f"jalandhar_s2_window_2021{SFX}.csv"
+
+
 def extract():
     import ee
     from transfer_checks import init_ee, to_df
     init_ee()
     pts = random_points()
     fc = ee.FeatureCollection([
-        ee.Feature(ee.Geometry.Point([r.lon, r.lat]).buffer(HALF).bounds(),
+        ee.Feature(ee.Geometry.Point([r.lon, r.lat]).buffer(HALF).bounds() if HALF
+                   else ee.Geometry.Point([r.lon, r.lat]),
                    {"field_id": r.field_id, "field_category": r.field_category}) for r in pts.itertuples()])
     col = (ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED").filterBounds(fc.geometry())
            .filterDate("2021-09-10", "2021-11-21").filter(ee.Filter.lt("CLOUDY_PIXEL_PERCENTAGE", 60)))
@@ -75,18 +83,21 @@ def extract():
         df["date"] = pd.to_datetime(iid[:8])
         recs.append(df)
         print(f"  {k}/{len(ids)} {iid[:8]}", flush=True)
-    pd.concat(recs, ignore_index=True).to_csv(CACHE, index=False)
+    pd.concat(recs, ignore_index=True).to_csv(cache(), index=False)
     pts.to_csv(OUT / "jalandhar_window_points.csv", index=False)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--extract", action="store_true")
+    ap.add_argument("--half", type=int, default=30)
     args = ap.parse_args()
-    if args.extract or not CACHE.exists():
+    global HALF, SFX
+    HALF, SFX = args.half, ("" if args.half == 30 else f"_h{args.half}")
+    if args.extract or not cache().exists():
         extract()
     jw.PRE_LOOKS, jw.CANDIDATE = 1, "jump"
-    jw.CACHE["window"] = CACHE
+    jw.CACHE["window"] = cache()
     d = jw.looks("window")
     print(f"clear window looks: {len(d)}, fields {d.field_id.nunique()}, dates {d.date.nunique()}")
     rf, cols, cut90 = jw.walker_model()
@@ -94,12 +105,12 @@ def main():
     pr = pd.read_csv(OUT / "jalandhar_planet_rule_fields.csv", parse_dates=["burn_day"])
     a = jw.score_fields(d, pr.field_id, jw.WIN_A, rf, cols).merge(
         pr[["field_id", "min_ratio", "burn_day", "planet_burnt"]], on="field_id")
-    a.to_csv(OUT / "jalandhar_window_fields_A.csv", index=False)
+    a.to_csv(OUT / f"jalandhar_window_fields_A{SFX}.csv", index=False)
     cat = d.drop_duplicates("field_id").set_index("field_id").field_category
     b = jw.score_fields(d, cat.index, jw.WIN_B, rf, cols)
     b["field_category"] = b.field_id.map(cat)
     b["ceew_burnt"] = (b.field_category != "unburnt").astype(int)
-    b.to_csv(OUT / "jalandhar_window_fields_B.csv", index=False)
+    b.to_csv(OUT / f"jalandhar_window_fields_B{SFX}.csv", index=False)
 
     res = []
     res += jw.summarise(a, "planet_burnt", "A Planet rule (29 Oct-13 Nov)", "all 95", cut90)
@@ -110,7 +121,7 @@ def main():
         res += jw.summarise(b[b.field_category.isin([c, "unburnt"])], "ceew_burnt", "B CEEW visit (by 29 Oct)",
                             f"{c} vs unburnt", cut90)
     res = pd.DataFrame(res)
-    res.to_csv(OUT / "jalandhar_window_results.csv", index=False)
+    res.to_csv(OUT / f"jalandhar_window_results{SFX}.csv", index=False)
     pd.set_option("display.width", 250)
     pd.set_option("display.max_colwidth", 60)
     print(res.drop(columns=["share_burns_caught", "share_not_burnt_called_burnt"]).to_string(index=False))
