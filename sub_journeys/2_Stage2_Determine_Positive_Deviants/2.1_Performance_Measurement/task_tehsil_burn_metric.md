@@ -30,3 +30,12 @@ The burn classifier works on fields. To compare tehsils we need one number per t
 ### 2026-10-11 — Window changed to the official season, 15 Sep–30 Nov
 **Plain:** We now look for burning only during the government's official stubble-burning season, 15 September to 30 November. December is dropped. This does not solve the ploughed-field problem, but it removes some false alarms and matches how official fire counts are made.
 **Technical:** [C] Soham. Supersedes the 2026-10-07 "[C] Window = 1 Oct – 15 Dec". Source: ISRO protocol adopted by CAQM (counts 15 Sep–30 Nov annually). Mid-November cut-off rejected. Evidence in `task_burn_detection.md` (2026-10-11, window entry).
+
+### 2026-10-27 — Final-model tehsil run built and started (single pixel, cut 0.79 main / 0.5 sensitivity, 2019–2024)
+**Plain:** We are now recomputing the burn measure for all 97 tehsils with the final Sentinel-2 model. It uses the same 100 rice points per tehsil as the old heat-peak table, so the two can be compared directly. For each point and season, the model finds the picture where the burn score jumps most (15 Sep–30 Nov). It compares that picture with the last clear picture before it and decides burnt or not. A point with no clear picture, or with no picture before the jump, is "unknown" and left out. The heat peak is no longer used. Each point is read as a single 20 m pixel, the best option on Jalandhar in the gate test of single pixel vs 3×3 vs 5×5.
+**Technical:**
+- [C] Soham (2026-10-27): single pixel; main cut = Walker cut90 (0.786), sensitivity 0.5; seasons 2019–2024 (PD uses 2020–2024; 2019 for the CREAMS check); heat peak dropped; the old heat-peak table is kept as the comparison measure.
+- Code: `Code/burn/tehsil_metric_rf.py` → `outputs/burn_tehsil_rf/` (`tehsil_burn_measure.csv` with `burnt_share`, `burnt_share_05`, `n_look`, `n_unknown`; `point_verdicts.csv`; `aggregation_checks{,_05}.csv`; `district_from_tehsils.csv`; `old_vs_new.csv`; raw S2 cache in `raw/`).
+- Extraction: S2 SR Harmonized, CLOUDY_PIXEL_PERCENTAGE < 60, 25 Aug – 1 Dec (for the 20-day "before"), `sampleRegions` scale 20 of SCL + B2–B8, B11, B12; clear = SCL {2,4,5,7}; same-day tiles averaged. Indices and old-detector z computed locally (`labelling_package.model()`), RF = `jalandhar_walker_model_test.walker_model()` with pre_looks 1.
+- 2022 also scored with the window ending 24 Oct for the CREAMS in-season table.
+- Smoke test (first 200 points: Dhar Kalan, Pathankot): runs end to end; points with a verdict 92–100 per tehsil per year.
