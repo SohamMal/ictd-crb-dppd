@@ -52,3 +52,21 @@ The weak spots are the 2019 level (our 59% vs CREAMS 37%; CREAMS changed its met
 - [C] Spearman, 81 PD-group tehsils: new vs heat-peak 0.11–0.26; main vs 0.5 cut 0.84–0.97; year-to-year (main) 2019→20 0.84, 20→21 0.91, 21→22 0.84, 22→23 0.82, 23→24 0.62; vs VIIRS fires per 1,000 ha rice 2019 0.79, 2020 0.86, 2021 0.87, 2022 0.79, 2023 0.78, 2024 0.51.
 - [C] Area-weighted burnt % (main), Central / South-west / Foothills: 2019 58.9 / 67.4 / 30.6; 2020 61.1 / 66.0 / 26.8; 2021 66.9 / 70.2 / 25.9; 2022 53.3 / 61.3 / 21.7; 2023 52.5 / 60.2 / 19.9; 2024 58.7 / 80.7 / 28.6.
 - Reading [P]: the new measure is fit for PD identification (2020–2024). Caveats for the report: the 2019 level (CREAMS method change), the 2020 district order, the 2024 SW jump (80.7%; unchecked), partial-burn under-count, and untested pixel-level false alarms on ploughed fields.
+
+### 2026-10-28 — Final-model tehsil run done: tehsil ranks agree with VIIRS (ρ 0.78–0.87) and are stable from year to year (0.82–0.91), unlike the heat-peak table; 2024 is the weak season
+**Plain:** The new measure is ready for all 97 tehsils, 2019–2024. Almost every point got a verdict (median 100 of 100 per tehsil; lowest 70, Pathankot-area 2022). Three things stand out. (1) **It ranks tehsils the way fire counts do.** Within the 81 ranked tehsils, its order matches the VIIRS fire counts closely (ρ 0.78–0.87 in 2019–2023). The old heat-peak table hardly matched them (0.10–0.27). Its order also stays steady from one year to the next (0.82–0.91, old 0.62–0.75), as expected if burning habits are local and lasting. (2) **District check vs CREAMS is mixed.** It is good for 2019 (ρ 0.75) and 2022 in-season (0.87; state 7.8% vs 9.9%), but weaker for 2020 (0.50; old 0.82). Season totals are higher than CREAMS (about 60% vs 37% in 2019 and 56% in 2020). (3) **2024 behaves differently.** 72% of its burns are first seen in the second half of November (other years 10–32%). The gap before the "change" picture is longer (10 days vs 5), and agreement with VIIRS (0.51) and with 2023 (0.62) drops. This may be real (the 2024 harvest was reportedly late) or ploughing/sowing being counted, and we can't tell which here.
+**Technical:** `python Code/burn/tehsil_metric_rf.py` (≈1 h, 0 retries) → `outputs/burn_tehsil_rf/`. Points with a verdict / 9,700: 2019 9,633; 2020 9,693; 2021 9,695; 2022 9,441; 2023 9,675; 2024 9,677. Point burnt share (cut 0.786 / 0.5): 0.555/0.732, 0.556/0.732, 0.601/0.722, 0.494/0.657, 0.477/0.688, 0.574/0.816.
+
+| Check | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 |
+|---|---|---|---|---|---|---|
+| CREAMS district ρ, all 22 (new / old) | 0.75 / 0.37 | 0.50 / 0.82 | — | 0.87 / 0.64 (till 24 Oct) | — | — |
+| State burnt %, new vs CREAMS | 59.3 vs 37.4 | 59.7 vs 55.7 | — | 7.8 vs 9.9 | — | — |
+| ρ vs VIIRS, 81 PD tehsils (new / old) | 0.79 / 0.27 | 0.86 / 0.20 | 0.87 / 0.10 | 0.79 / 0.25 | 0.78 / 0.24 | 0.51 / 0.17 |
+| ρ new vs old, 81 | 0.15 | 0.26 | 0.18 | 0.25 | 0.11 | 0.13 |
+| Burnt points first seen 16–30 Nov | 23% | 13% | 10% | 11% | 32% | 72% |
+
+- [C] Year-to-year rank stability, 81 tehsils (consecutive years from 2019–20): new 0.79 cut 0.84, 0.91, 0.84, 0.82, 0.62; new 0.5 cut 0.69, 0.88, 0.80, 0.68, 0.58; old 0.71, 0.75, 0.73, 0.62, 0.66; VIIRS 0.95, 0.96, 0.94, 0.93, 0.77.
+- [C] New 0.79 vs 0.5 tehsil ranks: ρ 0.84–0.98 (81 tehsils). CREAMS at 0.5: 0.69 / 0.52 / 0.95.
+- [C] Area-weighted burnt % (main cut), Central / South-west / Foothills: 2019 58.9 / 67.4 / 30.6; 2020 61.1 / 66.0 / 26.8; 2021 66.9 / 70.2 / 25.9; 2022 53.3 / 61.3 / 21.7; 2023 52.5 / 60.2 / 19.9; 2024 58.7 / 80.7 / 28.6. Foothills no longer over-counted (old heat-peak issue).
+- [C] 5-season mean (2020–24) burnt share: Central min 0.25, q10 0.38, median 0.62, max 0.81; South-west 0.34, 0.55, 0.73, 0.90.
+- Reading [P]: the new measure is the main PD measure (agrees with an independent source on ranking, stable, no foothill over-count). VIIRS agreement is reassuring, not proof, because overpass evasion biases VIIRS. 2024 is suspect: either a late harvest (real burning shifted later) or late-November ploughing/sowing false alarms. Proposed: PD identification on 2020–2024 with a 2020–2023 sensitivity run, and PDs reported as robust only if they hold in both.
