@@ -617,3 +617,18 @@ n: 2021 all-burnt 43, all-unburnt 60, unburnt-SS/HS 40; 2022 34 / 43 / 13.
 - [C] Candidate dates now: A Planet-burnt 3 Nov 28, 8 Nov 22, 13 Nov 12, 29 Oct 1; B CEEW-burnt 29 Oct 228, 19 Oct 25, 14 Oct 3, 9 Oct 1. B caught by candidate date: completely burnt 29 Oct 70 fields 0.80; partially 29 Oct 158 0.48, 19 Oct 24 0.50.
 - [C] Planet-not-burnt fields called burnt (RF 0.5): 330 (3 Nov, z 6.4, Planet min ratio 0.89), 336 (3 Nov, z 7.1, ratio 0.789, just above the 0.765 cut), 346 (8 Nov, z 0.3, ratio 0.82).
 - Reading [P]: setting adopted = jump candidate + last-1-look "before". Remaining losses: partial burns (field mean diluted) and long gaps (19 → 29 Oct, 10 days, no clear image, so ash fades before the next look). Next: (b) retrain with Walker + Jalandhar Planet labels; (a) re-set the cut-off. Caveats unchanged (n 95 / 357 fields, Planet judge imperfect, one tile and season).
+
+### 2026-10-27 — Option (b): adding Jalandhar Planet labels to the training brings no clear gain → keep the Walker-only model; Planet stays the judge
+**Plain:** We retrained the Sentinel-2 model on Walker's fields **plus** 86 Jalandhar fields labelled by the automatic Planet rule (63 burnt, 23 not). To keep it fair, each Jalandhar field was judged by a model that never trained on it (5 groups, each tested by a model trained on the other 4). The result barely moves. Counting Jalandhar fields like Walker ones: 52 of 63 Planet burns kept (Walker-only: 51), same 3 of 32 false alarms. Counting each Jalandhar field 10 times: 55 of 63 burns, but false alarms rise to 5 of 32. Against the CEEW visit it keeps slightly **fewer** burns (134–135 of 262 vs 145). So 86 local fields are too few to teach the model much beyond Walker's 2,200, and what they add trades burns for false alarms. Decision: keep the Walker-trained model, and use Planet to **check** it in a new place and year, not to train it.
+**Technical:** `Code/planet/jalandhar_planet_retrain.py` → `outputs/planet/jalandhar_retrain_fields_{A,B}.csv`, `jalandhar_retrain_results.csv`. Setting: jump candidate + last-1-look "before", Walker features with `pre_looks=1`. KFold(5, seed 42) over the 357 Jalandhar field IDs; per fold RF (500 trees, leaf 5, balanced) on Walker (2,193 fields) + Jalandhar Planet-labelled fields outside the fold, sample weight 1 or 10; predicts judge A and B fields in the fold. "Walker only" rerun on the same folds = identical to the previous entry.
+
+| Judge / subset | Old detector | Walker only | + Jalandhar, weight 1 | + Jalandhar, weight 10 |
+|---|---|---|---|---|
+| A all 95: burns / false (AUC) | 63/63, 23/32 (0.886) | 51/63, 3/32 (0.937) | 52/63, 3/32 (0.940) | 55/63, 5/32 (0.939) |
+| A darkest day ≠ 13 Nov | 48/48, 14/16 (0.841) | 45/48, 2/16 (0.975) | 45/48, 3/16 (0.971) | 47/48, 5/16 (0.965) |
+| B all: burns / false (AUC) | 257/262, 28/95 (0.977) | 145/262, 2/95 (0.925) | 135/262, 2/95 (0.946) | 134/262, 2/95 (0.947) |
+| B completely burnt | 71/72 (0.985) | 56/72 (0.957) | 54/72 (0.966) | 55/72 (0.965) |
+| B partially burnt | 186/190 (0.975) | 89/190 (0.913) | 81/190 (0.938) | 79/190 (0.940) |
+
+- [C] Old-detector AUC here uses the jump candidate's z (so it differs from earlier entries).
+- Reading [P]: (1) Judge A (where the not-burnt fields include ploughing / slow change) is where the new model matters: AUC 0.94–0.98 vs old 0.84–0.89. (2) Judge B (burnt vs standing stubble, no ploughing) is easy for the old detector (AUC 0.98). There the new model's loss is mostly a too-cautious cut-off, not poor ranking. That points to option (a): set the cut-off without using the judges' labels. (3) Small local sample (86 rows, 23 not-burnt) limits (b); with more Planet quota, more local labels might help.
