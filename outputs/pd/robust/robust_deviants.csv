@@ -1,0 +1,39 @@
+lgd_tehsil_name,lgd_district_name,group,status,robust,mean_main,mean_no2024,static_main,static_no2024,temporal_main,temporal_no2024,pct_per_year_vs_group_main,pct_per_year_vs_group_no2024,survives_plains_main,static_viirs,temporal_viirs
+Dera Baba Nanak,Gurdaspur,Central,one run only,,0.396,0.382,,,,candidate-PD,-0.293,-10.002,,,
+Ludhiana (West),Ludhiana,Central,one run only,,0.455,0.418,,,candidate-ND,,9.337,0.744,,,
+Bhulath,Kapurthala,Central,one run only,,0.533,0.559,,,,candidate-ND,-1.532,10.144,,,
+Payal,Ludhiana,Central,one run only,,0.544,0.548,,,,PD,-3.721,-15.399,,,
+Ahmedgarh,Malerkotla,Central,one run only,,0.558,0.51,,,candidate-ND,,9.251,-0.009,,,
+Khanna,Ludhiana,Central,one run only,,0.594,0.572,,,,candidate-PD,-0.013,-9.313,,,candidate-PD
+Patiala,Patiala,Central,one run only,,0.624,0.665,,,candidate-PD,,-5.462,3.718,True,,
+Khamanon,Fatehgarh Sahib,Central,one run only,,0.626,0.58,,,,candidate-PD,3.222,-9.602,,,
+Bassi Pathana,Fatehgarh Sahib,Central,one run only,,0.632,0.582,,,candidate-ND,,8.251,2.351,,,candidate-ND
+Sultanpur Lodhi,Kapurthala,Central,one run only,,0.642,0.676,,,,candidate-ND,-2.531,7.733,,,
+Amloh,Fatehgarh Sahib,Central,one run only,,0.72,0.755,,,candidate-PD,,-6.498,-1.53,True,,candidate-PD
+Bhawanigarh,Sangrur,Central,one run only,,0.72,0.765,,candidate-ND,candidate-PD,,-7.946,-3.428,True,,
+Nabha,Patiala,Central,one run only,,0.722,0.758,,candidate-ND,candidate-PD,,-5.624,-2.708,True,,
+Bagha Purana,Moga,Central,one run only,,0.736,0.728,candidate-ND,,,,-1.488,-2.747,,,
+Sangrur,Sangrur,Central,one run only,,0.744,0.768,,candidate-ND,,candidate-ND,0.193,11.123,,,candidate-ND
+Mehal Kalan,Barnala,Central,one run only,,0.763,0.748,candidate-ND,,,,0.138,-1.655,,candidate-ND,
+Bathinda,Bathinda,South-west,one run only,,0.648,0.58,,,,ND,5.511,5.983,,,
+Budhlada,Mansa,South-west,one run only,,0.655,0.642,,,,ND,2.141,6.172,,,
+Kotkapura,Faridkot,South-west,one run only,,0.78,0.755,,,,candidate-PD,-2.35,-2.888,,,
+Firozpur,Ferozepur,South-west,one run only,,0.815,0.835,,candidate-ND,,,-4.739,1.072,,,
+Jaitu,Faridkot,South-west,one run only,,0.846,0.815,candidate-ND,,candidate-PD,,-5.11,-2.54,False,,
+Lehra,Sangrur,Central,robust,ND static,0.79,0.807,candidate-ND,candidate-ND,,,-2.153,0.335,,,
+Zira,Ferozepur,Central,robust,ND static,0.797,0.835,candidate-ND,candidate-ND,,,-4.333,0.528,,candidate-ND,
+Moonak,Sangrur,Central,robust,ND static,0.81,0.825,candidate-ND,candidate-ND,,,-0.197,2.874,,candidate-ND,
+Guruharsahai,Ferozepur,South-west,robust,ND static,0.895,0.892,candidate-ND,candidate-ND,,,-2.755,0.956,,candidate-ND,
+Batala,Gurdaspur,Central,robust,ND temporal,0.44,0.427,,,candidate-ND,candidate-ND,9.859,7.758,,,
+Majitha,Amritsar,Central,robust,ND temporal,0.485,0.473,,,candidate-ND,candidate-ND,7.663,9.574,,,
+Malout,Sri Muktsar Sahib,South-west,robust,ND temporal,0.684,0.625,,,candidate-ND,ND,9.288,6.205,,,candidate-PD
+Dinanagar,Gurdaspur,Central,robust,PD static,0.212,0.208,PD,candidate-PD,candidate-ND,candidate-ND,6.514,11.207,True,candidate-PD,
+Gurdaspur,Gurdaspur,Central,robust,PD static,0.289,0.294,candidate-PD,candidate-PD,,,2.325,6.211,True,,candidate-PD
+Phagwara,Kapurthala,Central,robust,PD static,0.3,0.29,candidate-PD,candidate-PD,,,5.972,6.212,True,candidate-PD,
+Adampur,Jalandhar,Central,robust,PD static,0.302,0.313,candidate-PD,candidate-PD,,,-4.87,-1.426,True,candidate-PD,
+Jalandhar - I,Jalandhar,Central,robust,PD static,0.308,0.283,candidate-PD,candidate-PD,,,-1.436,-5.916,True,candidate-PD,candidate-ND
+Banga,Shahid Bhagat Singh Nagar,Central,robust,PD static,0.342,0.322,candidate-PD,candidate-PD,,,5.575,-0.275,True,candidate-PD,ND
+Talwandi Sabo,Bathinda,South-west,robust,PD static,0.504,0.405,candidate-PD,candidate-PD,ND,,14.542,-0.665,False,,
+Abohar,Fazilka,South-west,robust,PD static + temporal,0.338,0.327,PD,PD,candidate-PD,PD,-11.074,-17.436,True,PD,
+Samana,Patiala,Central,robust,PD temporal,0.634,0.67,,,PD,candidate-PD,-9.133,-8.602,True,,
+Dirba,Sangrur,Central,robust,PD temporal,0.706,0.732,,,candidate-PD,candidate-PD,-8.231,-8.465,True,candidate-ND,

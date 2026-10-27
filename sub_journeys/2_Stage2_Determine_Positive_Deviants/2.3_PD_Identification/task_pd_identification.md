@@ -44,3 +44,27 @@ Once groups are frozen and each tehsil has a burn score, we look inside each gro
 - VIIRS 2019–2023 result: static PD SW 1 (Abohar); candidate-PD Central 6 (Doaba belt + Dinanagar, as before), SW 1 (Sardulgarh). Temporal candidate-PD Central 6 (Gurdaspur −21%/yr vs group, Khanna −20, Fatehgarh Churian −19, Amloh −15, Kalanaur −14, Amritsar-I −12), SW 2 (Mansa −10, Malout −9); temporal ND Central 1 (Banga +38). Strict temporal PD = 0. PD on both = 0.
 - Scratch test without the offset (log of the raw mean) also made Dinanagar a strict PD (fence 0.32); with c = 10% of the group median it falls just short → result is sensitive to c [P]: check c ∈ {5%, 10%, 20%} on the main measure.
 - Reading [P]: Gurdaspur, Kalanaur and Fatehgarh Churian are low burners (5/5 years in Q1) and are also falling fast, so they are close to "good on both" (static rank just outside the bottom 10%). VIIRS trends are still contaminated by overpass evasion, so this remains a code test.
+
+### 2026-10-28 — PD identification on the final S2 measure: 8 robust static PDs, 3 robust temporal PDs; Abohar is a PD on both
+**Plain:** We ran the PD rules on the new burn measure twice: on 2020–2024 (main) and on 2020–2023 (without the doubtful 2024 season). A tehsil counts as a **robust** PD only if both runs flag it. **Lowest burners (static), 8 robust:** in Central, Dinanagar, Gurdaspur, Phagwara, Adampur, Jalandhar-I and Banga (burnt share 0.21–0.34 against a group median of about 0.62); in South-west, Abohar and Talwandi Sabo. Six of the eight were also flagged by the VIIRS fire counts, an independent source. **Fastest to cut burning (temporal), 3 robust:** Abohar (about 11% per year faster than its group), Samana (9%) and Dirba (8%). **Abohar is the only tehsil that is both a low burner and a fast reducer**, and it is a strict PD (beyond the IQR fence), not just a candidate. Things to check at validation: (1) the static PDs are mostly the Doaba belt, which may differ structurally (other crop rotations). (2) Dinanagar burns least but its burning is rising (temporal candidate-ND). (3) Talwandi Sabo's burning rises 14.5% per year faster than its group in the main run, and it falls away under the Plains grouping. **Robust negative deviants** (for the Stage 3 contrast): Lehra, Zira, Moonak and Guruharsahai burn most. Batala, Majitha and Malout are increasing fastest.
+**Technical:**
+- [C] Soham (2026-10-28): main = `s2rf` (`outputs/burn_tehsil_rf/tehsil_burn_measure.csv`, `burnt_share`, cut 0.786), seasons 2020–2024; sensitivity = `s2rf_2023` (2020–2023); robust = flagged (PD or candidate-PD; ND or candidate-ND) in both runs, same rule.
+- Code change: `pd_identify.py` consistency rule generalised from ">= 4 seasons" to "all seasons but one" (`MAX_SEASONS_MISSED = 1`; 4/5 as before, 3/4 for the 4-season run) [P → applied; same result for 5 seasons, VIIRS output unchanged]. New `Code/pd/pd_robust.py` → `outputs/pd/robust/robust_deviants.csv`. Run outputs `outputs/pd/s2rf/`, `outputs/pd/s2rf_2023/`.
+- [C] Counts, main run (Central / SW): static PD 1/1, candidate-PD 5/1, candidate-ND 5/2; temporal PD 1/0, candidate-PD 5/2, ND 0/1, candidate-ND 6/1. 2020–23 run: static PD 0/1, candidate-PD 6/1, candidate-ND 6/2; temporal PD 1/1, candidate-PD 5/1, ND 0/3, candidate-ND 6/0.
+
+| Tehsil | Group | Robust as | Mean share 2020–24 | Main static / temporal | 2020–23 static / temporal | %/yr vs group (main) | Plains | VIIRS static / temporal |
+|---|---|---|---|---|---|---|---|---|
+| Abohar | SW | PD static + temporal | 0.338 | PD / cand-PD | PD / PD | −11.1 | ✔ | PD / – |
+| Dinanagar | C | PD static | 0.212 | PD / cand-ND | cand-PD / cand-ND | +6.5 | ✔ | cand-PD / – |
+| Gurdaspur | C | PD static | 0.289 | cand-PD / – | cand-PD / – | +2.3 | ✔ | – / cand-PD |
+| Phagwara | C | PD static | 0.300 | cand-PD / – | cand-PD / – | +6.0 | ✔ | cand-PD / – |
+| Adampur | C | PD static | 0.302 | cand-PD / – | cand-PD / – | −4.9 | ✔ | cand-PD / – |
+| Jalandhar-I | C | PD static | 0.308 | cand-PD / – | cand-PD / – | −1.4 | ✔ | cand-PD / cand-ND |
+| Banga | C | PD static | 0.342 | cand-PD / – | cand-PD / – | +5.6 | ✔ | cand-PD / ND |
+| Talwandi Sabo | SW | PD static | 0.504 | cand-PD / ND | cand-PD / – | +14.5 | ✘ | – / – |
+| Samana | C | PD temporal | 0.634 | – / PD | – / cand-PD | −9.1 | ✔ | – / – |
+| Dirba | C | PD temporal | 0.706 | – / cand-PD | – / cand-PD | −8.2 | ✔ | cand-ND / – |
+
+- [C] Robust ND: static Lehra 0.790, Zira 0.797, Moonak 0.810 (C), Guruharsahai 0.895 (SW); temporal Batala (+9.9%/yr), Majitha (+7.7) (C), Malout (+9.3; VIIRS temporal cand-PD) (SW).
+- [C] Flagged in one run only (not robust): main only — Patiala, Amloh, Bhawanigarh, Nabha (temporal cand-PD), Jaitu (temporal cand-PD); 2020–23 only — Payal (temporal PD), Khanna, Khamanon, Dera Baba Nanak, Kotkapura (temporal cand-PD). Temporal flags are less stable than static ones (dropping one season changes a 5-point trend).
+- Reading [P]: static robust list ≈ VIIRS dry-run list (Doaba + Dinanagar; Abohar), so it is not an artefact of one sensor. Next = PD validation: structural check of the Doaba belt (crop rotation, rice share inside the group), data quality (clear looks, unknown points) at the PDs, cut 0.5 sensitivity, and the Dinanagar / Talwandi Sabo conflicts.

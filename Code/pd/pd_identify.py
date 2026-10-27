@@ -6,19 +6,23 @@ Rules [C] (Soham, 2026-10-23); DPPD Handbook pp. 63-66 (IQR rule, as in the Egyp
   scale Q1 - 1.5*IQR falls below 0 and no tehsil can pass (VIIRS Central: -5.76). All rules work on
   log(value + c), c = 10% of the group median of tehsil means (keeps near-zero values stable).
 - Static PD: log 5-season mean < Q1 - 1.5*IQR of its group, AND in the group's lowest quartile in
-  >= 4 of the 5 seasons. "candidate-PD" = bottom 10% of the group mean AND the same consistency
+  all seasons but one (4 of 5; 3 of 4 for a 4-season run). "candidate-PD" = bottom 10% of the group mean AND the same consistency
   rule (potential PDs, confirmed only at validation / fieldwork).
 - Temporal PD: Theil-Sen slope of log(value + c) over the seasons (relative change per year) minus
   the group median slope; PD if deviance < Q1 - 1.5*IQR of the group's deviances.
   candidate-PD = bottom 10%. pct_per_year_vs_group = exp(slope_dev) - 1.
-- Negative deviants: the mirror image (above Q3 + 1.5*IQR; top quartile >= 4 of 5; top 10%).
+- Negative deviants: the mirror image (above Q3 + 1.5*IQR; top quartile all seasons but one; top 10%).
 - Groups: frozen v4 Central and South-west only (Foothills excluded 2026-10-23; Outlier out).
   The merged Plains grouping (81 tehsils) is run as well and reported, not used to drop PDs.
 Direct comparison of each tehsil with its group; no regression residuals (Prof. Aaditeshwar).
 
 Input: any long table with one value per tehsil-year (lower = less burning).
 
-Run:  python Code/pd/pd_identify.py --measure viirs
+Measures: viirs (backup, 2019-23); s2rf = final S2 model tehsil table (tehsil_metric_rf.py, cut 0.786),
+2020-24 (main); s2rf_2023 = same, 2020-23 (sensitivity: 2024 is the weak season). Robust PDs = flagged in
+both s2rf runs (pd_robust.py).
+
+Run:  python Code/pd/pd_identify.py --measure viirs|s2rf|s2rf_2023
 Out:  outputs/pd/<measure>/pd_table.csv, pd_summary.csv
 """
 
@@ -32,13 +36,17 @@ from scipy.stats import theilslopes
 ROOT = Path(__file__).resolve().parents[2]
 GROUPS = ROOT / "outputs" / "grouping" / "FROZEN_groups.csv"
 PD_GROUPS = ["Central", "South-west"]
-MIN_YEARS_IN_QUARTILE = 4
+MAX_SEASONS_MISSED = 1   # consistency: in the quartile in all seasons but one
 NEAR_SHARE = 0.10
 
 # measure name -> (file, value column, seasons)
 MEASURES = {
     "viirs": (ROOT / "outputs" / "burn_fire" / "tehsil_fire_measure.csv",
               "fires_per_1000ha_rice", range(2019, 2024)),
+    "s2rf": (ROOT / "outputs" / "burn_tehsil_rf" / "tehsil_burn_measure.csv",
+             "burnt_share", range(2020, 2025)),
+    "s2rf_2023": (ROOT / "outputs" / "burn_tehsil_rf" / "tehsil_burn_measure.csv",
+                  "burnt_share", range(2020, 2024)),
 }
 
 
@@ -63,8 +71,8 @@ def flag_within(df, by):
 
         log_mean = np.log(d["mean"] + d["c"])
         lo, hi = iqr_bounds(log_mean)
-        consistent_lo = d["years_bottom_q"] >= MIN_YEARS_IN_QUARTILE
-        consistent_hi = d["years_top_q"] >= MIN_YEARS_IN_QUARTILE
+        consistent_lo = d["years_bottom_q"] >= d["n_years"] - MAX_SEASONS_MISSED
+        consistent_hi = d["years_top_q"] >= d["n_years"] - MAX_SEASONS_MISSED
         rank_lo = d["mean"].rank(method="min")
         rank_hi = d["mean"].rank(method="min", ascending=False)
         d["static"] = np.select(
