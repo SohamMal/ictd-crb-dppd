@@ -632,3 +632,20 @@ n: 2021 all-burnt 43, all-unburnt 60, unburnt-SS/HS 40; 2022 34 / 43 / 13.
 
 - [C] Old-detector AUC here uses the jump candidate's z (so it differs from earlier entries).
 - Reading [P]: (1) Judge A (where the not-burnt fields include ploughing / slow change) is where the new model matters: AUC 0.94–0.98 vs old 0.84–0.89. (2) Judge B (burnt vs standing stubble, no ploughing) is easy for the old detector (AUC 0.98). There the new model's loss is mostly a too-cautious cut-off, not poor ranking. That points to option (a): set the cut-off without using the judges' labels. (3) Small local sample (86 rows, 23 not-burnt) limits (b); with more Planet quota, more local labels might help.
+
+### 2026-10-27 — Option (a): label-free cut-offs don't beat 0.5; the unlabelled Jalandhar "valley" lands at 0.57, which backs 0.5 as not tuned → final setting fixed
+**Plain:** We tried two ways of choosing the burn line without looking at either judge's labels. (1) The best balance on Walker's ground truth gives **0.82**. That is too strict for Jalandhar: false alarms go to 0, but Planet-seen burns kept fall from 51 to 37 of 63. (2) The natural gap in Jalandhar's own unlabelled scores (Otsu's method) gives **0.57**, almost the default 0.5: 50 of 63 burns, 1 of 32 false alarms; CEEW 130 of 262 burns, 2 of 95 false alarms. A full sweep (labels used, reference only) shows a trade-off with no free gain. Lowering the line to 0.3 keeps 57 of 63 Planet burns and 185 of 262 CEEW burns, but false alarms climb to 8 of 32 and 9 of 95. So the missed CEEW burns (mostly partial burns) cannot be recovered by moving the line without letting ploughed / no-change fields back in. **Final setting:** Walker-trained model, jump candidate, last-look "before", cut-off 0.5. The label-free check (0.57) shows 0.5 was not tuned to the test.
+**Technical:** `Code/planet/jalandhar_cutoff.py` → `outputs/planet/jalandhar_cutoff_results.csv`, `jalandhar_cutoff_sweep.csv`. Probabilities from `jalandhar_walker_fields_{A,B}_pre1_jump.csv` (Walker-only RF, full fit).
+- [C] Walker 5-fold OOF (pre_looks = 1), Youden-optimal cut 0.82: burns caught 0.874, tilled called burnt 0.117.
+- [C] Jalandhar unlabelled candidate probabilities, judge A + B windows pooled (n 371), counts per 0.1 bin: 14, 57, 41, 23, 35, 26, 21, 27, 31, 96 (peaks at 0.1–0.2 and 0.9–1.0, broad middle). Otsu cut 0.57.
+
+| Subset | Cut 0.5 | Walker balance 0.82 | Jalandhar Otsu 0.57 | Old detector |
+|---|---|---|---|---|
+| A all 95: burns / false | 51/63, 3/32 | 37/63, 0/32 | 50/63, 1/32 | 63/63, 23/32 |
+| A darkest day ≠ 13 Nov | 45/48, 2/16 | 34/48, 0/16 | 44/48, 1/16 | 48/48, 14/16 |
+| B all | 145/262, 2/95 | 86/262, 1/95 | 130/262, 2/95 | 257/262, 28/95 |
+| B completely burnt | 56/72 | 38/72 | 53/72 | 71/72 |
+| B partially burnt | 89/190 | 48/190 | 77/190 | 186/190 |
+
+- [C] Sweep (A burns, A false; B burns, B false): 0.1 63, 21; 248, 25 · 0.2 58, 11; 216, 15 · 0.3 57, 8; 185, 9 · 0.4 54, 5; 170, 7 · 0.5 51, 3; 145, 2 · 0.6 49, 1; 123, 2 · 0.7 46, 1; 105, 2 · 0.8 37, 0; 89, 1 · 0.9 32, 0; 64, 0.
+- Reading [P]: Walker's cut is strict because its not-burnt class is all ploughed fields (the hardest case); Jalandhar's not-burnt fields are mostly stubble, so the same probability means less there. Remaining limitations: partial burns (field mean), long gaps between clear looks, small not-burnt sample (32), one tile and season.
