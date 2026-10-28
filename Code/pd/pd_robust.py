@@ -1,9 +1,12 @@
 """
 Robust positive / negative deviants (2026-10-28)
 
-A tehsil is robust if it is flagged (PD or candidate-PD; ND or candidate-ND for negatives) in BOTH the
-main S2 run (2020-24) and the sensitivity run without the weak 2024 season (2020-23), for the same rule
-(static or temporal). [C] Soham, 2026-10-28. The VIIRS backup flag is shown for reference only.
+Two rules are reported side by side [C] Soham, 2026-10-28. Both compare the main S2 run (2020-24) with the
+sensitivity run without the weak 2024 season (2020-23), for the same rule (static or temporal):
+  old rule     robust = PD or candidate-PD (bottom 10%) in both runs (mirror for ND)
+  strict rule  PD = beyond the IQR fence in both runs; borderline PD = beyond the fence in one run and
+               candidate (bottom 10%) in the other. The bottom 10% alone never makes a strict PD.
+The VIIRS backup flag is shown for reference only.
 
 Run:  python Code/pd/pd_identify.py --measure s2rf; ... --measure s2rf_2023; ... --measure viirs
       python Code/pd/pd_robust.py
@@ -37,23 +40,31 @@ def main():
         for kind, f in [("PD", pos), ("ND", neg)]:
             t[f"robust_{rule}_{kind}"] = f(a) & f(b)
             t[f"only_one_{rule}_{kind}"] = f(a) ^ f(b)
-    t["robust"] = np.select(
+            t[f"strict_{rule}_{kind}"] = (a == kind) & (b == kind)
+            t[f"border_{rule}_{kind}"] = ((a == kind) | (b == kind)) & f(a) & f(b) & ~t[f"strict_{rule}_{kind}"]
+    t["old_rule"] = np.select(
         [t.robust_static_PD & t.robust_temporal_PD, t.robust_static_PD, t.robust_temporal_PD,
          t.robust_static_ND & t.robust_temporal_ND, t.robust_static_ND, t.robust_temporal_ND],
         ["PD static + temporal", "PD static", "PD temporal",
          "ND static + temporal", "ND static", "ND temporal"], "")
-    flagged = t[(t.robust != "") | t.filter(like="only_one_").any(axis=1)].copy()
-    flagged["status"] = np.where(flagged.robust != "", "robust", "one run only")
-    cols = ["lgd_tehsil_name", "lgd_district_name", "group", "status", "robust",
+    lab = []
+    for kind in ["PD", "ND"]:
+        for rule in ["static", "temporal"]:
+            lab += [(t[f"strict_{rule}_{kind}"], f"{kind} {rule}"),
+                    (t[f"border_{rule}_{kind}"], f"borderline {kind} {rule}")]
+    t["strict_rule"] = [", ".join(lb for m, lb in lab if m.iloc[i]) for i in range(len(t))]
+    flagged = t[(t.old_rule != "") | t.filter(like="only_one_").any(axis=1)].copy()
+    flagged["status"] = np.where(flagged.old_rule != "", "robust (old rule)", "one run only")
+    cols = ["lgd_tehsil_name", "lgd_district_name", "group", "status", "old_rule", "strict_rule",
             "mean_main", "mean_no2024", "static_main", "static_no2024", "temporal_main", "temporal_no2024",
             "pct_per_year_vs_group_main", "pct_per_year_vs_group_no2024", "survives_plains_main",
             "static_viirs", "temporal_viirs"]
-    flagged = flagged[cols].sort_values(["status", "robust", "group", "mean_main"])
+    flagged = flagged[cols].sort_values(["status", "old_rule", "group", "mean_main"])
     out = PD / "robust"
     out.mkdir(parents=True, exist_ok=True)
     flagged.round(3).to_csv(out / "robust_deviants.csv", index=False)
     pd.set_option("display.width", 250)
-    show = ["lgd_tehsil_name", "group", "status", "robust", "mean_main", "static_main", "static_no2024",
+    show = ["lgd_tehsil_name", "group", "status", "old_rule", "strict_rule", "mean_main", "static_main", "static_no2024",
             "temporal_main", "temporal_no2024", "pct_per_year_vs_group_main", "survives_plains_main",
             "static_viirs", "temporal_viirs"]
     print(flagged[show].round(3).to_string(index=False))
