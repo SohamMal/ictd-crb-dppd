@@ -54,3 +54,7 @@ Before trusting a "positive deviant", we check it isn't a mistake. Maybe clouds 
 **Technical:**
 - [C] Soham 2026-11-08: no manual labelling. V7 = "not checked" in `pd_validated.csv` (does not count towards labels). `outputs/pd/validation/v7/` package (120 points, 2023) kept unused.
 - Validation rests on V1–V6 + V4b. Limitation for the report: no point-level visual confirmation at the PDs; the measure's field-level accuracy stays as stated in `2.1/task_burn_detection.md`; cotton passing the harvest filter at Abohar is not ruled out.
+
+### 2026-11-08 — V4b rule confirmed
+**Plain:** Soham kept the narrower V4b rule. A PD is flagged only when removing points with no visible harvest makes it lose its flag. A loss that comes from using 30 points instead of 100 does not count.
+**Technical:** [C] Soham 2026-11-08: V4b = flag iff kept (old rule) on `share_30` and lost on `share_confirmed`. Supersedes [P] in the 2026-11-08 V4b entry. Validation labels final (V1–V6 + V4b; V7 not done).
