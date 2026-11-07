@@ -48,3 +48,9 @@ Before trusting a "positive deviant", we check it isn't a mistake. Maybe clouds 
 - [C] V4b: flag only Banga (candidate on 30 points, not on confirmed). Abohar temporal regains its flag on confirmed points (lost on `share_30`). Abohar static is PD (main) / candidate (2020–23) on confirmed points, so it is not strict on 30 points.
 - Labels unchanged except Banga's reason list: validated PD = Abohar (static + temporal), Dinanagar, Phagwara, Jalandhar-I, Adampur, Talwandi Sabo; caveat = Gurdaspur, Banga; dropped = Samana, Dirba.
 - Reading [P]: option B (all 100 points) is not needed; the filter moves shares by ≤ 0.03. The rice-share link (V4) stays as a structural question for Stage 3 and the report.
+
+### 2026-11-08 — V7 visual check not done
+**Plain:** Soham decided not to hand-label the 120 points. The visual check is therefore not part of validation. The labelling tool stays in the repo so it can be used later. The cotton question (cotton fields can pass the harvest test) stays open and is reported as a limitation.
+**Technical:**
+- [C] Soham 2026-11-08: no manual labelling. V7 = "not checked" in `pd_validated.csv` (does not count towards labels). `outputs/pd/validation/v7/` package (120 points, 2023) kept unused.
+- Validation rests on V1–V6 + V4b. Limitation for the report: no point-level visual confirmation at the PDs; the measure's field-level accuracy stays as stated in `2.1/task_burn_detection.md`; cotton passing the harvest filter at Abohar is not ruled out.
