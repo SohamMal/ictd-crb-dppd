@@ -16,6 +16,11 @@ against its group.
                  flag if unknown share > 2x group median and > 1 pt, or median looks < 0.75x group median
   V4 rice        (PDs only) calibrated rice share and share of panel points where a paddy harvest is seen
                  (harvest_gap.py), vs group. flag if either is below the group Q1
+  V4b harvest    (2026-11-08, [C] Soham option A) the 30-point harvest panel (harvest_gap.py, first 30 points per
+                 tehsil): burnt share on all 30 points vs only points where a paddy harvest is seen that season
+                 (NDVI >= 0.45 then < 0.30 after 15 Sep). Both rerun through the same rules and runs. Kept (old
+                 rule) on all 30 points but lost on harvest-confirmed ones = flag (the filter's own effect); otherwise pass.
+                 Losses on both are the 30-vs-100-point sample size, not the filter. Does not remove cotton
   V5 timing      (PDs only) median paddy harvest date vs group; flag if >= 10 days later. Share of burnt
                  verdicts dated 20-30 Nov shown for reference
   V6 triangulate information only: VIIRS flags, district CREAMS 2020 / 2022 percentile among districts,
@@ -24,8 +29,9 @@ Final label (PDs): any fail -> dropped; <= 1 flag -> validated PD; else PD with 
 V1-V3 and the label "contrast". V7 (blind visual check, pd_visual_package.py --score -> v7_visual.csv) is read
 when present and counts like the other checks; tehsils outside its sample show "not checked".
 
-Run:  python Code/pd/pd_validate.py [--boot 1000]
-Out:  outputs/pd/validation/v1_bootstrap.csv ... v6_triangulation.csv, outputs/pd/pd_validated.csv
+Run:  python Code/pd/pd_validate.py [--boot 1000] [--reuse-v1]   (--reuse-v1 reads the saved v1_bootstrap.csv)
+Out:  outputs/pd/validation/v1_bootstrap.csv ... v6_triangulation.csv, v4b_harvest_confirmed.csv,
+      outputs/pd/pd_validated.csv
 """
 
 import argparse
@@ -43,6 +49,7 @@ VERDICTS = ROOT / "outputs" / "burn_tehsil_rf" / "point_verdicts.csv"
 POINTS = ROOT / "outputs" / "burn_tehsil" / "points.csv"
 MASTER = ROOT / "Data" / "punjab_homogeneous_grouping_master_raw_97tehsils.csv"
 HARVEST = ROOT / "outputs" / "predictors" / "harvest_gap" / "tehsil_harvest_gap.csv"
+HARVEST_POINTS = ROOT / "outputs" / "predictors" / "harvest_gap" / "point_dates.csv"
 DISTRICT = ROOT / "outputs" / "burn_tehsil_rf" / "district_from_tehsils.csv"
 SENS_LABELS = ROOT / "outputs" / "grouping" / "sensitivity_labels.csv"
 ALT_SCENARIO = "weight_rainfall_x0.85"
@@ -181,6 +188,37 @@ def v4_rice(groups):
     return d
 
 
+def v4b_harvest_confirmed(unit, groups):
+    v = pd.read_csv(VERDICTS)[["loc", "year", "burnt"]]
+    h = pd.read_csv(HARVEST_POINTS)[["loc", "year", "harvest"]]
+    d = h.merge(v, on=["loc", "year"]).merge(pd.read_csv(POINTS)[["loc", "lgd_tehsil_code"]], on="loc")
+    d = d[d.burnt.notna()].assign(confirmed=lambda x: x.harvest.notna())
+    long = d.groupby(["lgd_tehsil_code", "year"]).agg(
+        share_30=("burnt", "mean"), n_30=("burnt", "size"), n_confirmed=("confirmed", "sum")).reset_index()
+    long = long.merge(d[d.confirmed].groupby(["lgd_tehsil_code", "year"]).burnt.mean().rename("share_confirmed")
+                      .reset_index(), on=["lgd_tehsil_code", "year"], how="left")
+    long = long[long.lgd_tehsil_code.isin(groups.lgd_tehsil_code)]
+    out = unit.copy()
+    for col in ["share_30", "share_confirmed"]:
+        t = two_runs(long.rename(columns={col: "value"}), "value", groups)
+        out[f"{col}_old_rule"] = kept(t, unit.assign(strict=False))
+        out[f"{col}_strict"] = kept(t, unit.assign(strict=True))
+        for tag in RUNS:
+            out[f"{col}_static_{tag}"] = out.lgd_tehsil_code.map(t[f"static_{tag}"])
+            out[f"{col}_temporal_{tag}"] = out.lgd_tehsil_code.map(t[f"temporal_{tag}"])
+    main = long[long.year.isin(RUNS["main"])]
+    m = main.groupby("lgd_tehsil_code").agg(mean_30=("share_30", "mean"), mean_confirmed=("share_confirmed", "mean"),
+                                            confirmed_share=("n_confirmed", "sum"), n=("n_30", "sum"))
+    m["confirmed_share"] = m.confirmed_share / m.n
+    m = vs_group(vs_group(m.drop(columns="n").reset_index(), "mean_30", groups), "mean_confirmed", groups)
+    # are burnt verdicts themselves less often harvest-confirmed? (would bias the confirmed share down)
+    burnt_conf = d[d.year.isin(RUNS["main"]) & (d.burnt == 1)].groupby("lgd_tehsil_code").confirmed.mean()
+    m["burnt_points_confirmed"] = m.lgd_tehsil_code.map(burnt_conf)
+    out = out.merge(m.drop(columns="group"), on="lgd_tehsil_code")
+    out["v4b"] = np.where(out.share_30_old_rule & ~out.share_confirmed_old_rule, "flag", "pass")
+    return out
+
+
 def v5_timing(groups):
     h = pd.read_csv(HARVEST)
     h = h[h.year.isin(RUNS["main"])].groupby("lgd_tehsil_code").harvest_doy_median.median().rename("harvest_doy").reset_index()
@@ -212,6 +250,7 @@ def v6_triangulation(groups):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--boot", type=int, default=1000)
+    ap.add_argument("--reuse-v1", action="store_true")
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     groups = pi.load_groups()
@@ -220,9 +259,10 @@ def main():
 
     v3, v4, v5, v6 = v3_looks(groups), v4_rice(groups), v5_timing(groups), v6_triangulation(groups)
     v2 = v2_settings(unit, long, groups)
-    v1 = v1_bootstrap(unit, groups, args.boot)
+    v4b = v4b_harvest_confirmed(unit, groups)
+    v1 = pd.read_csv(OUT / "v1_bootstrap.csv") if args.reuse_v1 else v1_bootstrap(unit, groups, args.boot)
     for name, d in [("v1_bootstrap", v1), ("v2_settings", v2), ("v3_looks", v3), ("v4_rice", v4),
-                    ("v5_timing", v5), ("v6_triangulation", v6)]:
+                    ("v4b_harvest_confirmed", v4b), ("v5_timing", v5), ("v6_triangulation", v6)]:
         d.round(4).to_csv(OUT / f"{name}.csv", index=False)
 
     t = v1.merge(v2[["lgd_tehsil_code", "rule", "kind", "v2_kept_old_rule", "v2_scenarios"]],
@@ -230,6 +270,8 @@ def main():
     t = t.merge(v3[["lgd_tehsil_code", "unknown_share", "looks_median", "v3_flag"]], on="lgd_tehsil_code")
     t = t.merge(v4[["lgd_tehsil_code", "rice_share_2022_cal", "rice_share_2022_cal_grp_median", "calibration_factor",
                     "harvest_found", "harvest_found_grp_median", "v4_flag"]], on="lgd_tehsil_code")
+    t = t.merge(v4b[["lgd_tehsil_code", "rule", "kind", "mean_30", "mean_confirmed", "mean_confirmed_grp_median",
+                     "confirmed_share", "v4b"]], on=["lgd_tehsil_code", "rule", "kind"])
     t = t.merge(v5[["lgd_tehsil_code", "harvest_days_vs_group", "burnt_late_nov_share", "v5_flag"]], on="lgd_tehsil_code")
     t = t.merge(v6[["lgd_tehsil_code", "static_viirs", "temporal_viirs", "creams_2020_pctile", "creams_2022_pctile",
                     "greenup_doy_median", "greenup_doy_median_grp_median", "no_greenup_share"]], on="lgd_tehsil_code")
@@ -239,12 +281,13 @@ def main():
     is_pd = t.kind == "PD"
     t["v3"] = np.where(t.v3_flag, "flag", "pass")
     t["v4"] = np.where(~is_pd, "n/a", np.where(t.v4_flag, "flag", "pass"))
+    t["v4b"] = np.where(~is_pd, "n/a", t.v4b)
     t["v5"] = np.where(~is_pd, "n/a", np.where(t.v5_flag, "flag", "pass"))
     v7 = OUT / "v7_visual.csv"
     t["v7"] = "not checked"
     if v7.exists():
         t["v7"] = t.lgd_tehsil_name.map(pd.read_csv(v7).set_index("lgd_tehsil_name").v7).fillna("not checked")
-    checks = ["v1", "v2", "v3", "v4", "v5", "v7"]
+    checks = ["v1", "v2", "v3", "v4", "v4b", "v5", "v7"]
     t["n_flags"] = (t[checks] == "flag").sum(axis=1)
     t["reasons"] = t.apply(lambda r: "; ".join(f"{c}:{r[c]}" for c in checks if r[c] in ("flag", "fail")), axis=1)
     t["label"] = np.where(~is_pd, "contrast",
@@ -255,7 +298,7 @@ def main():
 
     pd.set_option("display.width", 250)
     print(t[["lgd_tehsil_name", "group", "kind", "rule", "strict", "boot_keep", "v2_kept_old_rule", "v1", "v2", "v3",
-             "v4", "v5", "label", "reasons"]].round(3).to_string(index=False))
+             "v4", "v4b", "v5", "label", "reasons"]].round(3).to_string(index=False))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,19 @@
+lgd_tehsil_code,lgd_tehsil_name,group,rule,kind,strict,strict_rule,share_30_old_rule,share_30_strict,share_30_static_main,share_30_temporal_main,share_30_static_no2024,share_30_temporal_no2024,share_confirmed_old_rule,share_confirmed_strict,share_confirmed_static_main,share_confirmed_temporal_main,share_confirmed_static_no2024,share_confirmed_temporal_no2024,mean_30,mean_confirmed,confirmed_share,mean_30_grp_median,mean_30_grp_q1,mean_confirmed_grp_median,mean_confirmed_grp_q1,burnt_points_confirmed,v4b
+273,Lehra,Central,static,ND,False,,False,False,,,,,False,False,,,,,0.7267,0.7372,0.9867,0.6133,0.4503,0.62,0.4557,1.0,pass
+234,Zira,Central,static,ND,False,,True,False,candidate-ND,,candidate-ND,,True,False,candidate-ND,,candidate-ND,,0.8056,0.8056,1.0,0.6133,0.4503,0.62,0.4557,1.0,pass
+274,Moonak,Central,static,ND,False,,True,False,candidate-ND,,candidate-ND,,True,False,candidate-ND,,candidate-ND,,0.8533,0.8533,1.0,0.6133,0.4503,0.62,0.4557,1.0,pass
+6011,Guruharsahai,South-west,static,ND,False,,True,False,candidate-ND,,candidate-ND,,True,False,candidate-ND,,candidate-ND,,0.8798,0.8906,0.9799,0.7222,0.62,0.7307,0.6351,0.9924,pass
+203,Batala,Central,temporal,ND,False,,False,False,,,,,False,False,,,,,0.443,0.446,0.9932,0.6133,0.4503,0.62,0.4557,1.0,pass
+6854,Majitha,Central,temporal,ND,False,,False,False,,,,candidate-ND,False,False,,,,,0.5119,0.5119,1.0,0.6133,0.4503,0.62,0.4557,1.0,pass
+239,Malout,South-west,temporal,ND,False,borderline ND temporal,True,False,,ND,,candidate-ND,True,True,,ND,,ND,0.66,0.6687,0.98,0.7222,0.62,0.7307,0.6351,0.9899,pass
+6860,Dinanagar,Central,static,PD,False,borderline PD static,True,False,candidate-PD,,PD,,True,False,candidate-PD,,candidate-PD,,0.22,0.2461,0.8733,0.6133,0.4503,0.62,0.4557,0.9697,pass
+202,Gurdaspur,Central,static,PD,False,,True,False,candidate-PD,,candidate-PD,,True,False,candidate-PD,,candidate-PD,,0.2578,0.2803,0.9252,0.6133,0.4503,0.62,0.4557,1.0,pass
+208,Phagwara,Central,static,PD,False,,True,False,candidate-PD,,candidate-PD,candidate-PD,True,False,candidate-PD,,candidate-PD,,0.2933,0.2959,0.9933,0.6133,0.4503,0.62,0.4557,1.0,pass
+7192,Adampur,Central,static,PD,False,,True,False,candidate-PD,candidate-PD,candidate-PD,,True,False,candidate-PD,candidate-PD,candidate-PD,,0.26,0.2764,0.9533,0.6133,0.4503,0.62,0.4557,1.0,pass
+212,Jalandhar - I,Central,static,PD,False,,False,False,,candidate-PD,candidate-PD,PD,False,False,,candidate-PD,candidate-PD,PD,0.3562,0.3583,0.9797,0.6133,0.4503,0.62,0.4557,0.9811,pass
+5993,Banga,Central,static,PD,False,,True,False,candidate-PD,,candidate-PD,,False,False,,,,,0.3467,0.3626,0.9533,0.6133,0.4503,0.62,0.4557,1.0,flag
+246,Talwandi Sabo,South-west,static,PD,False,,False,False,,candidate-ND,candidate-PD,candidate-PD,False,False,,candidate-ND,candidate-PD,,0.5533,0.5582,0.98,0.7222,0.62,0.7307,0.6351,0.988,pass
+238,Abohar,South-west,static,PD,True,"PD static, borderline PD temporal",True,False,candidate-PD,,candidate-PD,PD,True,False,PD,candidate-PD,candidate-PD,PD,0.4301,0.445,0.8188,0.7222,0.62,0.7307,0.6351,0.8438,pass
+238,Abohar,South-west,temporal,PD,False,"PD static, borderline PD temporal",False,False,candidate-PD,,candidate-PD,PD,True,False,PD,candidate-PD,candidate-PD,PD,0.4301,0.445,0.8188,0.7222,0.62,0.7307,0.6351,0.8438,pass
+250,Samana,Central,temporal,PD,False,borderline PD temporal,False,False,,,candidate-ND,,False,False,,,candidate-ND,,0.7333,0.7439,0.9867,0.6133,0.4503,0.62,0.4557,1.0,pass
+6852,Dirba,Central,temporal,PD,False,,False,False,,,,,False,False,,,,,0.7,0.6986,0.9933,0.6133,0.4503,0.62,0.4557,0.9905,pass
