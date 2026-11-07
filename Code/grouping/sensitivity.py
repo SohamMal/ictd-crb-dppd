@@ -6,7 +6,9 @@ at the same k, and compare with the baseline groups using the ARI.
 ARI 1 = identical groups; lower = the choice matters and must be defended.
 
 Run:  python Code/grouping/sensitivity.py
-Out:  outputs/grouping/sensitivity_table.csv
+Out:  outputs/grouping/sensitivity_table.csv,
+      sensitivity_labels.csv (per scenario, each tehsil's group matched to the baseline numbering;
+      used by Code/pd/pd_validate.py for the alternative-grouping PD run)
 """
 
 import copy
@@ -62,12 +64,17 @@ def scenarios(df):
     yield "soil_without_near_constant", df, {**base, "soil": soil}, None
 
 
-def moved_tehsils(base_labels, new_labels, names):
-    """Tehsils whose group changed, after matching each new group to its best-overlapping baseline group."""
+def align(base_labels, new_labels):
+    """Renumber the new groups to their best-overlapping baseline group."""
     mapping = {}
     for g in np.unique(new_labels):
         mapping[g] = pd.Series(base_labels[new_labels == g]).mode()[0]
-    aligned = np.array([mapping[g] for g in new_labels])
+    return np.array([mapping[g] for g in new_labels])
+
+
+def moved_tehsils(base_labels, new_labels, names):
+    """Tehsils whose group changed, after matching each new group to its best-overlapping baseline group."""
+    aligned = align(base_labels, new_labels)
     return [n for n, a, b in zip(names, aligned, base_labels) if a != b]
 
 
@@ -80,6 +87,7 @@ def main():
     base_labels, _ = group_tehsils(df, K_CHOSEN)
 
     rows = []
+    aligned = {"baseline": base_labels}
     for name, sdf, dims, weights in scenarios(df):
         config.DIMENSIONS, config.WEIGHTS = dims, weights
         try:
@@ -87,6 +95,7 @@ def main():
         finally:
             config.DIMENSIONS, config.WEIGHTS = original
         moved = moved_tehsils(base_labels, labels, names)
+        aligned[name] = align(base_labels, labels)
         rows.append(
             {
                 "scenario": name,
@@ -102,6 +111,8 @@ def main():
     table = pd.DataFrame(rows).set_index("scenario")
     config.OUT_DIR.mkdir(parents=True, exist_ok=True)
     table.to_csv(config.OUT_DIR / "sensitivity_table.csv")
+    pd.DataFrame({config.NAME_COL: names, **aligned}).to_csv(
+        config.OUT_DIR / "sensitivity_labels.csv", index=False)
     base_sizes = "/".join(str(s) for s in pd.Series(base_labels).value_counts().sort_index())
     print(f"Baseline (k={K_CHOSEN}): {base_sizes}")
     with pd.option_context("display.max_colwidth", 90, "display.width", 200):

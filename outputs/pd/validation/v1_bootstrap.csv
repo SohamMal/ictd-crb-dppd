@@ -1,0 +1,19 @@
+lgd_tehsil_code,lgd_tehsil_name,group,rule,kind,strict,strict_rule,boot_keep
+273,Lehra,Central,static,ND,False,,0.967
+234,Zira,Central,static,ND,False,,0.981
+274,Moonak,Central,static,ND,False,,0.999
+6011,Guruharsahai,South-west,static,ND,False,,0.999
+203,Batala,Central,temporal,ND,False,,0.14
+6854,Majitha,Central,temporal,ND,False,,0.228
+239,Malout,South-west,temporal,ND,False,borderline ND temporal,0.297
+6860,Dinanagar,Central,static,PD,False,borderline PD static,1.0
+202,Gurdaspur,Central,static,PD,False,,0.968
+208,Phagwara,Central,static,PD,False,,0.985
+7192,Adampur,Central,static,PD,False,,0.891
+212,Jalandhar - I,Central,static,PD,False,,0.983
+5993,Banga,Central,static,PD,False,,0.718
+246,Talwandi Sabo,South-west,static,PD,False,,0.969
+238,Abohar,South-west,static,PD,True,"PD static, borderline PD temporal",0.918
+238,Abohar,South-west,temporal,PD,False,"PD static, borderline PD temporal",0.915
+250,Samana,Central,temporal,PD,False,borderline PD temporal,0.396
+6852,Dirba,Central,temporal,PD,False,,0.387

@@ -1,0 +1,82 @@
+lgd_tehsil_code,lgd_tehsil_name,lgd_district_name,static_viirs,temporal_viirs,creams_2020_pctile,creams_2022_pctile,greenup_doy_median,no_greenup_share,group,greenup_doy_median_grp_median,greenup_doy_median_grp_q1,no_greenup_share_grp_median,no_greenup_share_grp_q1
+7192,Adampur,Jalandhar,candidate-PD,,0.7727,0.8182,342.0,0.167,Central,339.5,337.5,0.033,0.0
+6856,Ahmedgarh,Malerkotla,,,,,337.0,0.0,Central,339.5,337.5,0.033,0.0
+255,Ajnala,Amritsar,,,0.4545,1.0,339.5,0.133,Central,339.5,337.5,0.033,0.0
+7122,Amargarh,Malerkotla,,,,,338.0,0.033,Central,339.5,337.5,0.033,0.0
+222,Amloh,Fatehgarh Sahib,,candidate-PD,0.5909,0.7727,333.0,0.0,Central,339.5,337.5,0.033,0.0
+256,Amritsar -I,Amritsar,,,0.4545,1.0,327.0,0.037,Central,339.5,337.5,0.033,0.0
+257,Amritsar- II,Amritsar,,,0.4545,1.0,338.0,0.071,Central,339.5,337.5,0.033,0.0
+258,Baba Bakala,Amritsar,,,0.4545,1.0,342.0,0.067,Central,339.5,337.5,0.033,0.0
+232,Bagha Purana,Moga,,,0.5,0.2273,347.0,0.033,Central,339.5,337.5,0.033,0.0
+5993,Banga,Shahid Bhagat Singh Nagar,candidate-PD,ND,0.1364,0.5909,338.0,0.067,Central,339.5,337.5,0.033,0.0
+275,Barnala,Barnala,,,0.5455,0.0455,342.0,0.1,Central,339.5,337.5,0.033,0.0
+220,Bassi Pathana,Fatehgarh Sahib,,candidate-ND,0.5909,0.7727,340.0,0.0,Central,339.5,337.5,0.033,0.0
+203,Batala,Gurdaspur,,,0.8182,0.8636,338.0,0.067,Central,339.5,337.5,0.033,0.0
+6855,Bhawanigarh,Sangrur,,,1.0,0.2727,337.0,0.0,Central,339.5,337.5,0.033,0.0
+6853,Bhikhiwind,Tarn Taran,,,0.8636,0.9545,337.0,0.0,Central,339.5,337.5,0.033,0.0
+205,Bhulath,Kapurthala,,,0.9545,0.9091,338.0,0.071,Central,339.5,337.5,0.033,0.0
+204,Dera Baba Nanak,Gurdaspur,,,0.8182,0.8636,337.0,0.067,Central,339.5,337.5,0.033,0.0
+5996,Dharamkot,Moga,,,0.5,0.2273,347.0,0.033,Central,339.5,337.5,0.033,0.0
+270,Dhuri,Sangrur,,,1.0,0.2727,342.0,0.0,Central,339.5,337.5,0.033,0.0
+6860,Dinanagar,Gurdaspur,candidate-PD,,0.8182,0.8636,338.0,0.138,Central,339.5,337.5,0.033,0.0
+6852,Dirba,Sangrur,candidate-ND,,1.0,0.2727,343.0,0.0,Central,339.5,337.5,0.033,0.0
+6849,Dudhan Sadhan,Patiala,,,0.9091,0.5455,339.0,0.133,Central,339.5,337.5,0.033,0.0
+7191,Fatehgarh Churian,Gurdaspur,,,0.8182,0.8636,337.0,0.033,Central,339.5,337.5,0.033,0.0
+221,Fatehgarh Sahib,Fatehgarh Sahib,,,0.5909,0.7727,343.0,0.0,Central,339.5,337.5,0.033,0.0
+202,Gurdaspur,Gurdaspur,,candidate-PD,0.8182,0.8636,342.0,0.069,Central,339.5,337.5,0.033,0.0
+230,Jagraon,Ludhiana,,,0.6818,0.6818,342.0,0.133,Central,339.5,337.5,0.033,0.0
+212,Jalandhar - I,Jalandhar,candidate-PD,candidate-ND,0.7727,0.8182,342.0,0.133,Central,339.5,337.5,0.033,0.0
+213,Jalandhar - II,Jalandhar,,,0.7727,0.8182,332.0,0.167,Central,339.5,337.5,0.033,0.0
+6859,Kalanaur,Gurdaspur,,,0.8182,0.8636,337.0,0.033,Central,339.5,337.5,0.033,0.0
+206,Kapurthala,Kapurthala,,,0.9545,0.9091,338.0,0.033,Central,339.5,337.5,0.033,0.0
+261,Khadur Sahib,Tarn Taran,,,0.8636,0.9545,337.0,0.033,Central,339.5,337.5,0.033,0.0
+223,Khamanon,Fatehgarh Sahib,,,0.5909,0.7727,338.0,0.0,Central,339.5,337.5,0.033,0.0
+225,Khanna,Ludhiana,,candidate-PD,0.6818,0.6818,338.0,0.0,Central,339.5,337.5,0.033,0.0
+273,Lehra,Sangrur,,,1.0,0.2727,343.0,0.0,Central,339.5,337.5,0.033,0.0
+7341,Lopoke,Amritsar,,,0.4545,1.0,338.0,0.033,Central,339.5,337.5,0.033,0.0
+227,Ludhiana (East),Ludhiana,,,0.6818,0.6818,342.0,0.172,Central,339.5,337.5,0.033,0.0
+228,Ludhiana (West),Ludhiana,,,0.6818,0.6818,347.0,0.067,Central,339.5,337.5,0.033,0.0
+6854,Majitha,Amritsar,,,0.4545,1.0,333.0,0.033,Central,339.5,337.5,0.033,0.0
+269,Malerkotla,Malerkotla,,,,,342.0,0.0,Central,339.5,337.5,0.033,0.0
+7409,Mehal Kalan,Barnala,candidate-ND,,0.5455,0.0455,339.5,0.0,Central,339.5,337.5,0.033,0.0
+233,Moga,Moga,,,0.5,0.2273,347.0,0.067,Central,339.5,337.5,0.033,0.0
+274,Moonak,Sangrur,candidate-ND,,1.0,0.2727,337.0,0.0,Central,339.5,337.5,0.033,0.0
+252,Nabha,Patiala,,,0.9091,0.5455,337.0,0.0,Central,339.5,337.5,0.033,0.0
+210,Nakodar,Jalandhar,,,0.7727,0.8182,342.0,0.133,Central,339.5,337.5,0.033,0.0
+218,Nawanshahr,Shahid Bhagat Singh Nagar,,,0.1364,0.5909,345.0,0.0,Central,339.5,337.5,0.033,0.0
+231,Nihal Singhwala,Moga,,,0.5,0.2273,347.0,0.033,Central,339.5,337.5,0.033,0.0
+253,Patiala,Patiala,,,0.9091,0.5455,339.0,0.069,Central,339.5,337.5,0.033,0.0
+251,Patran,Patiala,,,0.9091,0.5455,337.0,0.0,Central,339.5,337.5,0.033,0.0
+260,Patti,Tarn Taran,,,0.8636,0.9545,338.0,0.0,Central,339.5,337.5,0.033,0.0
+226,Payal,Ludhiana,,,0.6818,0.6818,342.0,0.034,Central,339.5,337.5,0.033,0.0
+208,Phagwara,Kapurthala,candidate-PD,,0.9545,0.9091,338.0,0.1,Central,339.5,337.5,0.033,0.0
+211,Phillaur,Jalandhar,,,0.7727,0.8182,342.0,0.107,Central,339.5,337.5,0.033,0.0
+229,Raikot,Ludhiana,,,0.6818,0.6818,342.0,0.034,Central,339.5,337.5,0.033,0.0
+254,Rajpura,Patiala,,,0.9091,0.5455,342.5,0.067,Central,339.5,337.5,0.033,0.0
+250,Samana,Patiala,,,0.9091,0.5455,338.0,0.0,Central,339.5,337.5,0.033,0.0
+224,Samrala,Ludhiana,,,0.6818,0.6818,333.0,0.0,Central,339.5,337.5,0.033,0.0
+271,Sangrur,Sangrur,,candidate-ND,1.0,0.2727,342.0,0.0,Central,339.5,337.5,0.033,0.0
+209,Shahkot,Jalandhar,,,0.7727,0.8182,342.0,0.1,Central,339.5,337.5,0.033,0.0
+207,Sultanpur Lodhi,Kapurthala,,,0.9545,0.9091,342.0,0.077,Central,339.5,337.5,0.033,0.0
+272,Sunam,Sangrur,,,1.0,0.2727,337.0,0.0,Central,339.5,337.5,0.033,0.0
+276,Tapa,Barnala,,,0.5455,0.0455,343.0,0.034,Central,339.5,337.5,0.033,0.0
+259,Tarn Taran,Tarn Taran,,,0.8636,0.9545,342.0,0.0,Central,339.5,337.5,0.033,0.0
+234,Zira,Ferozepur,candidate-ND,,0.7273,0.4545,347.0,0.033,Central,339.5,337.5,0.033,0.0
+238,Abohar,Fazilka,PD,,0.1818,0.3636,352.0,0.083,South-west,347.0,345.125,0.068,0.0345
+245,Bathinda,Bathinda,,,0.3182,0.0909,347.0,0.069,South-west,347.0,345.125,0.068,0.0345
+248,Budhlada,Mansa,,,0.3636,0.1364,347.0,0.103,South-west,347.0,345.125,0.068,0.0345
+242,Faridkot,Faridkot,,,0.6364,0.4091,347.0,0.033,South-west,347.0,345.125,0.068,0.0345
+237,Fazilka,Fazilka,,,0.1818,0.3636,352.0,0.1,South-west,347.0,345.125,0.068,0.0345
+235,Firozpur,Ferozepur,,,0.7273,0.4545,342.0,0.033,South-west,347.0,345.125,0.068,0.0345
+240,Gidderbaha,Sri Muktsar Sahib,,,0.4091,0.1818,347.0,0.0,South-west,347.0,345.125,0.068,0.0345
+6011,Guruharsahai,Ferozepur,candidate-ND,,0.7273,0.4545,352.0,0.0,South-west,347.0,345.125,0.068,0.0345
+243,Jaitu,Faridkot,,,0.6364,0.4091,347.0,0.067,South-west,347.0,345.125,0.068,0.0345
+236,Jalalabad,Fazilka,,,0.1818,0.3636,352.0,0.167,South-west,347.0,345.125,0.068,0.0345
+5984,Kotkapura,Faridkot,,,0.6364,0.4091,347.0,0.067,South-west,347.0,345.125,0.068,0.0345
+239,Malout,Sri Muktsar Sahib,,candidate-PD,0.4091,0.1818,347.0,0.067,South-west,347.0,345.125,0.068,0.0345
+249,Mansa,Mansa,,,0.3636,0.1364,343.0,0.138,South-west,347.0,345.125,0.068,0.0345
+6858,Maur,Bathinda,,,0.3182,0.0909,342.0,0.034,South-west,347.0,345.125,0.068,0.0345
+244,Rampura Phul,Bathinda,,,0.3182,0.0909,342.0,0.036,South-west,347.0,345.125,0.068,0.0345
+247,Sardulgarh,Mansa,,,0.3636,0.1364,347.0,0.207,South-west,347.0,345.125,0.068,0.0345
+241,Sri Muktsar Sahib,Sri Muktsar Sahib,,,0.4091,0.1818,347.0,0.1,South-west,347.0,345.125,0.068,0.0345
+246,Talwandi Sabo,Bathinda,,,0.3182,0.0909,344.5,0.133,South-west,347.0,345.125,0.068,0.0345

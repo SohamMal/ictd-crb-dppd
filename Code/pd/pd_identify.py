@@ -20,9 +20,14 @@ Input: any long table with one value per tehsil-year (lower = less burning).
 
 Measures: viirs (backup, 2019-23); s2rf = final S2 model tehsil table (tehsil_metric_rf.py, cut 0.786),
 2020-24 (main); s2rf_2023 = same, 2020-23 (sensitivity: 2024 is the weak season). Robust PDs = flagged in
-both s2rf runs (pd_robust.py).
+both s2rf runs (pd_robust.py). s2rf_05 / s2rf_05_2023 = the same at the 0.5 cut (validation V2, 2026-11-07).
 
-Run:  python Code/pd/pd_identify.py --measure viirs|s2rf|s2rf_2023
+Validation options (2026-11-07; defaults reproduce the runs above):
+  --c-share S   offset c = S x group median (default 0.10)
+  --groups F    CSV (lgd_tehsil_code, group) replacing the frozen group of each tehsil
+  --tag T       write to outputs/pd/<measure>_<T>/ instead of outputs/pd/<measure>/
+
+Run:  python Code/pd/pd_identify.py --measure viirs|s2rf|s2rf_2023|s2rf_05|s2rf_05_2023
 Out:  outputs/pd/<measure>/pd_table.csv, pd_summary.csv
 """
 
@@ -38,6 +43,7 @@ GROUPS = ROOT / "outputs" / "grouping" / "FROZEN_groups.csv"
 PD_GROUPS = ["Central", "South-west"]
 MAX_SEASONS_MISSED = 1   # consistency: in the quartile in all seasons but one
 NEAR_SHARE = 0.10
+C_SHARE = 0.10           # offset c = C_SHARE x group median of tehsil means
 
 # measure name -> (file, value column, seasons)
 MEASURES = {
@@ -47,11 +53,17 @@ MEASURES = {
              "burnt_share", range(2020, 2025)),
     "s2rf_2023": (ROOT / "outputs" / "burn_tehsil_rf" / "tehsil_burn_measure.csv",
                   "burnt_share", range(2020, 2024)),
+    "s2rf_05": (ROOT / "outputs" / "burn_tehsil_rf" / "tehsil_burn_measure.csv",
+                "burnt_share_05", range(2020, 2025)),
+    "s2rf_05_2023": (ROOT / "outputs" / "burn_tehsil_rf" / "tehsil_burn_measure.csv",
+                     "burnt_share_05", range(2020, 2024)),
 }
 
 
-def load_groups():
+def load_groups(alt=None):
     g = pd.read_csv(GROUPS)
+    if alt is not None:
+        g = g.drop(columns="group").merge(pd.read_csv(alt)[["lgd_tehsil_code", "group"]], on="lgd_tehsil_code")
     g = g[g["group"].isin(PD_GROUPS)]
     return g[["lgd_tehsil_code", "lgd_tehsil_name", "lgd_district_name", "group", "group_2way"]]
 
@@ -94,11 +106,11 @@ def flag_within(df, by):
     return pd.concat(out)
 
 
-def tehsil_stats(long, value, years, by):
+def tehsil_stats(long, value, years, by, c_share=C_SHARE):
     """Per tehsil: season mean, offset c of its group, Theil-Sen slope of log(value + c)."""
     long = long[long["year"].isin(years)]
     means = long.groupby(["lgd_tehsil_code", by])[value].mean()
-    c = (NEAR_SHARE * means.groupby(by).median()).rename("c")
+    c = (c_share * means.groupby(by).median()).rename("c")
     long = long.merge(c, left_on=by, right_index=True)
     rows = []
     for code, d in long.groupby("lgd_tehsil_code"):
@@ -120,9 +132,9 @@ def quartile_years(long, value, years, by):
         columns={"bottom": "years_bottom_q", "top": "years_top_q"}).reset_index()
 
 
-def run(long, value, years, groups, by):
+def run(long, value, years, groups, by, c_share=C_SHARE):
     long = long.merge(groups[["lgd_tehsil_code", by]], on="lgd_tehsil_code")
-    stats = tehsil_stats(long, value, years, by).merge(groups, on="lgd_tehsil_code")
+    stats = tehsil_stats(long, value, years, by, c_share).merge(groups, on="lgd_tehsil_code")
     stats = stats.merge(quartile_years(long, value, years, by), on="lgd_tehsil_code")
     return flag_within(stats, by)
 
@@ -130,17 +142,20 @@ def run(long, value, years, groups, by):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--measure", default="viirs", choices=MEASURES)
+    ap.add_argument("--c-share", type=float, default=C_SHARE)
+    ap.add_argument("--groups", default=None)
+    ap.add_argument("--tag", default=None)
     args = ap.parse_args()
     path, value, years = MEASURES[args.measure]
     years = list(years)
 
     long = pd.read_csv(path)[["lgd_tehsil_code", "year", value]]
-    groups = load_groups()
+    groups = load_groups(args.groups)
     missing = set(groups["lgd_tehsil_code"]) - set(long["lgd_tehsil_code"])
     assert not missing, f"tehsils without a burn value: {missing}"
 
-    main_run = run(long, value, years, groups, "group")
-    plains = run(long, value, years, groups, "group_2way")[
+    main_run = run(long, value, years, groups, "group", args.c_share)
+    plains = run(long, value, years, groups, "group_2way", args.c_share)[
         ["lgd_tehsil_code", "slope_dev", "static", "temporal"]].rename(
         columns={"slope_dev": "slope_dev_plains", "static": "static_plains",
                  "temporal": "temporal_plains"})
@@ -153,7 +168,7 @@ def main():
         (pd_like(t["static"]) & pd_like(t["static_plains"]))
         | (pd_like(t["temporal"]) & pd_like(t["temporal_plains"])), "")
 
-    out = ROOT / "outputs" / "pd" / args.measure
+    out = ROOT / "outputs" / "pd" / (args.measure + (f"_{args.tag}" if args.tag else ""))
     out.mkdir(parents=True, exist_ok=True)
     cols = ["lgd_tehsil_code", "lgd_tehsil_name", "lgd_district_name", "group", "n_in_group",
             "n_years", "mean", "c", "years_bottom_q", "years_top_q", "slope", "slope_dev",
@@ -171,7 +186,8 @@ def main():
     summary = summary[summary["flag"] != ""]
     summary.to_csv(out / "pd_summary.csv", index=False)
 
-    print(f"measure={args.measure} value={value} seasons={years[0]}-{years[-1]}")
+    print(f"measure={args.measure} value={value} seasons={years[0]}-{years[-1]} c_share={args.c_share}"
+          f" groups={args.groups or 'frozen'}")
     print(summary.pivot_table(index=["kind", "flag"], columns="group", values="n", fill_value=0))
     flagged = t[(t["static"] != "") | (t["temporal"] != "")]
     print(flagged[["lgd_tehsil_name", "group", "mean", "years_bottom_q", "years_top_q",

@@ -1,0 +1,19 @@
+lgd_tehsil_code,lgd_tehsil_name,group,rule,kind,strict,strict_rule,cut_0.5_old_rule,cut_0.5_strict,c_5pct_old_rule,c_5pct_strict,c_20pct_old_rule,c_20pct_strict,alt_grouping_old_rule,alt_grouping_strict,v2_kept_old_rule,v2_scenarios
+273,Lehra,Central,static,ND,False,,True,False,True,False,True,False,True,False,4,4
+234,Zira,Central,static,ND,False,,False,False,True,False,True,False,True,False,3,4
+274,Moonak,Central,static,ND,False,,True,False,True,False,True,False,False,False,3,4
+6011,Guruharsahai,South-west,static,ND,False,,True,False,True,False,True,False,True,False,4,4
+203,Batala,Central,temporal,ND,False,,False,False,True,False,True,False,True,False,3,4
+6854,Majitha,Central,temporal,ND,False,,False,False,True,False,True,False,True,False,3,4
+239,Malout,South-west,temporal,ND,False,borderline ND temporal,False,False,True,False,True,False,True,False,3,4
+6860,Dinanagar,Central,static,PD,False,borderline PD static,True,False,True,True,True,False,True,False,4,4
+202,Gurdaspur,Central,static,PD,False,,True,False,True,False,True,False,True,False,4,4
+208,Phagwara,Central,static,PD,False,,True,False,True,False,True,False,True,False,4,4
+7192,Adampur,Central,static,PD,False,,False,False,True,False,True,False,True,False,3,4
+212,Jalandhar - I,Central,static,PD,False,,False,False,True,False,True,False,True,False,3,4
+5993,Banga,Central,static,PD,False,,True,False,True,False,True,False,True,False,4,4
+246,Talwandi Sabo,South-west,static,PD,False,,True,False,True,False,True,False,True,False,4,4
+238,Abohar,South-west,static,PD,True,"PD static, borderline PD temporal",True,True,True,True,True,True,True,True,4,4
+238,Abohar,South-west,temporal,PD,False,"PD static, borderline PD temporal",True,False,True,False,True,False,True,True,4,4
+250,Samana,Central,temporal,PD,False,borderline PD temporal,False,False,True,False,True,False,True,False,3,4
+6852,Dirba,Central,temporal,PD,False,,False,False,True,False,True,False,True,True,3,4
