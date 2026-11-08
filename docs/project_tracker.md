@@ -164,3 +164,9 @@ Legend: **[C]** confirmed · **[P]** proposed / provisional · **[?]** unknown /
 - [C] Branch B frozen as a documented negative result (radar filter fails B2–B5; W1 false alarms shared by both branches).
 - [C] Foothills (15 tehsils) excluded from PD identification for now; still measured. 81 tehsils ranked (Central 63, South-west 18).
 - Impact: measure all 97 tehsils; validate by area-weighted sums at district, full-state and plains-state (minus 4 foothill districts) level.
+
+### 2026-11-08 — PD validation done (V1–V6 + V4b; V7 not done)
+- [C] Validated PD: Abohar (static strict + temporal), Dinanagar, Phagwara, Jalandhar-I, Adampur, Talwandi Sabo. Caveat: Gurdaspur, Banga. Dropped: Samana, Dirba (bootstrap 0.40/0.39). Temporal NDs (Batala, Majitha, Malout) fail bootstrap.
+- [C] Low burning at PDs is on harvest-confirmed paddy (V4b moves shares ≤ 0.03). Burning tracks rice share within groups (ρ 0.70 Central, 0.63 SW) → structural question for Stage 3.
+- [C] V7 visual check not done (Soham's decision) → limitation; cotton passing the harvest filter at Abohar not ruled out.
+- Impact: temporal deviance is too noisy at 100 points/tehsil, so only Abohar is reported as a temporal PD. Stage 3 compares the validated PDs with the static NDs (Lehra, Zira, Moonak, Guruharsahai).
