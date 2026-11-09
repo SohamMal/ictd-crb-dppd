@@ -58,3 +58,7 @@ Before trusting a "positive deviant", we check it isn't a mistake. Maybe clouds 
 ### 2026-11-08 — V4b rule confirmed
 **Plain:** Soham kept the narrower V4b rule. A PD is flagged only when removing points with no visible harvest makes it lose its flag. A loss that comes from using 30 points instead of 100 does not count.
 **Technical:** [C] Soham 2026-11-08: V4b = flag iff kept (old rule) on `share_30` and lost on `share_confirmed`. Supersedes [P] in the 2026-11-08 V4b entry. Validation labels final (V1–V6 + V4b; V7 not done).
+
+### 2026-11-09 — V8 (local knowledge) dropped
+**Plain:** We will not share the PD list with the professor or advisors for their view. Validation stays data-only.
+**Technical:** [C] Soham 2026-11-09: no human contact in this project (see `3.1/task_fieldwork_planning.md`). Handbook's "local knowledge" route is not used → limitation.

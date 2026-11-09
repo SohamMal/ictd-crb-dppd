@@ -13,3 +13,9 @@ DPPD normally visits positive-deviant places to learn what people there do diffe
 ### 2026-10-06 — File created
 **Plain:** Placeholder.
 **Technical:** Planned 15–16 Oct alongside predictor analysis.
+
+### 2026-11-09 — No fieldwork or human contact; Stage 3 uses online data only
+**Plain:** Soham decided Stage 3 will not talk to anyone: no field visits, interviews, expert calls or emails. This is an academic project, so the reasons behind the PDs are looked for only in data available online (public datasets, government reports, news, research papers). The report states this as a limitation: DPPD normally confirms PDs and their practices in the field.
+**Technical:**
+- [C] Soham 2026-11-09: retrospective desk study only (handbook p. 77–78 allows a quantitative approach from secondary sources when field engagement is not possible). Supersedes [P] interview guide and remote calls above; Open [?] on field contacts closed.
+- Also drops V8 (local knowledge) from PD validation (`2.4/task_pd_validation.md`).
