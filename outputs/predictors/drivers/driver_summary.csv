@@ -1,0 +1,12 @@
+driver,name,expected_sign,rho_Central,p_Central,partial_rho_Central,partial_p_Central,rho_South-west,p_South-west,partial_rho_South-west,partial_p_South-west,pds_expected_side,nds_expected_side,pds_on_side
+d1_turnaround_days,Harvest-to-wheat turnaround (days),-1,-0.382,0.002,-0.197,0.121,0.395,0.105,0.044,0.861,4/8,2/4,"Banga, Gurdaspur, Jalandhar - I, Phagwara"
+d2_early_canopy_share,Early second crop (potato/veg) share,-1,-0.16,0.21,0.055,0.67,-0.559,0.016,-0.465,0.052,5/8,2/4,"Adampur, Dinanagar, Jalandhar - I, Abohar, Talwandi Sabo"
+d3_labourers_per_cultivator,Farm labourers per cultivator (2011),-1,0.079,0.536,0.184,0.148,0.156,0.537,0.205,0.414,4/8,1/4,"Adampur, Dinanagar, Jalandhar - I, Abohar"
+d3_cultivators_per_100ha_rice,"Cultivators per 100 ha rice (small farms, 2011)",-1,-0.275,0.029,-0.194,0.128,-0.488,0.04,-0.053,0.836,5/8,2/4,"Banga, Dinanagar, Gurdaspur, Abohar, Talwandi Sabo"
+d4_buyers_within_30km,Straw buyers within 30 km,-1,0.059,0.643,0.161,0.207,0.267,0.284,0.04,0.874,1/8,2/4,Phagwara
+d4_km_nearest_buyer,km to nearest straw buyer,1,-0.198,0.12,-0.263,0.037,0.001,0.997,0.174,0.489,5/8,3/4,"Adampur, Banga, Jalandhar - I, Phagwara, Abohar"
+d5_km_interstate_border,km to inter-state border,-1,0.106,0.406,0.07,0.585,0.833,0.0,0.746,0.0,0/8,2/4,
+d6_km_urban_centre,km to nearest urban centre,1,0.12,0.347,-0.192,0.131,0.075,0.766,0.075,0.766,6/8,3/4,"Dinanagar, Gurdaspur, Jalandhar - I, Phagwara, Abohar, Talwandi Sabo"
+d6_urban_area_share,Urban area share,-1,-0.615,0.0,-0.299,0.017,0.449,0.062,0.519,0.027,7/8,4/4,"Adampur, Banga, Dinanagar, Gurdaspur, Jalandhar - I, Phagwara, Talwandi Sabo"
+d7_basmati_share_district,Basmati share of rice (district),-1,0.006,0.963,-0.047,0.716,0.135,0.593,0.013,0.958,4/8,1/4,"Banga, Dinanagar, Gurdaspur, Abohar"
+d9_bovines_per_cultivator,Cattle + buffalo per cultivator (2019),-1,-0.185,0.147,-0.016,0.903,-0.191,0.448,0.059,0.817,4/8,3/4,"Adampur, Jalandhar - I, Phagwara, Abohar"

@@ -1,5 +1,9 @@
 # Raw data (15 GB rasters/shapefiles; kept locally, see CLAUDE.md §5)
-Data/
+Data/*
+# hand-compiled Stage 3 source tables (one source per row) are tracked; downloads are not
+!Data/Predictors/
+Data/Predictors/livestock/
+Data/Predictors/*.pdf
 0. Material/
 Code/Ground Truth Data/
 
