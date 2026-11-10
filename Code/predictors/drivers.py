@@ -192,7 +192,12 @@ def d5_border(c):
                          "d5_km_international_border": c.geometry.distance(intl).to_numpy() / 1000})
 
 
-def d6_city(c):
+def smod_cells():
+    """GHS-SMOD 2020 cell centres (0.01 deg grid over Punjab + 0.3 deg), cached in raw/."""
+    path = OUT / "raw" / "smod_2020_cells.csv"
+    if path.exists():
+        d = pd.read_csv(path)
+        return gpd.GeoDataFrame(d[["smod"]], geometry=gpd.points_from_xy(d.lon, d.lat), crs="EPSG:4326")
     init_ee()
     t = gpd.read_file(TEHSILS)
     w, s, e, n = t.total_bounds + np.array([-0.3, -0.3, 0.3, 0.3])
@@ -207,8 +212,15 @@ def d6_city(c):
                  "crsCode": "EPSG:4326"}})["smod_code"]
     rows, cols = np.indices(arr.shape)
     lon, lat = w + (cols + 0.5) * step, n - (rows + 0.5) * step
-    cells = gpd.GeoDataFrame({"smod": arr.ravel()}, geometry=gpd.points_from_xy(lon.ravel(), lat.ravel()),
-                             crs="EPSG:4326")
+    path.parent.mkdir(exist_ok=True)
+    pd.DataFrame({"lon": lon.ravel(), "lat": lat.ravel(), "smod": arr.ravel()}).to_csv(path, index=False)
+    return gpd.GeoDataFrame({"smod": arr.ravel()}, geometry=gpd.points_from_xy(lon.ravel(), lat.ravel()),
+                            crs="EPSG:4326")
+
+
+def d6_city(c):
+    t = gpd.read_file(TEHSILS)
+    cells = smod_cells()
     centre = unary_union(cells[cells.smod == 30].to_crs(METRIC).geometry)
     inside = gpd.sjoin(cells, t[["lgd_tehsil_code", "geometry"]], predicate="within")
     share = inside.groupby("lgd_tehsil_code").smod.apply(lambda x: (x >= 21).mean())

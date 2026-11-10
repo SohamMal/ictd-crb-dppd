@@ -1,0 +1,5 @@
+distance_to,group,tehsils,point_seasons,slope_per_log1p_km,ci_lo,ci_hi,change_1km_to_10km,ci_lo_1to10,ci_hi_1to10
+urban cell (class >= 21),Central,63,31227,0.0391,0.0204,0.0595,0.0667,0.0347,0.1015
+urban cell (class >= 21),South-west,18,8988,0.0118,-0.0157,0.0435,0.0202,-0.0267,0.0741
+urban centre (class 30),Central,63,31227,0.0399,0.0215,0.0596,0.068,0.0366,0.1017
+urban centre (class 30),South-west,18,8988,0.0134,-0.0395,0.0619,0.0229,-0.0673,0.1056
