@@ -3,12 +3,22 @@
 **Soham Malvadkar** · mcs262493@cse.iitd.ac.in · IIT Delhi, COL7761 ICTD, 2026
 Supervisor: Prof. Aaditeshwar Seth · Advisors: Basma Albanna, Andreas Pawelke
 
-> **Draft status (10 Nov 2026).** Sections 1–6 are written from frozen outputs. The Abstract and §7 are still ⏸. Every number cites the file that produced it; regenerate figures with `python Code/figures/make_grouping_figures.py`.
+> **Draft status (10 Nov 2026).** Sections 1–6 are written from frozen outputs. Abstract and §7 drafted 10 Nov; reference citations marked ⏸ remain. Every number cites the file that produced it; regenerate figures with `python Code/figures/make_grouping_figures.py`.
 
 ---
 
 ## Abstract
-⏸ *Write last.*
+Paddy-straw burning in Punjab is a major seasonal source of air pollution. It continues despite years of subsidies for straw-management machines. We apply Data-Powered Positive Deviance (DPPD) to Punjab's 97 tehsils to ask which places burn much less than places like them, and why.
+
+**Peer groups.** Tehsils are grouped only on structural conditions: rice share, rainfall, agro-ecological zone, groundwater and soil. The method is dimension-balanced Gower distance with average-linkage clustering, stress-tested for stability (ARI 0.89) and sensitivity. This gives three peer regions: Central, South-west and Foothills.
+
+**Burn measure.** Burning is measured with a two-stage Sentinel-2 detector. A random forest, trained on field ground truth and checked against daily PlanetScope, separates burnt from freshly ploughed fields. This cuts ploughing false alarms from 81% to 18%. At tehsil level, the measure ranks tehsils like VIIRS fire counts (ρ 0.78–0.87) and is stable from year to year.
+
+**Positive deviants.** On 2020–2024, Abohar is the only strict positive deviant: the lowest burner in the South-west and among its fastest reducers. A low-burning Doaba cluster (Dinanagar, Phagwara, Jalandhar-I, Adampur) and Talwandi Sabo also survive resampling, alternative settings and data-artefact checks. Fastest-reducer trends proved too noisy to name deviants by themselves.
+
+**Drivers.** A desk study of nine candidate drivers from public online data, with no fieldwork, finds two things. The Doaba PDs share a tehsil-wide regional marker (urban surroundings) rather than a near-town effect. Abohar combines a local straw buyer, abundant farm labour and livestock, and an early second crop. Apparent drivers such as turnaround time and farm size mostly restate the rice-share gradient.
+
+The pipeline is fully coded and reproducible. Its findings are leads for field validation, not causal claims.
 
 ---
 
@@ -518,7 +528,38 @@ Many of the hardest parts of this project were data problems, not modelling prob
 
 ---
 
-## 7. Conclusion ⏸
+## 7. Conclusion
+
+**What we built.** We built an end-to-end, reproducible DPPD pipeline for crop residue burning, running from public data to a validated list of positive deviant tehsils and candidate explanations. Every number in this report is produced by code in the repository (`Code/`). The pipeline has three parts:
+- **Peer groups** from structural conditions only, tested for stability and sensitivity (§3.3, §4.1).
+- **A burnt-vs-ploughed Sentinel-2 detector.** This addresses the main weakness of season-long burn indices in Punjab, which count ploughed fields as burnt (§3.4, §4.2).
+- **PD identification and validation** on the data, combining static and temporal deviance with explicit checks for noise and artefacts (§3.5, §3.6, §4.3).
+
+**What we found.**
+- **Abohar** is the clearest positive deviant: it burns least among the South-west tehsils and has cut burning faster than its group.
+- A **Doaba belt** of Central tehsils (Dinanagar, Phagwara, Jalandhar-I, Adampur, with Gurdaspur and Banga) burns about half as much as the rest of Central Punjab. It does so as a region, and the difference holds on fields far from towns.
+- Low burning in both places is on fields that really grew paddy. It is not an artefact of the rice map or of cloud gaps.
+- Fastest-reducer trends could not be confirmed at 100 sample points per tehsil.
+- Several commonly cited explanations are weaker once rice share is held constant. A shorter harvest-to-sowing window and smaller farms mostly mark the places where paddy dominates.
+
+**Impact: what this means for NGOs and government.**
+1. **Where to look.** The PD list tells field teams where to go first: Abohar in the South-west, and the Doaba tehsils in Central Punjab. The heavy-burning NDs (Lehra, Zira, Moonak, Guruharsahai) are the natural comparison. A small field study in these places could confirm what practices differ, at a fraction of the cost of a statewide survey.
+2. **What to test.** Abohar's profile points to three levers that can be transferred to other South-west tehsils and tested there:
+   - an assured local straw buyer (a biomass plant within the tehsil);
+   - labour for manual straw handling;
+   - fodder demand from livestock.
+   
+   For the Doaba belt, the question for fieldwork is what farmers do with straw before an October potato or vegetable crop, and whether that can work in wheat-only areas.
+3. **How to target.** Programmes that rank districts or tehsils by burning should compare like with like (peer groups) and allow for rice share. Otherwise they reward places that simply grow less paddy and blame places that grow more.
+4. **How to monitor.** Fire counts (VIIRS) collapsed in 2024–25 as farmers timed fires to avoid the satellite pass. Field-level Sentinel-2 detection that separates burning from ploughing gives an evasion-resistant alternative. It is free, covers every season, and produces tehsil rankings that agree with fire counts in the years before evasion. The pipeline can be rerun each season and extended to Haryana.
+
+**Limits on these conclusions.** This is an academic study:
+- There was no fieldwork, so no practice is confirmed on the ground.
+- Stage 3 rests on 8 PDs and 4 NDs and on public data of mixed years and resolutions.
+- District data on straw-management machines, the main state intervention, was not available online.
+- 2024 is a doubtful season, and the Foothills are measured but not ranked.
+
+The results are therefore leads for field validation, not causal claims. With field access, more PlanetScope quota and district CRM data, the same pipeline would give firmer answers (§6).
 
 ---
 
