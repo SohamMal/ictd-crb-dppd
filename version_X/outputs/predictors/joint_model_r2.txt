@@ -1,0 +1,3 @@
+ols_r2_in_sample 0.1144
+rf_out_of_tehsil_cv_r2 0.1557
+n 9277

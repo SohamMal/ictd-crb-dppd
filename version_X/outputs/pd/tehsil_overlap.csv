@@ -1,0 +1,81 @@
+lgd_tehsil_code,lgd_tehsil_name,villages_ranked,tehsil_mean_of_villages,village_pds_static,share_pd_villages,tehsil_label_main_version
+238,Abohar,80,0.3105,41,0.5125,static:PD
+6849,Dudhan Sadhan,94,0.3752,26,0.2766,
+247,Sardulgarh,69,0.5953,12,0.1739,
+6860,Dinanagar,208,0.2452,36,0.1731,static:PD
+206,Kapurthala,243,0.4529,41,0.1687,
+246,Talwandi Sabo,57,0.5308,6,0.1053,static:PD
+257,Amritsar- II,101,0.4488,9,0.0891,
+202,Gurdaspur,347,0.3122,27,0.0778,static:PD
+237,Fazilka,143,0.712,10,0.0699,
+239,Malout,91,0.6856,5,0.0549,temporal:ND
+208,Phagwara,110,0.3191,5,0.0455,static:PD
+6859,Kalanaur,110,0.3934,5,0.0455,
+245,Bathinda,119,0.6517,5,0.042,
+229,Raikot,74,0.5661,3,0.0405,
+249,Mansa,84,0.6261,3,0.0357,
+241,Sri Muktsar Sahib,96,0.7773,3,0.0312,
+212,Jalandhar - I,66,0.3016,2,0.0303,static:PD
+254,Rajpura,234,0.4017,7,0.0299,
+209,Shahkot,178,0.635,5,0.0281,
+210,Nakodar,146,0.5292,4,0.0274,
+260,Patti,110,0.6381,3,0.0273,
+259,Tarn Taran,189,0.5708,5,0.0265,
+211,Phillaur,233,0.4432,6,0.0258,
+228,Ludhiana (West),123,0.4383,3,0.0244,
+230,Jagraon,139,0.6589,3,0.0216,
+5993,Banga,108,0.3232,2,0.0185,static:PD
+227,Ludhiana (East),173,0.4362,3,0.0173,
+7191,Fatehgarh Churian,62,0.4253,1,0.0161,
+207,Sultanpur Lodhi,201,0.643,3,0.0149,
+213,Jalandhar - II,145,0.3373,2,0.0138,
+6853,Bhikhiwind,94,0.6565,1,0.0106,
+261,Khadur Sahib,96,0.6883,1,0.0104,
+205,Bhulath,98,0.529,1,0.0102,
+203,Batala,295,0.4269,3,0.0102,temporal:ND
+226,Payal,111,0.5493,1,0.009,
+204,Dera Baba Nanak,118,0.4027,1,0.0085,
+235,Firozpur,304,0.7971,2,0.0066,
+7341,Lopoke,156,0.4565,1,0.0064,
+221,Fatehgarh Sahib,169,0.6713,1,0.0059,
+255,Ajnala,182,0.4259,1,0.0055,
+223,Khamanon,73,0.6264,0,0.0,
+220,Bassi Pathana,100,0.6269,0,0.0,
+218,Nawanshahr,172,0.4519,0,0.0,
+236,Jalalabad,134,0.8566,0,0.0,
+224,Samrala,200,0.5811,0,0.0,
+232,Bagha Purana,56,0.729,0,0.0,
+233,Moga,81,0.6738,0,0.0,
+234,Zira,216,0.7811,0,0.0,static:ND
+252,Nabha,171,0.7114,0,0.0,
+253,Patiala,251,0.5996,0,0.0,
+250,Samana,73,0.6398,0,0.0,
+251,Patran,67,0.7264,0,0.0,
+248,Budhlada,87,0.6766,0,0.0,
+242,Faridkot,96,0.7956,0,0.0,
+240,Gidderbaha,47,0.7864,0,0.0,
+244,Rampura Phul,52,0.743,0,0.0,
+243,Jaitu,41,0.8389,0,0.0,
+231,Nihal Singhwala,40,0.6516,0,0.0,
+225,Khanna,72,0.6308,0,0.0,
+271,Sangrur,59,0.7018,0,0.0,
+270,Dhuri,97,0.6984,0,0.0,
+258,Baba Bakala,151,0.6084,0,0.0,
+269,Malerkotla,83,0.6458,0,0.0,
+256,Amritsar -I,49,0.5872,0,0.0,
+5984,Kotkapura,34,0.7965,0,0.0,
+276,Tapa,50,0.7125,0,0.0,
+275,Barnala,51,0.7164,0,0.0,
+274,Moonak,45,0.8089,0,0.0,static:ND
+272,Sunam,46,0.7612,0,0.0,
+273,Lehra,39,0.7852,0,0.0,static:ND
+6011,Guruharsahai,119,0.8753,0,0.0,static:ND
+5996,Dharamkot,149,0.695,0,0.0,
+6856,Ahmedgarh,51,0.5921,0,0.0,
+6855,Bhawanigarh,66,0.7306,0,0.0,
+6854,Majitha,91,0.5423,0,0.0,temporal:ND
+6852,Dirba,35,0.6864,0,0.0,
+7122,Amargarh,48,0.679,0,0.0,
+6858,Maur,53,0.6822,0,0.0,
+7192,Adampur,149,0.3743,0,0.0,static:PD
+7409,Mehal Kalan,27,0.7077,0,0.0,

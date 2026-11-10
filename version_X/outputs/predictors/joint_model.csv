@@ -1,0 +1,14 @@
+feature,ols_beta,ols_ci_lo,ols_ci_hi,rf_perm_importance
+d1_turnaround_days_p,0.05051,0.007867,0.08707,0.0452
+d1_harvest_doy_p,-0.1077,-0.1659,-0.04944,0.04765
+d2_early_canopy_share_p,-0.01968,-0.06366,0.01955,0.01889
+d3_labourers_per_cultivator_p,0.02641,-0.006552,0.05845,0.0107
+d3_cultivators_per_100ha_rice_p,-0.01571,-0.04708,0.02089,0.01022
+d4_km_nearest_buyer_p,-0.112,-0.2303,0.008387,0.242
+d5_km_interstate_border_p,0.2636,0.1243,0.3693,0.3726
+d5_km_international_border_p,0.3185,0.1456,0.4902,0.5757
+d6_km_urban_centre_p,0.08664,0.001618,0.1758,0.07327
+d6_km_any_urban_p,0.04048,-0.01112,0.08865,0.01925
+d7_basmati_share_district_p,0.1591,0.006849,0.2921,0.1739
+d9_bovines_per_cultivator_p,-0.05001,-0.08979,-0.009838,0.009638
+rice_p,0.0904,0.05335,0.1235,0.02743

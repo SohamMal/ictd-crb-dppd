@@ -1,0 +1,28 @@
+population: 9278 villages
+tree built
+  bootstrap 0/40
+  bootstrap 10/40
+  bootstrap 20/40
+  bootstrap 30/40
+ k_cut  groups_after_merge                              sizes  silhouette  boot_ari_median  boot_ari_p10  ari_vs_tehsil_regions
+     2                   2                          7639/1639       0.353            1.000         0.995                  0.937
+     3                   3                     4305/3334/1639       0.377            0.991         0.392                  0.380
+     4                   4                 4074/3334/1639/231       0.356            0.950         0.945                  0.351
+     5                   5             4074/2864/1639/470/231       0.352            0.931         0.901                  0.318
+     6                   6         3550/2864/1639/524/470/231       0.371            0.891         0.870                  0.265
+     7                   7     3550/2864/1415/524/470/231/224       0.359            0.977         0.874                  0.256
+     8                   8 3428/2864/1415/524/470/231/224/122       0.348            0.969         0.951                  0.245
+
+chosen cut k=3: 4305/3334/1639, silhouette 0.377, boot ARI 0.991
+           n  rice_share  rain_mm  gw_pct  zone_14_2  zone_2_5  zone_4_1  zone_9_1      top_soil  silhouette  share_central
+vgroup                                                                                                                     
+V1      4305       0.721  838.642   186.0      0.119     0.000     0.005     0.876    Fine-loamy       0.336          1.000
+V2      3334       0.795  658.430   249.0      0.000     0.140     0.854     0.006    Fine-loamy       0.395          0.972
+V3      1639       0.612  462.219   103.0      0.000     0.997     0.003     0.000  Coarse-loamy       0.449          0.017
+dimension separation (between - within): {'rice': 0.035, 'rainfall': 0.161, 'zone': 0.377, 'groundwater': 0.095, 'soil': 0.021}
+cross-tab vs tehsil regions:
+ group   Central  South-west
+vgroup                     
+V1         4305           0
+V2         3239          95
+V3           28        1611

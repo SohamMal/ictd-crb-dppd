@@ -1,0 +1,43 @@
+{
+ "k_cut": 3,
+ "dimensions": {
+  "rice": [
+   "rice_share_2022_cal"
+  ],
+  "rainfall": [
+   "monsoon_rainfall_mm"
+  ],
+  "zone": [
+   "aesr_share_14_2",
+   "aesr_share_2_5",
+   "aesr_share_4_1",
+   "aesr_share_9_1"
+  ],
+  "groundwater": [
+   "extraction_pct_2022"
+  ],
+  "soil": [
+   "soil_particle_size",
+   "soil_drainage",
+   "soil_soil_texture",
+   "soil_soil_depth",
+   "soil_ph_class",
+   "soil_salinity",
+   "soil_sodicity",
+   "soil_erosion"
+  ]
+ },
+ "weights": "equal",
+ "min_group": 100,
+ "boot": 40,
+ "frac": 0.8,
+ "separation": {
+  "rice": 0.035,
+  "rainfall": 0.161,
+  "zone": 0.377,
+  "groundwater": 0.095,
+  "soil": 0.021
+ },
+ "silhouette": 0.377,
+ "boot_ari_median": 0.991
+}

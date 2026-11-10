@@ -1,0 +1,43 @@
+ranked villages 9277 | static PDs kept 299 | static NDs 222
+                       driver  expected_sign  pd_median_pctile  pd_expected_side  pd_vs_rest_p_holm  nd_median_pctile  nd_expected_side  nd_vs_rest_p_holm  rho_gradient  rho_ci_lo  rho_ci_hi  within_tehsil_expected_side  within_tehsil_sign_p_holm
+           d1_turnaround_days             -1             0.290             0.338       3.108501e-19             0.511             0.477       1.000000e+00         0.086      0.027      0.146                        0.311               5.004680e-10
+               d1_harvest_doy              1             0.697             0.358       1.529619e-10             0.505             0.500       1.000000e+00        -0.110     -0.177     -0.029                        0.298               1.967376e-11
+        d2_early_canopy_share             -1             0.367             0.428       1.000000e+00             0.367             0.577       2.775993e-01         0.020     -0.054      0.086                        0.428               1.050340e-01
+  d3_labourers_per_cultivator             -1             0.509             0.506       1.000000e+00             0.556             0.467       9.919002e-01         0.020     -0.020      0.061                        0.465               1.000000e+00
+d3_cultivators_per_100ha_rice             -1             0.441             0.455       4.348960e-01             0.425             0.599       1.300806e-02        -0.017     -0.052      0.026                        0.475               1.000000e+00
+          d4_km_nearest_buyer              1             0.545             0.475       9.660809e-01             0.340             0.369       5.515507e-07        -0.140     -0.241     -0.034                        0.488               1.000000e+00
+      d5_km_interstate_border             -1             0.214             0.184       9.299057e-40             0.439             0.572       4.915915e-01         0.110     -0.025      0.231                        0.411               2.062265e-02
+   d5_km_international_border              0             0.494               NaN       1.000000e+00             0.805               NaN       1.859142e-07         0.088     -0.064      0.232                          NaN                        NaN
+           d6_km_urban_centre              1             0.518             0.472       1.000000e+00             0.601             0.622       6.798057e-03         0.072     -0.021      0.153                        0.462               1.000000e+00
+              d6_km_any_urban              1             0.603             0.391       4.883640e-04             0.609             0.613       4.361064e-04         0.057     -0.002      0.121                        0.452               6.313750e-01
+    d7_basmati_share_district             -1             0.634             0.582       1.000000e+00             0.516             0.482       1.000000e+00         0.021     -0.111      0.154                          NaN                        NaN
+    d9_bovines_per_cultivator             -1             0.531             0.524       1.000000e+00             0.528             0.480       9.919002e-01        -0.023     -0.071      0.028                        0.464               1.000000e+00
+
+joint OLS R2 (in-sample) 0.114 | random forest out-of-tehsil CV R2 0.156
+                        feature  ols_beta  ols_ci_lo  ols_ci_hi  rf_perm_importance
+           d1_turnaround_days_p     0.051      0.008      0.087               0.045
+               d1_harvest_doy_p    -0.108     -0.166     -0.049               0.048
+        d2_early_canopy_share_p    -0.020     -0.064      0.020               0.019
+  d3_labourers_per_cultivator_p     0.026     -0.007      0.058               0.011
+d3_cultivators_per_100ha_rice_p    -0.016     -0.047      0.021               0.010
+          d4_km_nearest_buyer_p    -0.112     -0.230      0.008               0.242
+      d5_km_interstate_border_p     0.264      0.124      0.369               0.373
+   d5_km_international_border_p     0.319      0.146      0.490               0.576
+           d6_km_urban_centre_p     0.087      0.002      0.176               0.073
+              d6_km_any_urban_p     0.040     -0.011      0.089               0.019
+    d7_basmati_share_district_p     0.159      0.007      0.292               0.174
+    d9_bovines_per_cultivator_p    -0.050     -0.090     -0.010               0.010
+                         rice_p     0.090      0.053      0.123               0.027
+
+F. PDs with normal harvest timing only (within tehsil):
+                       driver  n_pd_v5_pass  within_tehsil_expected_side   sign_p  median_diff_vs_peer_median
+           d1_turnaround_days           248                        0.359 0.000010                      -2.500
+               d1_harvest_doy           248                        0.359 0.000010                       0.500
+        d2_early_canopy_share           248                        0.435 0.048791                       0.000
+  d3_labourers_per_cultivator           231                        0.463 0.292450                       0.020
+d3_cultivators_per_100ha_rice           248                        0.504 0.949385                      -3.472
+          d4_km_nearest_buyer           248                        0.488 0.750937                      -0.801
+      d5_km_interstate_border           248                        0.411 0.006210                     -13.744
+           d6_km_urban_centre           248                        0.508 0.848966                      -0.517
+              d6_km_any_urban           248                        0.500 1.000000                       0.213
+    d9_bovines_per_cultivator           214                        0.444 0.115684                       0.189

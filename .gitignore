@@ -32,3 +32,7 @@ __pycache__/
 Thumbs.db
 desktop.ini
 ~$*
+
+# Version X (village level): regenerable Earth Engine caches and point-level verdicts
+version_X/outputs/**/raw/
+version_X/outputs/burn/point_verdicts*.csv

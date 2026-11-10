@@ -1,0 +1,13 @@
+driver,name,expected_sign,coverage,pd_n,pd_median_pctile,nd_n,nd_median_pctile,pd_expected_side,nd_expected_side,pd_vs_rest_p,nd_vs_rest_p,rho_gradient,rho_ci_lo,rho_ci_hi,rho_V1,rho_V2,rho_V3,within_tehsil_expected_side,within_tehsil_sign_p,pd_vs_rest_p_holm,nd_vs_rest_p_holm,within_tehsil_sign_p_holm,ci_excludes_0
+d1_turnaround_days,Harvest-to-wheat turnaround (days),-1,1,299,0.29,222,0.511,0.338,0.477,2.826e-20,0.4329,0.086,0.027,0.146,0.058,0.071,0.188,0.311,5.561e-11,3.109e-19,1,5.005e-10,True
+d1_harvest_doy,Paddy harvest date (day of year),1,1,299,0.697,222,0.505,0.358,0.5,1.53e-11,0.9878,-0.11,-0.177,-0.029,-0.184,0.048,-0.228,0.298,1.967e-12,1.53e-10,1,1.967e-11,True
+d2_early_canopy_share,Early second crop (potato/veg) share,-1,1,299,0.367,222,0.367,0.428,0.577,0.2803,0.03966,0.02,-0.054,0.086,0.137,-0.119,-0.166,0.428,0.015,1,0.2776,0.105,False
+d3_labourers_per_cultivator,Farm labourers per cultivator (2011),-1,0.964,271,0.509,210,0.556,0.506,0.467,0.6451,0.1984,0.02,-0.02,0.061,0.046,0.026,-0.06,0.465,0.2742,1,0.9919,1,False
+d3_cultivators_per_100ha_rice,"Cultivators per 100 ha rice (small farms, 2011)",-1,1,299,0.441,222,0.425,0.455,0.599,0.05436,0.001626,-0.017,-0.052,0.026,-0.008,-0.003,-0.068,0.475,0.4182,0.4349,0.01301,1,False
+d4_km_nearest_buyer,km to nearest straw buyer,1,1,299,0.545,222,0.34,0.475,0.369,0.138,5.014e-08,-0.14,-0.241,-0.034,-0.298,-0.082,0.16,0.488,0.7287,0.9661,5.516e-07,1,True
+d5_km_interstate_border,km to inter-state border,-1,1,299,0.214,222,0.439,0.184,0.572,7.749e-41,0.08193,0.11,-0.025,0.231,0.034,0.07,0.392,0.411,0.002578,9.299e-40,0.4916,0.02062,False
+d5_km_international_border,km to international border,0,1,299,0.494,222,0.805,,,0.4401,1.549e-08,0.088,-0.064,0.232,0.361,-0.032,-0.385,,,1,1.859e-07,,False
+d6_km_urban_centre,km to nearest urban centre,1,1,299,0.518,222,0.601,0.472,0.622,0.9681,0.0007553,0.072,-0.021,0.153,0.039,0.178,-0.06,0.462,0.2032,1,0.006798,1,False
+d6_km_any_urban,km to nearest town (any urban cell),1,1,299,0.603,222,0.609,0.391,0.613,5.426e-05,4.361e-05,0.057,-0.002,0.121,0.088,0.075,-0.059,0.452,0.1052,0.0004884,0.0004361,0.6314,False
+d7_basmati_share_district,Basmati share of rice (district),-1,1,299,0.634,222,0.516,0.582,0.482,0.512,0.6533,0.021,-0.111,0.154,-0.077,0.149,0.069,,,1,1,,False
+d9_bovines_per_cultivator,Cattle + buffalo per cultivator (2019),-1,0.91,252,0.531,202,0.528,0.524,0.48,0.3806,0.2179,-0.023,-0.071,0.028,0.019,-0.067,-0.042,0.464,0.2842,1,0.9919,1,False

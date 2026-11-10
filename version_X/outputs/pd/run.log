@@ -1,0 +1,65 @@
+ranked villages: 9277 | village-seasons 46235 | median verdicts per village-season 10.0
+  bootstrap 0/200
+  bootstrap 20/200
+  bootstrap 40/200
+  bootstrap 60/200
+  bootstrap 80/200
+  bootstrap 100/200
+  bootstrap 120/200
+  bootstrap 140/200
+  bootstrap 160/200
+  bootstrap 180/200
+
+flags per group (static):
+static        PD  candidate-ND  candidate-PD
+peer                                        
+V1-H    1180  22           128           104
+V1-L    1200  45           118            73
+V1-M    1216  19           120            80
+V2-H     945  41            68            55
+V2-L     900  40           106            67
+V2-M     941  38            78            54
+V3-H     446  26            50            24
+V3-L     436  54            56             1
+V3-M     444  17            51            34
+
+flags per group (temporal):
+temporal        ND  PD  candidate-ND  candidate-PD
+peer                                              
+V1-H      1148  35  30           108           113
+V1-L      1147  47  36            97           109
+V1-M      1147  20  22           124           122
+V2-H       887  23  22            88            89
+V2-L       891  23  18            88            93
+V2-M       888  14  14            98            97
+V3-H       436  29  32            26            23
+V3-L       437  31  28            24            27
+V3-M       436  35   9            20            46
+
+validation outcome:
+    kind flag_side  strict          label   n
+  static        ND   False       contrast 222
+  static        ND   False        dropped 553
+  static        PD   False PD with caveat  18
+  static        PD   False        dropped 449
+  static        PD   False   validated PD  25
+  static        PD    True PD with caveat 101
+  static        PD    True        dropped  46
+  static        PD    True   validated PD 155
+temporal        ND   False       contrast 100
+temporal        ND   False        dropped 573
+temporal        ND    True       contrast 214
+temporal        ND    True        dropped  43
+temporal        PD   False PD with caveat  23
+temporal        PD   False        dropped 645
+temporal        PD   False   validated PD  51
+temporal        PD    True PD with caveat  32
+temporal        PD    True        dropped  72
+temporal        PD    True   validated PD 107
+
+village static PDs (validated + caveat) by tehsil label of the main version:
+                  villages_ranked  village_pds_static  share
+tl                                                          
+other                        7733                 180  0.023
+tehsil static ND              419                   0  0.000
+tehsil static PD             1125                 119  0.106

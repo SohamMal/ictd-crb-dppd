@@ -1,0 +1,19 @@
+kind,flag_side,strict,label,n
+static,ND,False,contrast,222
+static,ND,False,dropped,553
+static,PD,False,PD with caveat,18
+static,PD,False,dropped,449
+static,PD,False,validated PD,25
+static,PD,True,PD with caveat,101
+static,PD,True,dropped,46
+static,PD,True,validated PD,155
+temporal,ND,False,contrast,100
+temporal,ND,False,dropped,573
+temporal,ND,True,contrast,214
+temporal,ND,True,dropped,43
+temporal,PD,False,PD with caveat,23
+temporal,PD,False,dropped,645
+temporal,PD,False,validated PD,51
+temporal,PD,True,PD with caveat,32
+temporal,PD,True,dropped,72
+temporal,PD,True,validated PD,107
