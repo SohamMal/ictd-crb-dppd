@@ -170,3 +170,39 @@ Legend: **[C]** confirmed · **[P]** proposed / provisional · **[?]** unknown /
 - [C] Low burning at PDs is on harvest-confirmed paddy (V4b moves shares ≤ 0.03). Burning tracks rice share within groups (ρ 0.70 Central, 0.63 SW) → structural question for Stage 3.
 - [C] V7 visual check not done (Soham's decision) → limitation; cotton passing the harvest filter at Abohar not ruled out.
 - Impact: temporal deviance is too noisy at 100 points/tehsil, so only Abohar is reported as a temporal PD. Stage 3 compares the validated PDs with the static NDs (Lehra, Zira, Moonak, Guruharsahai).
+
+### 2026-10-24 → 11-07 (catch-up, written 2026-11-10) — Final burn detector, tehsil measure, PD identification, A3 deck
+- [C] 10-24: Planet Education & Research access granted (to 2028-10-22, 3,000 km²/month, resets on the 1st).
+- [C] 10-24: VIIRS fall in 2024 (2,355 fires) matches the official ICAR-CREAMS counts (71,304 in 2021 → 36,663 in 2023 → 10,887 in 2024). It is not a data gap; overpass evasion is the likely cause. VIIRS stays a backup only.
+- [C] 10-24: Soham asked for temporal PDs only (Basma), changing the 10-10/10-11 "static + temporal" decision. Later runs (10-28 onwards) report both, with static as the headline. **[?] Soham to confirm static was reinstated.**
+- [C] 10-24: Stage 3 driver 1 built (harvest date, harvest-to-sowing turnaround). Checked against CIMMYT reported dates: district ρ 0.77–0.93.
+- [C] 10-26: Planet bills each scene as at least 100 km² (7,500 km² used of 3,000 for 75 small clips). Downloads were blocked until 11-01; Planet used only as a judge on a small area.
+- [C] 10-26: Soham set the academic framing: a sound pipeline plus a sample demonstration with stated limits, not a perfect state-wide measure. On Walker's ground truth, daily Planet separates burnt from ploughed fields (AUC 0.96); Sentinel-2 alone cannot.
+- [C] 10-26: Prof. Aaditeshwar meeting: train Sentinel-2 on Planet; a one-tehsil demonstration is enough. Acceptance bar: most burns detected, few false alarms, ploughed fields mostly called not burnt.
+- [C] 10-27: Final Sentinel-2 detector:
+  - candidate = largest jump in the BAIS2+TCB score; "before" = last clear look;
+  - random forest trained on Walker ground truth;
+  - cut 0.79 main (keeps 90% of burns; 18% of ploughed fields called burnt), cut 0.5 sensitivity (51% of ploughed called burnt);
+  - read at a single 20 m pixel.
+  
+  Independent check on Jalandhar 2021 with Planet: false alarms 23/32 → 0–3/32; burns under-counted (mostly partial burns).
+- [C] 10-28: Final tehsil measure, 2019–24 (100 fixed rice points per tehsil). Tehsil ranks match VIIRS (ρ 0.78–0.87) and are stable year to year (0.82–0.91). CREAMS 2022 district ρ 0.87. 2024 is flagged as doubtful (72% of burns first seen 16–30 Nov).
+- [C] 10-28: PD identification on 2020–24 (main) and 2020–23 (sensitivity); robust = flagged in both runs. Log scale (log(value + c), c = 10% of the group median). Temporal trend = Theil–Sen slope relative to the group median.
+- [C] 10-29: Strict IQR rule reported beside the old (bottom-10%) rule. Abohar is the only strict PD; Dinanagar and Samana are borderline; the Doaba cluster is low-burning but inside the normal spread.
+- [C] 11-05/06: A3 interim deck submitted (20 slides + 4 backup; new figures G–J: burn map, burn vs VIIRS, PD fences, PD map).
+- Impact: the burn measure and PD lists that validation and Stage 3 rest on were fixed in this period.
+
+### 2026-11-09 — Stage 3 = online desk study only
+- [C] No fieldwork, interviews, expert calls or emails (academic project). Stage 3 uses public datasets, government reports, news and papers only (handbook p. 77–78: quantitative route from secondary sources).
+- [C] V8 (local knowledge) dropped from PD validation.
+- Impact: PDs and their practices are not confirmed in the field → stated limitation in the report.
+
+### 2026-11-10 — Stage 3 drivers analysed; report fully drafted
+- [C] 8 of 9 drivers built per tehsil from online data. D8 (CRM machines / CHCs) was dropped because only state totals exist online. Livestock is at village level (2019 census, 92% matched).
+- [C] Findings (descriptive; 8 PDs vs 4 NDs; 44 tests):
+  - urban area share is the only driver that holds in Central with rice share controlled (ρ −0.61, partial −0.30). A field-level check shows it is tehsil-wide: PDs burn as little on fields > 5 km from towns. So it is a regional marker of the Doaba belt, not a near-town effect.
+  - Abohar has a single-case profile: a biomass plant in the tehsil, the most labourers per cultivator in Punjab, high livestock, an early second crop, and a basmati-heavy district.
+  - Turnaround and farm size mostly restate rice share.
+  - The South-west border pattern runs opposite to Dipoppa & Gulzar (cotton belt).
+- [C] Report: all sections drafted (Abstract, §1–§7 with impact section); references complete [1]–[32]; tables renumbered 1–9.
+- Open: figures G–J and a Stage 3 figure not yet in the report; proofreading and export; talk slides for 25 Nov; `version_X/` (untracked parallel pipeline) to be reviewed.
