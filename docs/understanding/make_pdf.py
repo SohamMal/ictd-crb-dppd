@@ -6,9 +6,12 @@ Usage:  python docs/understanding/make_pdf.py            (all .md files)
 Markdown -> styled HTML (python-markdown) -> PDF via headless Edge/Chrome.
 """
 
+import re
+import shutil
 import subprocess
 import sys
 import tempfile
+import time
 from pathlib import Path
 
 import markdown
@@ -50,8 +53,21 @@ def browser() -> str:
     sys.exit("No Edge or Chrome found.")
 
 
+def fix_lists(text: str) -> str:
+    """Python-markdown needs a blank line before a list; add one if missing."""
+    out, prev = [], ""
+    for line in text.splitlines():
+        is_item = re.match(r"\s*([-*]|\d+\.)\s", line) is not None
+        prev_item = re.match(r"\s*([-*]|\d+\.)\s", prev) is not None
+        if is_item and prev.strip() and not prev_item and not prev.startswith("|"):
+            out.append("")
+        out.append(line)
+        prev = line
+    return "\n".join(out)
+
+
 def convert(md_path: Path, exe: str) -> Path:
-    body = markdown.markdown(md_path.read_text(encoding="utf-8"),
+    body = markdown.markdown(fix_lists(md_path.read_text(encoding="utf-8")),
                              extensions=["tables", "sane_lists"])
     html = (f"<!doctype html><html><head><meta charset='utf-8'>"
             f"<title>{md_path.stem}</title><style>{CSS}</style></head>"
@@ -60,11 +76,27 @@ def convert(md_path: Path, exe: str) -> Path:
     with tempfile.TemporaryDirectory() as tmp:
         html_path = Path(tmp) / (md_path.stem + ".html")
         html_path.write_text(html, encoding="utf-8")
-        subprocess.run([exe, "--headless", "--disable-gpu",
+        # Print inside the temp dir, then copy: some setups block the browser
+        # from writing into the project folder directly.
+        tmp_pdf = Path(tmp) / pdf_path.name
+        subprocess.run([exe, "--headless=new", "--disable-gpu",
                         "--no-pdf-header-footer",
                         f"--user-data-dir={Path(tmp) / 'profile'}",
-                        f"--print-to-pdf={pdf_path}", html_path.as_uri()],
+                        f"--print-to-pdf={tmp_pdf}", html_path.as_uri()],
                        check=True, capture_output=True, timeout=120)
+        # The browser may hand off to a background process and return early:
+        # wait until the PDF appears and its size stops changing.
+        last = -1
+        for _ in range(120):
+            size = tmp_pdf.stat().st_size if tmp_pdf.exists() else -1
+            if size > 0 and size == last:
+                break
+            last = size
+            time.sleep(0.5)
+        if not tmp_pdf.exists():
+            sys.exit(f"Browser did not write {tmp_pdf}; try setting TEMP to "
+                     "a writable folder.")
+        shutil.copyfile(tmp_pdf, pdf_path)
     return pdf_path
 
 
