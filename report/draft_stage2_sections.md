@@ -1,6 +1,6 @@
 # Draft: §3.4 (tehsil measure), §3.5, §3.6 and §4.3 for `report_draft.md` (2026-11-10)
 
-> **Status: [P] draft for Soham's review.** Not yet merged into `report_draft.md`. Proposed placement:
+> **Status: merged into `report_draft.md` on 2026-11-10** (tables renumbered there: 3 Drivers, 6 Robust deviants, 7 Validation, 8 Drivers vs burning). Edit the report, not this file. Proposed placement:
 > - **§3.4:** the "Tehsil measure" block replaces the three "Tehsil measure ⏸" bullets at the end of §3.4. The "*Status: … tehsil aggregation ⏸*" line goes.
 > - **§3.5 and §3.6:** replace their placeholders.
 > - **§4.3:** replaces "4.3 Positive deviants ⏸".

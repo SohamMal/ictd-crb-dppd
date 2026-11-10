@@ -1,6 +1,6 @@
 # Draft: Stage 3 sections for `report_draft.md` (2026-11-10)
 
-> **Status: [P] draft for Soham's review.** Not yet merged into `report_draft.md`. Proposed placement: §3.7 replaces the "3.7 Discovering underlying factors ⏸" placeholder, §4.4 replaces "4.4 Predictors ⏸", the limitation and future-work bullets go into §6, and the references continue the list at [21].
+> **Status: merged into `report_draft.md` on 2026-11-10** (tables renumbered there: 3 Drivers, 6 Robust deviants, 7 Validation, 8 Drivers vs burning). Edit the report, not this file. Proposed placement: §3.7 replaces the "3.7 Discovering underlying factors ⏸" placeholder, §4.4 replaces "4.4 Predictors ⏸", the limitation and future-work bullets go into §6, and the references continue the list at [21].
 > **Depends on unwritten sections:** §3.5 (PD identification), §3.6 (PD validation) and §4.3 (positive deviants) are still placeholders in the report. The text below refers to them for the PD list: 6 validated static PDs, 2 PDs with caveat, 4 static NDs.
 > Every number below comes from `outputs/predictors/drivers/` (`driver_summary.csv`, `unit_profiles.csv`, `urban_check_*.csv`); code in `Code/predictors/`.
 
