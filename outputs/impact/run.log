@@ -1,0 +1,22 @@
+South-west villages: 1706; frame after dropping Abohar and village PDs: 1597
+
+Simulation check (target 2023, as measured, 1000 draws):
+  delta 0.05: formula n 152/arm -> simulated power 0.80; simulation needs n 152/arm (power 0.81)
+  delta 0.10: formula n 39/arm -> simulated power 0.74; simulation needs n 42/arm (power 0.80)
+  delta 0.15: formula n 19/arm -> simulated power 0.77; simulation needs n 21/arm (power 0.83)
+
+Variance components (SD of village burnt share):
+ target  villages  mean_y  sd_raw  sd_peer  sd_ancova  sd_sampling  sd_full_field  corr_baseline
+   2022      1597  0.7098  0.2025   0.1916     0.1386       0.1291         0.0505         0.7214
+   2023      1597  0.6946  0.2095   0.1974     0.1551       0.1304         0.0839         0.6680
+   2024      1597  0.8164  0.1775   0.1632     0.1548       0.1102         0.1087         0.3141
+
+Villages per arm (target 2023, 80% power, alpha 0.05):
+delta                     0.05  0.10  0.15
+scenario                                  
+100 pts per village         56    16     7
+30 pts per village          81    22    11
+as measured (~10 pts)      152    39    19
+as measured, simulated     152    42    21
+full field                  46    13     6
+no baseline, as measured   246    63    29
