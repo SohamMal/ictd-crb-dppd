@@ -123,13 +123,60 @@ The full questionnaire is in Appendix A. Modules:
 | 9 | Barriers and preferences | What would make the farmer stop burning; willingness to sell straw at a given price |
 | 10 | List experiment | Sensitive burning question (§8.5) |
 
-### 8.7 Sample size **[TBD: to be computed from the main tehsil burn measure]**
+### 8.7 Sample size
 
-How many villages Phase 2 needs depends on two numbers:
-- how much burnt share varies between similar places;
-- how well a place's past seasons predict its next one (the stronger the link, the more noise the baseline removes, and the fewer villages are needed).
+How many villages Phase 2 needs depends on two things:
+- **How much burning differs between similar places.** This is the noise a pilot effect has to stand out from.
+- **How well a place's past seasons predict its next one.** The stronger the link, the more noise the baseline removes, and the fewer villages are needed.
 
-Both will be estimated from the study's tehsil burn measure (§3.4, 9,700 fixed points revisited 2019–24).
+**Where the numbers come from.** Both are estimated from the study's tehsil burn measure (§3.4). It revisits the same 100 points in every tehsil each season, 2019–24 (`Code/impact/sample_size.py`; outputs in `outputs/impact/`).
+- **Frame:** the 17 South-west tehsils other than Abohar, which hold 1,633 Census villages. Abohar is excluded because the levers come from there.
+- **Pilot season:** 2023. **Baseline:** each field's 2019–22 burning.
+- **Analysis:** pilot-season burning compared between arms, allowing for the village baseline (ANCOVA).
+- **Test:** 80% power, 5% two-sided significance, with a small-sample correction.
+
+**What the data show.**
+- In 2023, 65% of fields burnt.
+- Tehsils in the frame differ by an SD of 0.11, and the tehsil explains about 5% of the field-to-field variation.
+- A field that burnt before is more likely to burn again: within-tehsil correlation 0.36.
+- Tehsil burning levels tracked each other almost perfectly from 2019 to 2023 (estimated correlation ≈ 1.0, on 17 tehsils), but not into 2024 (0.25).
+
+**Two things the tehsil data cannot tell us, set as ranges.** The pilot unit is the village, and the data have no village identifier.
+- **How much villages differ.** Villages are smaller than tehsils and usually more alike inside, so they should differ more from each other. We set the between-village variation at 1×, 2× and 3× the between-tehsil value.
+- **How steady a village's burning level is from year to year.** A village has more local shocks than a tehsil (a buyer arrives or leaves, harvest timing shifts). We set this correlation at 0.9, 0.7 and 0.5 rather than the tehsil estimate of ≈ 1.0, which would make the baseline look unrealistically strong.
+
+**Table 10. Villages needed per arm to detect a 10-point drop.** *(2023 as pilot season, 30 points scored per village per season. One arm = one lever, or control; with pairs, villages per arm = number of pairs.)*
+
+| Year-to-year steadiness of a village's level | Villages differ 1× as much as tehsils | 2× | 3× |
+|---|---|---|---|
+| 0.9 | 15 | 18 | 21 |
+| 0.7 | 21 | **30** | 39 |
+| 0.5 | 25 | 39 | 52 |
+
+**How the middle case (2×, 0.7) changes:**
+
+| Change | Villages per arm |
+|---|---|
+| Fewer points per village: 10 | 48 |
+| More points: 100 | 23 |
+| More points: 300 | 21 |
+| No baseline, 30 points | 49 |
+| A 5-point drop instead of 10 | 114 |
+| A 15-point drop instead of 10 | 14 |
+| 2022 as pilot season | 32 |
+| 2024 as pilot season | 20 |
+
+**Recommendation.**
+- Design for a **10-point drop**, about one-sixth of current burning. A smaller effect would hardly justify the lever's cost.
+- Score **at least 30 points per village** each season. This costs nothing extra: it only needs more Sentinel-2 extraction, and points beyond 30 add little.
+- Plan on the middle case, **30 villages per arm**, rounded up to **35 pairs (70 villages) per lever** to allow for villages where the lever is not delivered.
+- The pessimistic corner of Table 10 (52 per arm) still fits easily within the 1,633-village frame. Three levers plus control would need about 140 villages.
+- Add the neighbouring villages tracked for spillovers (§8.4).
+
+**Caveats.**
+- The between-village spread and the village-level steadiness are assumptions, not estimates. Phase 1 can measure both by scoring 30 points in each surveyed village, and the sample size should be recomputed before Phase 2.
+- The calculation uses the normal-approximation formula. Shares near 100% cannot rise, which squeezes the variation, so a check by simulation on the Phase 1 data is advisable.
+- Matching pairs on baseline and rice share is not credited, so the numbers err on the high side.
 
 ### 8.8 Recommended formats
 
