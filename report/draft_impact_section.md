@@ -59,7 +59,7 @@ Assumptions that must hold, and where each is tested:
 | ND | Lehra, Zira, Moonak, Guruharsahai | Heavy burners in the same groups |
 | Typical peer | 2 per group, near the group median **[TBD: pick by code]** | Shows what "normal" looks like |
 
-**Village selection.** Within each tehsil, rank villages by their 2020–24 satellite burnt share and select about 6 villages spread across that range (the village-level measure is already built in `version_X/`). This gives both "PD villages inside PD tehsils" and ordinary villages for contrast.
+**Village selection.** Within each tehsil, rank villages by their 2020–24 satellite burnt share and select about 6 villages spread across that range (this needs the §3.4 burn measure run on more points per village, a cheap extension of the existing pipeline). This gives both "PD villages inside PD tehsils" and ordinary villages for contrast.
 
 **Activities.**
 - **Farmer survey:** about 20 rice farmers per village, sampled from the village list (§8.5).
@@ -123,51 +123,13 @@ The full questionnaire is in Appendix A. Modules:
 | 9 | Barriers and preferences | What would make the farmer stop burning; willingness to sell straw at a given price |
 | 10 | List experiment | Sensitive burning question (§8.5) |
 
-### 8.7 Sample size
+### 8.7 Sample size **[TBD: to be computed from the main tehsil burn measure]**
 
-How many villages Phase 2 needs depends on two numbers, both estimated from the study's own village-level burn measure (`Code/impact/power_calc.py`; outputs in `outputs/impact/`):
-- **How much burnt share varies between similar villages.** This is the noise a pilot effect has to stand out from.
-- **How well a village's past seasons predict its next one.** The stronger the link, the more noise the baseline removes, and the fewer villages are needed.
+How many villages Phase 2 needs depends on two numbers:
+- how much burnt share varies between similar places;
+- how well a place's past seasons predict its next one (the stronger the link, the more noise the baseline removes, and the fewer villages are needed).
 
-**Set-up.**
-- **Frame:** 1,597 South-west villages. Abohar is excluded because the levers come from there, and validated village PDs are excluded because they already burn little.
-- **Pilot outcome:** 2023 burnt share.
-- **Baseline:** the mean of 2020–22.
-- **Analysis:** pilot season regressed on treatment, baseline and peer group (ANCOVA).
-- **Test:** 80% power, 5% two-sided significance, for a drop of 5, 10 or 15 percentage points.
-- **Pairing:** not credited, so the numbers err on the high side.
-
-**What the data show.**
-- Mean burnt share is 0.69, with a village-to-village SD of 0.21.
-- The baseline correlates with the pilot season at r = 0.67, and allowing for it cuts the SD to 0.16.
-- About 0.13 of that SD is sampling noise from the 10 points per village. A pilot that scores more fields per village is therefore much more precise.
-
-**Table 10. Villages needed per arm (2023 as pilot season).** *(One arm = one lever, or control. With pairs, villages per arm = number of pairs.)*
-
-| Measurement in the pilot | 5-point drop | 10-point drop | 15-point drop |
-|---|---|---|---|
-| No baseline, 10 points per village | 246 | 63 | 29 |
-| Baseline, 10 points per village (checked by simulation) | 152 | 42 | 21 |
-| Baseline, 30 points per village | 81 | 22 | 11 |
-| Baseline, 100 points per village | 56 | 16 | 7 |
-| Baseline, all rice fields (lower bound) | 46 | 13 | 6 |
-
-**Checks.**
-- **Simulation:** we assigned villages at random on the real data, cut the treated villages' burning by a fixed amount, and refitted the model 1,000 times. For a 10-point drop the formula's 39 villages gave 74% power, so the simulated 42 is used in Table 10.
-- **Other pilot seasons:**
-  - With 2022 as the pilot season, fewer villages are needed (formula: 32 instead of 39 per arm at 10 points per village).
-  - With 2024, the baseline predicts much less (r = 0.31; 2024 is the doubtful season, §6). The baseline-adjusted numbers rise to 26 per arm at 30 points per village and 22 at 100.
-
-**Recommendation.**
-- Design for a **10-point drop**. That is about one-seventh of current burning, and a smaller effect would hardly justify the lever's cost.
-- Score **at least 30 points per village** each season. This is free: it only needs more Sentinel-2 extraction.
-- That needs **22 villages per arm**. Rounding up to **25 pairs (50 villages) per lever** allows for villages where the lever is not delivered.
-- Add the neighbouring villages that are tracked for spillovers (§8.4).
-- One lever plus control fits easily within the 1,597-village frame. All three levers plus control would need about 100 pilot villages.
-
-**Caveats.**
-- The "all rice fields" row subtracts estimated sampling noise. It also ignores that a more precise baseline would help further, so treat it as a rough bound only.
-- Shares near 100% cannot rise, which squeezes the variation. The simulation captures this on the real data; the formula does not.
+Both will be estimated from the study's tehsil burn measure (§3.4, 9,700 fixed points revisited 2019–24).
 
 ### 8.8 Recommended formats
 
