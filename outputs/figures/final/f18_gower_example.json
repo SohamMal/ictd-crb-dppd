@@ -1,0 +1,41 @@
+{
+ "Phagwara|Adampur": {
+  "rice": 0.09,
+  "rainfall": 0.09,
+  "zone": 0.0,
+  "groundwater": 0.12,
+  "soil": 0.88,
+  "distance": 0.24
+ },
+ "Phagwara|Abohar": {
+  "rice": 0.42,
+  "rainfall": 0.38,
+  "zone": 0.5,
+  "groundwater": 0.63,
+  "soil": 0.62,
+  "distance": 0.51
+ },
+ "values": {
+  "Phagwara": {
+   "rice_share_2022_cal": 0.650925,
+   "mean_monsoon_rainfall_mm": 767.25,
+   "aesr_dominant": 9.1,
+   "mean_extraction_pct_2022": 265.0,
+   "dominant_particle_size": "Coarse-loamy"
+  },
+  "Adampur": {
+   "rice_share_2022_cal": 0.589251,
+   "mean_monsoon_rainfall_mm": 854.44,
+   "aesr_dominant": 9.1,
+   "mean_extraction_pct_2022": 219.4,
+   "dominant_particle_size": "Sandy"
+  },
+  "Abohar": {
+   "rice_share_2022_cal": 0.365042,
+   "mean_monsoon_rainfall_mm": 394.55,
+   "aesr_dominant": 2.5,
+   "mean_extraction_pct_2022": 31.85,
+   "dominant_particle_size": "Coarse-loamy"
+  }
+ }
+}

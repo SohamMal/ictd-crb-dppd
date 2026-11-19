@@ -583,3 +583,85 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# ================= method figures (added 2026-11-20) =================
+def f18_gower_example():
+    """Real per-dimension Gower scores for two pairs (json for a pptx table)."""
+    sys.path.insert(0, str(ROOT / "Code" / "grouping"))
+    import config
+    from gower import gower_matrix
+    df = pd.read_csv(config.MASTER_CSV)
+    dist, per_dim = gower_matrix(df, config.DIMENSIONS, range_exclude=("Dhar Kalan",))
+    names = df[config.NAME_COL].tolist()
+    pairs = [("Phagwara", "Adampur"), ("Phagwara", "Abohar")]
+    out = {}
+    for a, b in pairs:
+        i, j = names.index(a), names.index(b)
+        out[f"{a}|{b}"] = {**{d: round(float(per_dim[d][i, j]), 2) for d in config.DIMENSIONS},
+                           "distance": round(float(dist[i, j]), 2)}
+    cols = ["rice_share_2022_cal", "mean_monsoon_rainfall_mm", "aesr_dominant", "mean_extraction_pct_2022",
+            "dominant_particle_size"]
+    vals = df.set_index(config.NAME_COL).loc[["Phagwara", "Adampur", "Abohar"], cols]
+    out["values"] = json.loads(vals.to_json(orient="index"))
+    (OUT / "f18_gower_example.json").write_text(json.dumps(out, indent=1))
+    print("  gower", {k: v for k, v in out.items() if k != "values"})
+
+
+def f19_detector_series():
+    """Two real sample points (Lehra, 2022): both flagged; the forest keeps one, rejects one."""
+    # same steps as Code/burn/tehsil_metric_rf.looks (that module imports rasterio, blocked here)
+    sys.path.insert(0, str(ROOT / "Code" / "planet"))
+    import s2_from_planet_labels as w
+    raw_dir = ROOT / "outputs" / "burn_tehsil_rf" / "raw"
+
+    def looks(s):
+        d = s.copy()
+        bands = ["B2", "B3", "B4", "B5", "B6", "B7", "B8", "B11", "B12"]
+        d[bands] = d[bands] / 10000
+        d["NDVI"] = (d.B8 - d.B4) / (d.B8 + d.B4)
+        d["NBR"] = (d.B8 - d.B12) / (d.B8 + d.B12)
+        d["NBR2"] = (d.B11 - d.B12) / (d.B11 + d.B12)
+        d["BAIS2"] = w.bais2(d.B4, d.B6, d.B7, d.B8, d.B12)
+        d["TCB"] = w.tcb(d.B2, d.B3, d.B4, d.B8, d.B11, d.B12)
+        d = d.replace([np.inf, -np.inf], np.nan).dropna(subset=w.VARS)
+        sc, m = w.lp.model()
+        d["z"] = m.decision_function(sc.transform(d[["BAIS2", "TCB"]].to_numpy()))
+        return d.sort_values(["loc", "date"])
+    v = pd.read_csv(VERDICTS, parse_dates=["candidate_date", "pre_date"])
+    pts = pd.read_csv(POINTS)
+    code = gpd.read_file(ROOT / "Data" / "Rice" / "rice_area_output" / "punjab_current_tehsils_lgd.gpkg")
+    code = int(code[code.lgd_tehsil_name_current == "Lehra"].lgd_tehsil_code.iloc[0])
+    vv = v[(v.year == 2022) & v["loc"].str.startswith(f"T{code}_") & v.prob.notna()]
+    yes = vv.sort_values("prob").iloc[-1]
+    no = vv[vv.prob < 0.2].sort_values("candidate_z").iloc[-1]
+    batch = int(pts[pts["loc"] == yes["loc"]].batch.iloc[0])
+    raw = pd.concat([pd.read_csv(f, parse_dates=["date"]) for f in raw_dir.glob("s2_2022_b*.csv")])
+    raw = raw[raw["loc"].isin([yes["loc"], no["loc"]])]
+    d = looks(raw)
+    fig, axes = plt.subplots(1, 2, figsize=(13, 4.3), sharey=True)
+    for ax, r, lab in [(axes[0], yes, "burnt"), (axes[1], no, "not burnt")]:
+        g = d[(d["loc"] == r["loc"]) & (d.date >= "2022-09-15") & (d.date <= "2022-11-30")]
+        ax.axhline(0, color=INK_2, lw=1, ls="--")
+        ax.text(pd.Timestamp("2022-09-16"), 0.15, "flag line (score > 0)", fontsize=10, color=INK_2)
+        ax.plot(g.date, g.z, "-o", color=INK, ms=5, lw=1.5)
+        c, p = r.candidate_date, r.pre_date
+        ax.scatter([p], g[g.date == p].z, s=160, facecolor="none", edgecolor=COLORS["Central"], lw=2.5, zorder=4)
+        ax.scatter([c], g[g.date == c].z, s=160, facecolor="none", edgecolor=EMBER, lw=2.5, zorder=4)
+        ax.annotate("before", (p, g[g.date == p].z.iloc[0]), xytext=(-20, -26), textcoords="offset points",
+                    color=COLORS["Central"], fontsize=11)
+        ax.annotate("candidate\n(sharpest jump)", (c, g[g.date == c].z.iloc[0]), xytext=(10, 6),
+                    textcoords="offset points", color=EMBER, fontsize=11)
+        col = EMBER if r.prob >= 0.786 else COLORS["Central"]
+        ax.set_title(f"Forest: p = {r.prob:.2f} → {lab}", loc="left", fontsize=13, color=col)
+        ax.xaxis.set_major_formatter(matplotlib.dates.DateFormatter("%d %b"))
+        ax.yaxis.grid(True, color=GRID)
+    axes[0].set_ylabel("burn-index score (BAIS2 + TCB)")
+    fig.tight_layout()
+    save(fig, "f19_detector_series.png")
+    print("  points", yes["loc"], round(yes.prob, 2), no["loc"], round(no.prob, 2))
+
+
+if __name__ == "__main__" and len(sys.argv) > 1 and sys.argv[1] == "methods":
+    f18_gower_example()
+    f19_detector_series()

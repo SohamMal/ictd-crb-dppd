@@ -217,7 +217,7 @@ def notes(slide, t):
 
 FF = ROOT / "outputs" / "figures" / "final"
 RAWF = FF / "raw"
-TOTAL = 22
+TOTAL = 27
 
 
 def meta(name):
@@ -275,7 +275,7 @@ notes(s, "Fifteen minutes: who burns less than their peers, why we trust that, w
 # ---------- 2. Problem ----------
 s = S("The problem", "Punjab burns over half its paddy straw every autumn")
 image(s, FIG / "fig_G_burn_map.png", M, TOP + 0.1, 5.6, 5.4, align="left")
-caption(s, M, 6.95, 5.6, "Our measure: share of cropland points burnt, mean 2020–24, by tehsil")
+caption(s, M, 6.95, 5.6, "Our measure: share of sample rice points burnt, mean 2020–24, by tehsil")
 stat(s, 6.8, TOP + 0.3, 5.8, "52–64%", "of paddy area burnt each season, 2019–23\n(our Sentinel-2 measure)",
      big_size=48)
 bullets(s, 6.8, TOP + 2.2, 5.9, 3.2, [
@@ -322,6 +322,33 @@ text(s, 8.45, TOP + 3.95, 4.28, 1.4, "Question: which of Punjab's 97 tehsils bur
      "than structurally similar peers, and why?", size=14, color=MUTED, italic=True, margin=0)
 notes(s, "Answer first; the rest of the talk is why we believe it, why they differ, and what to do.")
 
+# ---------- M0. Pipeline ----------
+s = S("Method", "How we did it: the DPPD pipeline, step by step")
+steps = [("1", "Peer groups", "Gower distance on 5 structural dimensions → hierarchical clustering → 3 groups",
+          "Frozen before any burning data"),
+         ("2", "Burn measure", "Sentinel-2 flag → candidate look → before/after → random forest; 100 points per tehsil",
+          "Burnt vs ploughed separated"),
+         ("3", "Find PDs", "Log-scale IQR fence within each group: static (level) and temporal (trend)",
+          "Two season runs; strict rule"),
+         ("4", "Validate", "Bootstrap, other settings, cloud gaps, rice map, real paddy, harvest timing",
+          "On the data; no fieldwork"),
+         ("5", "Drivers", "9 public drivers: rank correlation, partial (rice held constant), PD/ND sides",
+          "Leads, not causes")]
+bw = (W - 2 * M - 4 * 0.22) / 5
+for i, (k, h_, b_, r_) in enumerate(steps):
+    x = M + i * (bw + 0.22)
+    panel(s, x, TOP + 0.2, bw, 4.6)
+    c = s.shapes.add_shape(MSO_SHAPE.OVAL, Inches(x + 0.18), Inches(TOP + 0.4), Inches(0.55), Inches(0.55))
+    fill(c, EMBER)
+    text(s, x + 0.18, TOP + 0.4, 0.55, 0.55, k, size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER,
+         anchor=MSO_ANCHOR.MIDDLE, margin=0)
+    text(s, x + 0.18, TOP + 1.1, bw - 0.36, 0.45, h_, size=18, bold=True, margin=0)
+    text(s, x + 0.18, TOP + 1.65, bw - 0.36, 2.2, b_, size=14, margin=0)
+    text(s, x + 0.18, TOP + 3.95, bw - 0.36, 0.7, r_, size=13, color=GOOD, bold=True, margin=0)
+text(s, M, 6.55, W - 2 * M, 0.5, "Hard rules: groups use only conditions a tehsil cannot change; burning data never "
+     "enters grouping; every number comes from code in the repository.", size=14, color=MUTED, italic=True, margin=0)
+notes(s, "Follows the DPPD handbook (Albanna et al. 2021). Grouping was done before measurement on purpose.")
+
 # ---------- 6. Peers ----------
 s = S("A · Fair peers", "Peers are built only from conditions a tehsil cannot change",
       "No machines, mandis or policies, and no burning data. Frozen before burning was measured.")
@@ -332,6 +359,49 @@ bullets(s, M, 5.55, W - 2 * M, 1.4, [
 ], size=16, gap=6)
 notes(s, "Rice share calibrated to official district rice area (Chen map was biased by region). "
          "DPPD rule: grouping on drivers would hide the deviance we want to find.")
+
+# ---------- M1. Gower worked example ----------
+s = S("A · Fair peers", "Step 1: how alike are two tehsils? (dimension-balanced Gower)")
+gx = json.loads((FF / "f18_gower_example.json").read_text())
+pa, pb = gx["Phagwara|Adampur"], gx["Phagwara|Abohar"]
+vv = gx["values"]
+rows = [["Dimension", "Phagwara", "Adampur", "Abohar", "Phagwara–Adampur", "Phagwara–Abohar"],
+        ["Rice share", f"{vv['Phagwara']['rice_share_2022_cal']:.0%}", f"{vv['Adampur']['rice_share_2022_cal']:.0%}",
+         f"{vv['Abohar']['rice_share_2022_cal']:.0%}", f"{pa['rice']:.2f}", f"{pb['rice']:.2f}"],
+        ["Monsoon rain", f"{vv['Phagwara']['mean_monsoon_rainfall_mm']:.0f} mm",
+         f"{vv['Adampur']['mean_monsoon_rainfall_mm']:.0f} mm", f"{vv['Abohar']['mean_monsoon_rainfall_mm']:.0f} mm",
+         f"{pa['rainfall']:.2f}", f"{pb['rainfall']:.2f}"],
+        ["Agro-ecological zone", f"AESR {vv['Phagwara']['aesr_dominant']}", f"AESR {vv['Adampur']['aesr_dominant']}",
+         f"AESR {vv['Abohar']['aesr_dominant']}", f"{pa['zone']:.2f}", f"{pb['zone']:.2f}"],
+        ["Groundwater use", f"{vv['Phagwara']['mean_extraction_pct_2022']:.0f}%",
+         f"{vv['Adampur']['mean_extraction_pct_2022']:.0f}%", f"{vv['Abohar']['mean_extraction_pct_2022']:.0f}%",
+         f"{pa['groundwater']:.2f}", f"{pb['groundwater']:.2f}"],
+        ["Soil (8 descriptors)", "", "", "", f"{pa['soil']:.2f}", f"{pb['soil']:.2f}"],
+        [("Distance = mean of 5", EMBER), "", "", "", (f"{pa['distance']:.2f}", GOOD), (f"{pb['distance']:.2f}", BAD)]]
+table(s, M, TOP + 0.1, 8.3, rows, [2.2, 1.15, 1.15, 1.15, 1.35, 1.3], size=13, row_h=0.5)
+caption(s, M, TOP + 3.65, 8.3, "Real values from the grouping master; scores from Code/grouping/gower.py")
+card(s, 9.2, TOP + 0.1, 3.53, 1.75, "Numbers", "difference ÷ range across tehsils → 0 to 1", size=14)
+card(s, 9.2, TOP + 2.0, 3.53, 1.75, "Categories", "same = 0, different = 1 (soil: average of its 8)", size=14)
+card(s, 9.2, TOP + 3.9, 3.53, 1.75, "Balanced", "average inside each dimension first, so soil's 8 columns get 1 vote, "
+     "not 8", size=14)
+text(s, M, TOP + 4.2, 8.3, 1.2, "Phagwara and Adampur differ mainly in soil, so they are close (0.24) and land in the "
+     "same group. Abohar differs on every dimension (0.51).", size=15, margin=0)
+notes(s, "Why Gower: the variables mix numbers and categories. Why balanced: plain Gower would let soil "
+         "(8 columns) outvote rainfall (1). Dhar Kalan is left out when computing ranges.")
+
+# ---------- M2. Clustering ----------
+s = S("A · Fair peers", "Step 2: merge the closest tehsils, then choose where to cut")
+image(s, FIG / "fig_B_dendrogram.png", M, TOP + 0.05, 7.4, 3.3, align="left")
+caption(s, M, TOP + 3.4, 7.4, "Average-linkage tree of all 97 tehsils; dashed line = cut into 3 groups + outlier")
+image(s, FIG / "fig_D_choosing_k.png", M, TOP + 3.75, 7.4, 1.9, align="left")
+stat(s, 8.4, TOP + 0.05, 4.3, "0.377", "silhouette at k = 3 (how well each tehsil sits in its group)", big_size=34)
+stat(s, 8.4, TOP + 1.55, 4.3, "0.890", "bootstrap ARI: regroup 300 random 80% samples; 1 = identical", big_size=34)
+bullets(s, 8.4, TOP + 3.15, 4.33, 2.5, [
+    ("Average linkage: ", "works on any distance matrix; no forced round or equal groups."),
+    ("Sensitivity: ", "each weight ±15%, each dimension dropped; 8 of 10 weight changes keep ARI ≥ 0.83."),
+    ("Weak point: ", "the South-west / Central border, so PDs are also checked under a 2-group split."),
+], size=13, gap=5)
+notes(s, "Borderline tehsils (switch group in > 20% of resamples) get their consensus group.")
 
 # ---------- 7. Groups ----------
 s = S("A · Fair peers", "Three peer regions emerge, though no location was given")
@@ -368,8 +438,22 @@ card(s, M + 6.25, 5.05, 5.9, 1.75, "PlanetScope (daily, 3 m, limited quota)",
 notes(s, "Also tried and rejected: land surface temperature (ash not hotter than soil) and Sentinel-1 radar "
          "roughness (Basma's suggestion; 12-day revisit, moved the wrong way on ploughed fields).")
 
+# ---------- M3. Detector method ----------
+s = S("A · Measuring burning", "Our detector: flag, pick the sudden change, let a forest decide")
+image(s, FF / "f19_detector_series.png", M, TOP + 0.05, W - 2 * M, 3.75)
+caption(s, M, TOP + 3.85, W - 2 * M, "Two real sample points in Lehra, 2022. Both cross the flag line; only the "
+        "sudden jump is judged a burn.")
+card(s, M, 5.75, 4.0, 1.3, "1 · Flag", "BAIS2 (red-edge burn index) + TCB (brightness), fitted on 438 CEEW fields: "
+     "score > 0", size=12)
+card(s, M + 4.1, 5.75, 4.0, 1.3, "2–3 · Candidate + before/after", "largest rise in score; compare 14 bands and "
+     "indices with the last clear look ≤ 20 days earlier", size=12)
+card(s, M + 8.2, 5.75, 3.93, 1.3, "4 · Random forest", "500 trees, trained on Walker et al. 2,204 burnt vs 223 "
+     "ploughed fields; burnt if p ≥ 0.79", size=12)
+notes(s, "Why the jump: burning darkens a field overnight; drying and harvest change it gradually. "
+         "Cut-off 0.79 keeps 90% of Walker's burns; 0.5 is the sensitivity check.")
+
 # ---------- 10. Detector ----------
-s = S("A · Measuring burning", "Our detector cuts ploughing false alarms from 81% to 18%")
+s = S("A · Measuring burning", "How good is it? Ploughing false alarms fall from 81% to 18%")
 steps = [("1", "Flag", "burn index > 0 on a clear look"), ("2", "Candidate", "the sharpest jump: burning is sudden"),
          ("3", "Before / after", "compare bands and indices with the look before"),
          ("4", "Decide", "random forest trained on 2,204 burnt + 223 ploughed fields")]
@@ -395,11 +479,11 @@ image(s, FF / "f08_points_two_tehsils.png", M, TOP + 0.05, 8.6, 5.55, align="lef
 mp, ml = meta("tehsil_phagwara.json"), meta("tehsil_lehra.json")
 caption(s, M, 7.0, 8.6, f"Sentinel-2 true colour, cloud-free {mp['date']}, with each point's 2022 verdict")
 bullets(s, 9.5, TOP + 0.4, 3.25, 5, [
-    ("9,700 points ", "per season, 97 tehsils, 2019–24."),
+    ("100 rice pixels ", "per tehsil (rice in both 2020 and 2022 maps), same points every season."),
     ("Tehsil value ", "= share of its points burnt."),
     ("≥ 97% ", "of points get a verdict each season."),
 ], size=17, gap=14)
-notes(s, "Points on all cropland, not on the Chen rice map, because that map is biased by region.")
+notes(s, "Points are pixels that are rice in both the Chen 2020 and 2022 maps; the same panel is read every season, so year-to-year change is not sampling noise.")
 
 # ---------- 12. Holds up ----------
 s = S("A · Measuring burning", "The tehsil measure matches fire counts and is stable")
@@ -417,12 +501,12 @@ notes(s, "Agreement with VIIRS is reassuring but not proof, since farmers time f
 s = S("B · Positive deviants", "A positive deviant lies beyond its own group's fence")
 image(s, FIG / "fig_I_pd_fences.png", M, TOP + 0.05, 8.2, 4.2, align="left")
 caption(s, M, TOP + 4.3, 8.2, "Each dot = a tehsil's mean burnt share 2020–24 (log scale). Hollow = Doaba tehsils.")
-bullets(s, 9.1, TOP + 0.2, 3.65, 5, [
-    ("Fence: ", "Q1 − 1.5 × IQR within the group."),
-    ("Strict PD: ", "beyond the fence in both 2020–24 and 2020–23."),
-    ("Central ", "fence 0.23, median 0.61."),
-    ("South-west ", "fence 0.45, median 0.73."),
-], size=16, gap=10)
+bullets(s, 9.1, TOP + 0.1, 3.65, 5.4, [
+    ("Scale: ", "log(share + c), c = 10% of group median: halving counts the same at any level."),
+    ("Static PD: ", "5-season mean below Q1 − 1.5 × IQR of its group, and in the bottom quarter in 4 of 5 seasons."),
+    ("Temporal PD: ", "Theil–Sen trend minus the group's median trend, beyond the same fence."),
+    ("Strict: ", "beyond the fence in both 2020–24 and 2020–23."),
+], size=14, gap=7)
 notes(s, "Static deviance = burns least; temporal (Basma) = falls fastest vs group trend. "
          "Doaba tehsils sit together, so the fence treats them as part of the normal spread.")
 
@@ -434,6 +518,22 @@ stat(s, 8.9, TOP + 1.9, 3.8, "−11% / yr", "burning trend relative to its group
 text(s, 8.9, TOP + 3.6, 3.8, 1.2, "The only tehsil that is a deviant on both level and trend.",
      size=16, margin=0)
 notes(s, "Abohar is the only strict PD.")
+
+# ---------- M4. Validation design ----------
+s = S("B · Positive deviants", "Before trusting a PD: six checks on the data, fixed in advance")
+rows = [["Check", "Question", "How", "Pass rule"],
+        ["V1 Resampling", "Luck of the 100 points?", "redraw verdicts 1,000×, rerun", "flag kept ≥ 80%"],
+        ["V2 Settings", "Depends on our choices?", "cut 0.5; offset 5% / 20%; other grouping", "kept in all but one"],
+        ["V3 Clear looks", "Do clouds hide fires?", "unknown points, looks per point", "≤ 2× group median"],
+        ["V4 Rice map", "Less paddy to burn?", "rice share; harvest seen at points", "not below group Q1"],
+        ["V4b Real paddy", "Non-paddy points pulling it down?", "score only harvest-confirmed points", "flag survives"],
+        ["V5 Timing", "Harvest after the window?", "median harvest vs group", "< 10 days later"]]
+table(s, M, TOP + 0.1, W - 2 * M, rows, [2.4, 3.6, 3.9, 2.23], size=14, row_h=0.56)
+text(s, M, TOP + 4.25, W - 2 * M, 0.9, [[("Label: ", {"bold": True, "color": EMBER}),
+     ("any fail → dropped; at most one flag → validated PD; more → PD with caveat. "
+      "VIIRS and CREAMS used for triangulation only.", {})]], size=15, margin=0)
+notes(s, "Handbook pp. 67-68: check a deviant is a real signal before fieldwork. A planned blind visual check (V7) "
+         "was not done; stated as a limitation.")
 
 # ---------- 15. Validation ----------
 s = S("B · Positive deviants", "Low burners survive every check; fast reducers do not")
@@ -456,6 +556,29 @@ bullets(s, 8.6, TOP + 0.3, 4.1, 5, [
     ("Result: ", "Abohar 0.45 vs 0.73; Dinanagar 0.25 vs 0.62. The PDs stay low."),
 ], size=16, gap=10)
 notes(s, "So rice share is treated as structural and held constant in Stage 3.")
+
+# ---------- M5. Driver method ----------
+s = S("C · Why they burn less", "Stage 3: nine public drivers, tested three ways")
+rows = [["Driver", "Data", "Level"],
+        ["Harvest-to-sowing days", "Sentinel-2 NDVI (checked vs CIMMYT survey)", "Tehsil 2020–24"],
+        ["Early second crop", "points green by 30 Nov (potato, vegetables)", "Tehsil 2020–24"],
+        ["Farm labour; small farms", "Census 2011 village abstract", "Tehsil"],
+        ["Straw buyers", "14 biomass / biogas plants from news", "Town"],
+        ["Distance to state border", "SHRUG district polygons", "Tehsil"],
+        ["Urban surroundings", "JRC GHS-SMOD 2020 settlement map", "Tehsil"],
+        ["Basmati share", "APEDA survey 2023 ÷ rice area", "District"],
+        ["Livestock", "Livestock Census 2019, village", "Tehsil"],
+        [("CRM machines", BAD), ("no district data online → dropped", BAD), "—"]]
+table(s, M, TOP + 0.05, 7.4, rows, [2.5, 3.5, 1.4], size=12, row_h=0.47)
+card(s, 8.3, TOP + 0.05, 4.43, 1.45, "1 · Profiles", "Are PDs on the expected side of their group median, NDs on "
+     "the other?", size=13)
+card(s, 8.3, TOP + 1.65, 4.43, 1.45, "2 · Rank correlation", "Spearman ρ with 2020–24 burning, inside each "
+     "group", size=13)
+card(s, 8.3, TOP + 3.25, 4.43, 1.45, "3 · Rice held constant", "partial ρ: remove rice share's rank from both, "
+     "then correlate", size=13)
+text(s, 8.3, TOP + 4.85, 4.43, 0.8, "8 PDs, 4 NDs, 44 tests → only patterns that repeat across all three readings "
+     "count.", size=13, color=MUTED, margin=0)
+notes(s, "Drivers are things that could change or transfer; structural conditions are never re-used as drivers.")
 
 # ---------- 17. Drivers ----------
 s = S("C · Why they burn less", "Only urban surroundings line up; others restate rice")
@@ -480,22 +603,6 @@ bullets(s, 8.6, TOP + 0.3, 4.1, 5, [
 ], size=15, gap=10)
 notes(s, "A transferable practice would have to be found inside the region, e.g. what farmers do with "
          "straw before an October potato crop. Only fieldwork can show that.")
-
-# ---------- 19. Landscapes ----------
-s = S("C · Why they burn less", "What the landscapes look like from space")
-mm = {k: meta(f"s2_{k}.json") for k in ["phagwara", "lehra", "abohar", "guruharsahai"]}
-iw = (W - 2 * M - 0.6) / 4
-for i, (k, lab, col) in enumerate([("phagwara", "Phagwara · PD", GOOD), ("lehra", "Lehra · ND", BAD),
-                                   ("abohar", "Abohar · PD", GOOD), ("guruharsahai", "Guruharsahai · ND", BAD)]):
-    x = M + i * (iw + 0.2)
-    text(s, x, TOP + 0.05, iw, 0.4, lab, size=17, bold=True, color=col, margin=0)
-    image(s, RAWF / f"s2_{k}.png", x, TOP + 0.5, iw, iw)
-    caption(s, x, TOP + 0.55 + iw, iw, f"{mm[k]['date']} · {mm[k]['box_km']:.0f} km box")
-text(s, M, TOP + 1.1 + iw, (W - 2 * M) / 2, 0.8, "Central: Doaba PD vs heavy burner. Mixed fields, more green.",
-     size=14, color=MUTED, margin=0)
-text(s, M + (W - 2 * M) / 2 + 0.1, TOP + 1.1 + iw, (W - 2 * M) / 2, 0.8, "South-west: Abohar's orchards and cotton vs "
-     "solid harvested paddy.", size=14, color=MUTED, margin=0)
-notes(s, "Sentinel-2 true colour, same stretch for all four. Illustration only; drivers are tested on slide 17.")
 
 # ---------- 20. Abohar profile ----------
 s = S("C · Why they burn less", "Abohar: straw buyer, labour, livestock, early second crop")
@@ -643,6 +750,23 @@ bullets(s, M, TOP + 3.3, W - 2 * M, 2.2, [
     ("Outcome: ", "farmers manage straw without burning (list experiment; straw sold / fed)."),
     ("Outputs: ", "lever delivered on time (villages served, tonnes collected, labour days)."),
 ], size=15, gap=6)
+
+# ---------- 19. Landscapes ----------
+s = backup("B8 · What the landscapes look like from space")
+mm = {k: meta(f"s2_{k}.json") for k in ["phagwara", "lehra", "abohar", "guruharsahai"]}
+iw = (W - 2 * M - 0.6) / 4
+for i, (k, lab, col) in enumerate([("phagwara", "Phagwara · PD", GOOD), ("lehra", "Lehra · ND", BAD),
+                                   ("abohar", "Abohar · PD", GOOD), ("guruharsahai", "Guruharsahai · ND", BAD)]):
+    x = M + i * (iw + 0.2)
+    text(s, x, TOP + 0.05, iw, 0.4, lab, size=17, bold=True, color=col, margin=0)
+    image(s, RAWF / f"s2_{k}.png", x, TOP + 0.5, iw, iw)
+    caption(s, x, TOP + 0.55 + iw, iw, f"{mm[k]['date']} · {mm[k]['box_km']:.0f} km box")
+text(s, M, TOP + 1.1 + iw, (W - 2 * M) / 2, 0.8, "Central: Doaba PD vs heavy burner. Mixed fields, more green.",
+     size=14, color=MUTED, margin=0)
+text(s, M + (W - 2 * M) / 2 + 0.1, TOP + 1.1 + iw, (W - 2 * M) / 2, 0.8, "South-west: Abohar's orchards and cotton vs "
+     "solid harvested paddy.", size=14, color=MUTED, margin=0)
+notes(s, "Sentinel-2 true colour, same stretch for all four. Illustration only; drivers are tested on slide 17.")
+
 
 prs.save(OUT)
 print(f"Saved {OUT} ({len(prs.slides)} slides)")
