@@ -36,3 +36,8 @@ desktop.ini
 # Version X (village level): regenerable Earth Engine caches and point-level verdicts
 version_X/outputs/**/raw/
 version_X/outputs/burn/point_verdicts*.csv
+# final deck: Planet-derived chips and cache stay local (same licence); deck pptx embeds them
+outputs/figures/final/raw/planet_days_*.pkl
+outputs/figures/final/f05_planet_burnt_vs_ploughed.png
+outputs/figures/final/f06_planet_vs_s2.png
+report/final_deck.pptx
