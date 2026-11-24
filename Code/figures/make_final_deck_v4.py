@@ -10,6 +10,7 @@ Run:  python Code/figures/make_final_deck_v4.py
 Out:  report/final_deck_v4.pptx   (git-ignored: embeds PlanetScope imagery)
 """
 import json
+import os
 from pathlib import Path
 
 import pandas as pd
@@ -24,7 +25,7 @@ ROOT = Path(__file__).resolve().parents[2]
 FIG = ROOT / "outputs" / "figures"
 FF = FIG / "final"
 RAWF = FF / "raw"
-OUT = ROOT / "report" / "final_deck_v4.pptx"
+OUT = Path(os.environ.get("DECK_OUT", ROOT / "report" / "final_deck_v4.pptx"))
 
 # Palette: charcoal text, one ember accent, green only for "positive deviant / good", red for "bad".
 DARK = RGBColor(0x1F, 0x1A, 0x17)
@@ -430,22 +431,25 @@ notes(s, "Rice difference example: |share P − share A| ÷ range across tehsils
          "are tested in the sensitivity check.")
 
 # 6 Matrix
-s = S("Grouping", "Comparing all 97 tehsils: a 97 × 97 distance matrix")
-image(s, FF / "v3_distance_matrix.png", M, TOP, 6.6, 4.8, align="left")
-text(s, 7.5, TOP + 0.05, 5.23, 0.35, "How it was generated", size=15, bold=True, color=EMBER, margin=0)
-bullets(s, 7.5, TOP + 0.45, 5.23, 1.6, [
-    "Code computes the 5 dimension scores for every pair and averages them.",
-    "97 × 96 ÷ 2 = 4,656 pairs; the diagonal is 0 (a tehsil vs itself).",
+s = S("Grouping", "Comparing all 97 tehsils: the Gower distance matrix")
+image(s, FF / "v4_gower_corr_matrix.png", M, TOP - 0.05, 6.9, 4.9, align="left")
+text(s, 7.75, TOP + 0.05, 4.98, 0.35, "How it was generated", size=15, bold=True, color=EMBER, margin=0)
+bullets(s, 7.75, TOP + 0.45, 4.98, 1.55, [
+    "Code computes the 5 dimension scores for every pair of tehsils and averages them.",
+    "Full matrix: 97 × 97, i.e. 4,656 pairs. Shown: 12 real tehsils, 4 per group.",
 ], size=14, gap=4)
-text(s, 7.5, TOP + 1.95, 5.23, 0.35, "How to read it", size=15, bold=True, color=EMBER, margin=0)
-bullets(s, 7.5, TOP + 2.35, 5.23, 2.4, [
-    ("Dark = alike, light = different.", ""),
-    ("Rows sorted by final group: ", "dark squares on the diagonal mean tehsils inside a group are alike."),
-    ("Foothills ", "are light against everyone: the most distinct region."),
-    ("The only input to clustering: ", "it never sees maps or burning."),
+text(s, 7.75, TOP + 1.95, 4.98, 0.35, "How to read it", size=15, bold=True, color=EMBER, margin=0)
+bullets(s, 7.75, TOP + 2.35, 4.98, 2.45, [
+    ("Each cell: ", "distance between two tehsils; dark = alike, light = different."),
+    ("Symmetric, ", "so only the lower half is shown; the diagonal is 0."),
+    ("Within a group (triangles): ", "small numbers, e.g. Pathankot ↔ Nangal 0.10."),
+    ("Across groups: ", "larger, e.g. Lehra ↔ Anandpur Sahib 0.60."),
 ], size=14, gap=4)
-short(s, "the clustering's job is to find those dark blocks on its own, without being told where they are.")
-notes(s, "Shown sorted for readability. The clustering receives the matrix in district order.")
+short(s, "this matrix is the only input to clustering, which must find the alike blocks on its own.")
+notes(s, "Same numbers as the full 97 x 97 matrix (outputs/grouping/dist_baseline.csv); 12 tehsils shown so every "
+         "value is readable. Ordered by final group for the picture only: clustering sees the full matrix in district "
+         "order, never maps or burning. Some cross-group pairs are close too (Lehra ↔ Mansa 0.14): groups are decided "
+         "by average distances, not one pair.")
 
 # 7 HAC
 s = S("Grouping", "Hierarchical clustering: merge the two closest, repeat")
