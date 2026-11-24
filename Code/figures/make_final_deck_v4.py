@@ -633,32 +633,76 @@ short(s, "both points cross the flag line (score > 0), which fooled the old dete
 notes(s, "Flag = BAIS2 + TCB score above 0. Candidate = flagged look with the largest rise from the previous look.")
 
 # 16 Burning vs ploughing
-s = S("Burn detection", "Distinguishing burning from ploughing")
-cw = (W - 2 * M - 0.4) / 3
-panel(s, M, TOP + 0.05, cw, 4.7)
-text(s, M + 0.2, TOP + 0.15, cw - 0.4, 0.4, "14 bands and indices", size=16, bold=True, color=EMBER, margin=0)
-rows = [["Input", "What it sees"],
-        ["Blue, Green, Red", "colour, darkness"],
-        ["Red-edge 1, 2, 3", "plant / residue"],
-        ["NIR", "green vegetation"],
-        ["SWIR 1, 2", "moisture, char"],
-        ["NDVI", "greenness"],
-        ["NBR, NBR2", "burn, residue"],
-        ["BAIS2", "burn area"],
-        ["TCB", "brightness"]]
-table(s, M + 0.15, TOP + 0.6, cw - 0.3, rows, [1.7, cw - 2.0], size=12, row_h=0.43)
-card(s, M + cw + 0.2, TOP + 0.05, cw, 4.7, "Before / after features", [
-    "After: each of the 14 on the candidate date",
-    "Change: after − before (last clear image in the 20 days before)",
-    "14 × 2 = 28 features per event",
-    "Fire: sudden drop in brightness and NIR, rise in BAIS2. Plough: brighter bare soil, smaller change"], size=15)
-card(s, M + 2 * (cw + 0.2), TOP + 0.05, cw, 4.7, "Random forest", [
-    "500 decision trees each vote burnt or not; p = share voting burnt",
-    "Training: Walker et al. 2019, farmer-reported 2,204 burnt + 223 ploughed-not-burnt fields",
-    "Threshold: burnt if p ≥ 0.79, which keeps 90% of burns while staying strict on ploughing",
-    "p ≥ 0.5 rerun as a check"], size=15, head_color=GOOD)
-short(s, "the forest learns what a real fire does to a field that a plough does not.")
-notes(s, "Walker et al. 2019 is the only public ground truth with ploughed-not-burnt fields for Punjab.")
+s = S("Burn detection", "Distinguishing burning from ploughing: 28 features, one forest")
+text(s, M, TOP + 0.0, 5.4, 0.35, "What the forest sees for each event", size=14, bold=True, color=MUTED, margin=0)
+rows = [["Feature category", "Features", "Count"],
+        ["Spectral bands", "B2–B8, B11, B12 (after)", "9"],
+        ["Spectral indices", "NDVI, NBR, NBR2, BAIS2, TCB (after)", "5"],
+        ["Temporal changes", "after − before, for all the above", "14"],
+        [("Total", EMBER), "", ("28", EMBER)]]
+table(s, M, TOP + 0.4, 5.4, rows, [1.75, 2.85, 0.8], size=13, row_h=0.5)
+card(s, M, TOP + 3.1, 5.4, 1.65, "Training and threshold", [
+    "Walker et al. 2019: 2,204 burnt + 223 ploughed-not-burnt fields",
+    "500 trees; burnt if p ≥ 0.79 (keeps 90% of burns, strict on ploughing)"], size=13)
+
+# random-forest diagram (5 of the 500 trees shown)
+from pptx.enum.shapes import MSO_CONNECTOR
+
+
+def line(sl, x1, y1, x2, y2, color=LIGHT, wd=1.75):
+    c = sl.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, Inches(x1), Inches(y1), Inches(x2), Inches(y2))
+    c.line.color.rgb = color
+    c.line.width = Pt(wd)
+
+
+DX0, DW = 6.35, W - M - 6.35
+cx = DX0 + DW / 2
+box = panel(s, cx - 1.6, TOP + 0.05, 3.2, 0.55, color=PANEL)
+box.line.color.rgb = LIGHT
+text(s, cx - 1.6, TOP + 0.05, 3.2, 0.55, "Input: 28 features", size=16, bold=True, align=PP_ALIGN.CENTER,
+     anchor=MSO_ANCHOR.MIDDLE, margin=0)
+votes = ["Burnt", "Burnt", "Burnt", "Unburnt", "Burnt"]
+step = DW / 5
+xs = [DX0 + step * (i + 0.5) for i in range(5)]
+yb1, yroot = TOP + 0.85, TOP + 1.1
+line(s, cx, TOP + 0.6, cx, yb1)
+line(s, xs[0], yb1, xs[-1], yb1)
+for i, (x, v) in enumerate(zip(xs, votes)):
+    col = BAD if v == "Burnt" else GOOD
+    line(s, x, yb1, x, yroot)
+    r = 0.11
+    dot = s.shapes.add_shape(MSO_SHAPE.OVAL, Inches(x - r), Inches(yroot), Inches(2 * r), Inches(2 * r))
+    fill(dot, col)
+    y0 = yroot + 2 * r
+    line(s, x, y0, x, y0 + 0.2, col, 3)
+    y1 = y0 + 0.2
+    for sx in (-1, 1):
+        xm, ym = x + sx * 0.4, y1 + 0.35
+        line(s, x, y1, xm, ym, col, 3)
+        for lx in (-1, 1):
+            line(s, xm, ym, xm + lx * 0.14, ym + 0.38, col, 3)
+    text(s, x - 0.6, TOP + 2.35, 1.2, 0.3, f"Tree {i + 1}", size=14, align=PP_ALIGN.CENTER, margin=0)
+    text(s, x - 0.6, TOP + 2.65, 1.2, 0.3, v, size=14, bold=True, color=col, align=PP_ALIGN.CENTER, margin=0)
+yb2 = TOP + 3.15
+for x in xs:
+    line(s, x, TOP + 3.0, x, yb2)
+line(s, xs[0], yb2, xs[-1], yb2)
+line(s, cx, yb2, cx, TOP + 3.3)
+agg = panel(s, cx - 1.6, TOP + 3.3, 3.2, 0.5, color=PANEL)
+text(s, cx - 1.6, TOP + 3.3, 3.2, 0.5, "Aggregate predictions", size=15, bold=True, align=PP_ALIGN.CENTER,
+     anchor=MSO_ANCHOR.MIDDLE, margin=0)
+panel(s, DX0, TOP + 3.92, DW, 0.72, color=TINT)
+text(s, DX0 + 0.2, TOP + 3.92, DW - 0.4, 0.72, [
+    [("p(burnt) = share of trees voting burnt = 4 / 5 = 0.80", {"bold": True})],
+    [("p > threshold 0.79  →  ", {}), ("BURNT", {"bold": True, "color": BAD}),
+     ("     (p below 0.79 → not burnt)", {"color": MUTED, "size": 12})]], size=14, anchor=MSO_ANCHOR.MIDDLE,
+     align=PP_ALIGN.CENTER, margin=0)
+caption(s, DX0, TOP + 4.68, DW, "Illustration: 5 of the model's 500 trees")
+short(s, "each tree votes on the 28 features; the share of 'burnt' votes is p, and only p above 0.79 counts as a burn.")
+notes(s, "After = value on the candidate date; change = after minus the last clear image in the 20 days before. "
+         "Fire: sudden drop in brightness and NIR, rise in BAIS2. Plough: brighter bare soil, smaller change. "
+         "Each tree is trained on a random sample of fields and features, so trees disagree; the vote averages "
+         "out their errors. Walker et al. 2019 is the only public ground truth with ploughed-not-burnt fields.")
 
 # 17 Evaluating
 s = S("Burn detection", "Evaluating our improved detector on Walker ground truth")
