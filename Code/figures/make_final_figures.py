@@ -110,6 +110,29 @@ def f02_viirs():
     print("  fires", f.to_dict(), "\n  share", share.round(3).to_dict())
 
 
+def f02r_viirs_report():
+    """ACM report version of f02: 2019-2023 only (2024 detections uncertain, 2025 not measured)."""
+    yrs = range(2019, 2024)
+    f = pd.read_csv(FIRES).groupby("year").fire_all.sum().reindex(yrs)
+    b = pd.read_csv(BURN)
+    share = b.groupby("year").apply(lambda d: d.burnt_ha.sum() / d.rice_ha.sum(), include_groups=False).reindex(yrs)
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 4.2), gridspec_kw={"wspace": 0.3})
+    a1.bar(f.index, f.values / 1000, color=INK_2, width=0.7)
+    for y, v in f.items():
+        a1.text(y, v / 1000 + 0.4, f"{v/1000:.1f}k", ha="center", fontsize=11, color=INK)
+    a1.set_title("VIIRS active fires, Punjab, 15 Sep–30 Nov", loc="left", fontsize=13, color=INK)
+    a1.set_ylabel("fires (thousands)")
+    a1.set_xticks(list(yrs))
+    a2.bar(share.index, share.values * 100, color=EMBER, width=0.7)
+    for y, v in share.items():
+        a2.text(y, v * 100 + 1.2, f"{v*100:.0f}%", ha="center", fontsize=11, color=INK)
+    a2.set_title("Our measure: share of paddy area burnt", loc="left", fontsize=13, color=INK)
+    a2.set_ylim(0, 80)
+    a2.set_xticks(list(yrs))
+    save(fig, "f02r_viirs_2019_2023.png")
+    print("  fires", f.to_dict(), "\n  share", share.round(3).to_dict())
+
+
 # ---------- 3. final PD map ----------
 def f03_pd_map(gdf, name="f03_pd_map.png", labels=True, size=7.2):
     style = {**{n: GOOD for n in STRICT}, **{n: "#2fa36b" for n in VALIDATED},
@@ -562,6 +585,7 @@ def main():
     run = lambda k: not only or k in only  # noqa: E731
     if run("f01"): f01_season()
     if run("f02"): f02_viirs()
+    if run("f02r"): f02r_viirs_report()
     if run("f03"): f03_pd_map(gdf)
     if run("f04"): f04_variables(gdf)
     if run("f05") or run("f06"):
